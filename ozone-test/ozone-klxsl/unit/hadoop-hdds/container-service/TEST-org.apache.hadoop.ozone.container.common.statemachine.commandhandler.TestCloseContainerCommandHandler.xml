@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler" time="18.159" tests="5" errors="2" skipped="0" failures="0">
+  <properties>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/opt/src/hadoop-hdds/container-service/target/test-classes:/opt/src/hadoop-hdds/container-service/target/classes:/opt/src/hadoop-hdds/common/target/classes:/opt/src/hadoop-hdds/config/target/classes:/root/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/root/.m2/repository/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar:/root/.m2/repository/org/apache/ratis/ratis-server/0.4.0-fe2b15d-SNAPSHOT/ratis-server-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/apache/ratis/ratis-thirdparty-misc/0.2.0/ratis-thirdparty-misc-0.2.0.jar:/root/.m2/repository/org/apache/ratis/ratis-proto/0.4.0-fe2b15d-SNAPSHOT/ratis-proto-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/apache/ratis/ratis-common/0.4.0-fe2b15d-SNAPSHOT/ratis-common-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/apache/ratis/ratis-client/0.4.0-fe2b15d-SNAPSHOT/ratis-client-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/apache/ratis/ratis-netty/0.4.0-fe2b15d-SNAPSHOT/ratis-netty-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/apache/ratis/ratis-grpc/0.4.0-fe2b15d-SNAPSHOT/ratis-grpc-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/rocksdb/rocksdbjni/5.14.2/rocksdbjni-5.14.2.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.0/log4j-api-2.11.0.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-core/2.11.0/log4j-core-2.11.0.jar:/root/.m2/repository/com/lmax/disruptor/3.4.2/disruptor-3.4.2.jar:/root/.m2/repository/org/apache/commons/commons-pool2/2.6.0/commons-pool2-2.6.0.jar:/root/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.jar:/root/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.jar:/root/.m2/repository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar:/root/.m2/repository/commons-digester/commons-digester/1.8.1/commons-digester-1.8.1.jar:/root/.m2/repository/io/jaegertracing/jaeger-client/0.33.1/jaeger-client-0.33.1.jar:/root/.m2/repository/io/jaegertracing/jaeger-thrift/0.33.1/jaeger-thrift-0.33.1.jar:/root/.m2/repository/org/apache/thrift/libthrift/0.11.0/libthrift-0.11.0.jar:/root/.m2/repository/com/squareup/okhttp3/okhttp/3.9.0/okhttp-3.9.0.jar:/root/.m2/repository/com/squareup/okio/okio/1.13.0/okio-1.13.0.jar:/root/.m2/repository/io/jaegertracing/jaeger-core/0.33.1/jaeger-core-0.33.1.jar:/root/.m2/repository/io/jaegertracing/jaeger-tracerresolver/0.33.1/jaeger-tracerresolver-0.33.1.jar:/root/.m2/repository/io/opentracing/contrib/opentracing-tracerresolver/0.1.5/opentracing-tracerresolver-0.1.5.jar:/root/.m2/repository/io/opentracing/opentracing-util/0.31.0/opentracing-util-0.31.0.jar:/root/.m2/repository/io/opentracing/opentracing-api/0.31.0/opentracing-api-0.31.0.jar:/root/.m2/repository/io/opentracing/opentracing-noop/0.31.0/opentracing-noop-0.31.0.jar:/opt/src/hadoop-hdds/framework/target/classes:/root/.m2/repository/org/mockito/mockito-core/2.2.0/mockito-core-2.2.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.4.26/byte-buddy-1.4.26.jar:/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.4.26/byte-buddy-agent-1.4.26.jar:/root/.m2/repository/org/objenesis/objenesis/1.0/objenesis-1.0.jar:/root/.m2/repository/org/yaml/snakeyaml/1.16/snakeyaml-1.16.jar:/root/.m2/repository/com/google/code/findbugs/findbugs/3.0.1/findbugs-3.0.1.jar:/root/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/root/.m2/repository/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar:/root/.m2/repository/com/google/code/findbugs/bcel-findbugs/6.0/bcel-findbugs-6.0.jar:/root/.m2/repository/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.jar:/root/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/root/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/root/.m2/repository/org/ow2/asm/asm-debug-all/5.0.2/asm-debug-all-5.0.2.jar:/root/.m2/repository/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.jar:/root/.m2/repository/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.jar:/root/.m2/repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/root/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/root/.m2/repository/com/apple/AppleJavaExtensions/1.4/AppleJavaExtensions-1.4.jar:/root/.m2/repository/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar:/root/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.4/metrics-core-3.2.4.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/root/.m2/repository/org/apache/hadoop/hadoop-common/3.2.0/hadoop-common-3.2.0.jar:/root/.m2/repository/org/apache/hadoop/hadoop-annotations/3.2.0/hadoop-annotations-3.2.0.jar:/usr/lib/jvm/java-1.8-openjdk/jre/../lib/tools.jar:/root/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/root/.m2/repository/org/apache/commons/commons-math3/3.1.1/commons-math3-3.1.1.jar:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar:/root/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/root/.m2/repository/commons-io/commons-io/2.5/commons-io-2.5.jar:/root/.m2/repository/commons-net/commons-net/3.6/commons-net-3.6.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/root/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/root/.m2/repository/org/eclipse/jetty/jetty-server/9.3.24.v20180605/jetty-server-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-http/9.3.24.v20180605/jetty-http-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-io/9.3.24.v20180605/jetty-io-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-util/9.3.24.v20180605/jetty-util-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-servlet/9.3.24.v20180605/jetty-servlet-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-security/9.3.24.v20180605/jetty-security-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-webapp/9.3.24.v20180605/jetty-webapp-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-xml/9.3.24.v20180605/jetty-xml-9.3.24.v20180605.jar:/root/.m2/repository/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar:/root/.m2/repository/com/sun/jersey/jersey-core/1.19/jersey-core-1.19.jar:/root/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/root/.m2/repository/com/sun/jersey/jersey-servlet/1.19/jersey-servlet-1.19.jar:/root/.m2/repository/com/sun/jersey/jersey-json/1.19/jersey-json-1.19.jar:/root/.m2/repository/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar:/root/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1.jar:/root/.m2/repository/javax/xml/bind/jaxb-api/2.2.11/jaxb-api-2.2.11.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/root/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.9.13/jackson-jaxrs-1.9.13.jar:/root/.m2/repository/org/codehaus/jackson/jackson-xc/1.9.13/jackson-xc-1.9.13.jar:/root/.m2/repository/com/sun/jersey/jersey-server/1.19/jersey-server-1.19.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/root/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/root/.m2/repository/commons-beanutils/commons-beanutils/1.9.3/commons-beanutils-1.9.3.jar:/root/.m2/repository/org/apache/commons/commons-configuration2/2.1.1/commons-configuration2-2.1.1.jar:/root/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/root/.m2/repository/org/apache/commons/commons-text/1.4/commons-text-1.4.jar:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar:/root/.m2/repository/org/apache/avro/avro/1.7.7/avro-1.7.7.jar:/root/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/root/.m2/repository/org/xerial/snappy/snappy-java/1.0.5/snappy-java-1.0.5.jar:/root/.m2/repository/com/google/re2j/re2j/1.1/re2j-1.1.jar:/root/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/root/.m2/repository/org/apache/hadoop/hadoop-auth/3.2.0/hadoop-auth-3.2.0.jar:/root/.m2/repository/com/nimbusds/nimbus-jose-jwt/4.41.1/nimbus-jose-jwt-4.41.1.jar:/root/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/root/.m2/repository/net/minidev/json-smart/2.3/json-smart-2.3.jar:/root/.m2/repository/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar:/root/.m2/repository/org/apache/curator/curator-framework/2.12.0/curator-framework-2.12.0.jar:/root/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar:/root/.m2/repository/org/apache/curator/curator-client/2.12.0/curator-client-2.12.0.jar:/root/.m2/repository/org/apache/curator/curator-recipes/2.12.0/curator-recipes-2.12.0.jar:/root/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/root/.m2/repository/org/apache/zookeeper/zookeeper/3.4.13/zookeeper-3.4.13.jar:/root/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/root/.m2/repository/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar:/root/.m2/repository/org/tukaani/xz/1.0/xz-1.0.jar:/root/.m2/repository/org/apache/kerby/kerb-simplekdc/1.0.1/kerb-simplekdc-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-client/1.0.1/kerb-client-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerby-config/1.0.1/kerby-config-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-core/1.0.1/kerb-core-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerby-pkix/1.0.1/kerby-pkix-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerby-asn1/1.0.1/kerby-asn1-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerby-util/1.0.1/kerby-util-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-common/1.0.1/kerb-common-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-crypto/1.0.1/kerb-crypto-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-util/1.0.1/kerb-util-1.0.1.jar:/root/.m2/repository/org/apache/kerby/token-provider/1.0.1/token-provider-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-admin/1.0.1/kerb-admin-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-server/1.0.1/kerb-server-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-identity/1.0.1/kerb-identity-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerby-xdr/1.0.1/kerby-xdr-1.0.1.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.5/jackson-databind-2.9.5.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.5/jackson-core-2.9.5.jar:/root/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar:/root/.m2/repository/com/fasterxml/woodstox/woodstox-core/5.0.3/woodstox-core-5.0.3.jar:/root/.m2/repository/dnsjava/dnsjava/2.1.7/dnsjava-2.1.7.jar:/root/.m2/repository/org/apache/hadoop/hadoop-hdfs/3.2.0/hadoop-hdfs-3.2.0.jar:/root/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.3.24.v20180605/jetty-util-ajax-9.3.24.v20180605.jar:/root/.m2/repository/commons-daemon/commons-daemon/1.0.13/commons-daemon-1.0.13.jar:/root/.m2/repository/io/netty/netty/3.10.5.Final/netty-3.10.5.Final.jar:/root/.m2/repository/io/netty/netty-all/4.0.52.Final/netty-all-4.0.52.Final.jar:/root/.m2/repository/org/apache/hadoop/hadoop-hdfs-client/3.2.0/hadoop-hdfs-client-3.2.0.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.5/jackson-annotations-2.9.5.jar:/root/.m2/repository/org/apache/hadoop/hadoop-common/3.2.0/hadoop-common-3.2.0-tests.jar:/root/.m2/repository/org/apache/hadoop/hadoop-hdfs/3.2.0/hadoop-hdfs-3.2.0-tests.jar:/root/.m2/repository/info/picocli/picocli/3.9.6/picocli-3.9.6.jar:/root/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/root/.m2/repository/com/google/guava/guava/11.0.2/guava-11.0.2.jar:/root/.m2/repository/junit/junit/4.11/junit-4.11.jar:/root/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.vm.vendor" value="IcedTea"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="test.build.dir" value="/opt/src/hadoop-hdds/container-service/target/test-dir"/>
+    <property name="test.cache.data" value=""/>
+    <property name="java.vendor.url" value="https://icedtea.classpath.org"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="test.build.data" value="/opt/src/hadoop-hdds/container-service/target/test-dir"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/opt/src/hadoop-hdds/container-service/target/surefire/surefirebooter185441459477302901.jar /opt/src/hadoop-hdds/container-service/target/surefire 2019-06-13T09-30-52_316-jvmRun1 surefire6859580068997148955tmp surefire_244251569111573953472tmp"/>
+    <property name="surefire.test.class.path" value="/opt/src/hadoop-hdds/container-service/target/test-classes:/opt/src/hadoop-hdds/container-service/target/classes:/opt/src/hadoop-hdds/common/target/classes:/opt/src/hadoop-hdds/config/target/classes:/root/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/root/.m2/repository/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar:/root/.m2/repository/org/apache/ratis/ratis-server/0.4.0-fe2b15d-SNAPSHOT/ratis-server-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/apache/ratis/ratis-thirdparty-misc/0.2.0/ratis-thirdparty-misc-0.2.0.jar:/root/.m2/repository/org/apache/ratis/ratis-proto/0.4.0-fe2b15d-SNAPSHOT/ratis-proto-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/apache/ratis/ratis-common/0.4.0-fe2b15d-SNAPSHOT/ratis-common-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/apache/ratis/ratis-client/0.4.0-fe2b15d-SNAPSHOT/ratis-client-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/apache/ratis/ratis-netty/0.4.0-fe2b15d-SNAPSHOT/ratis-netty-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/apache/ratis/ratis-grpc/0.4.0-fe2b15d-SNAPSHOT/ratis-grpc-0.4.0-fe2b15d-SNAPSHOT.jar:/root/.m2/repository/org/rocksdb/rocksdbjni/5.14.2/rocksdbjni-5.14.2.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.0/log4j-api-2.11.0.jar:/root/.m2/repository/org/apache/logging/log4j/log4j-core/2.11.0/log4j-core-2.11.0.jar:/root/.m2/repository/com/lmax/disruptor/3.4.2/disruptor-3.4.2.jar:/root/.m2/repository/org/apache/commons/commons-pool2/2.6.0/commons-pool2-2.6.0.jar:/root/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.60/bcpkix-jdk15on-1.60.jar:/root/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.60/bcprov-jdk15on-1.60.jar:/root/.m2/repository/commons-validator/commons-validator/1.6/commons-validator-1.6.jar:/root/.m2/repository/commons-digester/commons-digester/1.8.1/commons-digester-1.8.1.jar:/root/.m2/repository/io/jaegertracing/jaeger-client/0.33.1/jaeger-client-0.33.1.jar:/root/.m2/repository/io/jaegertracing/jaeger-thrift/0.33.1/jaeger-thrift-0.33.1.jar:/root/.m2/repository/org/apache/thrift/libthrift/0.11.0/libthrift-0.11.0.jar:/root/.m2/repository/com/squareup/okhttp3/okhttp/3.9.0/okhttp-3.9.0.jar:/root/.m2/repository/com/squareup/okio/okio/1.13.0/okio-1.13.0.jar:/root/.m2/repository/io/jaegertracing/jaeger-core/0.33.1/jaeger-core-0.33.1.jar:/root/.m2/repository/io/jaegertracing/jaeger-tracerresolver/0.33.1/jaeger-tracerresolver-0.33.1.jar:/root/.m2/repository/io/opentracing/contrib/opentracing-tracerresolver/0.1.5/opentracing-tracerresolver-0.1.5.jar:/root/.m2/repository/io/opentracing/opentracing-util/0.31.0/opentracing-util-0.31.0.jar:/root/.m2/repository/io/opentracing/opentracing-api/0.31.0/opentracing-api-0.31.0.jar:/root/.m2/repository/io/opentracing/opentracing-noop/0.31.0/opentracing-noop-0.31.0.jar:/opt/src/hadoop-hdds/framework/target/classes:/root/.m2/repository/org/mockito/mockito-core/2.2.0/mockito-core-2.2.0.jar:/root/.m2/repository/net/bytebuddy/byte-buddy/1.4.26/byte-buddy-1.4.26.jar:/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.4.26/byte-buddy-agent-1.4.26.jar:/root/.m2/repository/org/objenesis/objenesis/1.0/objenesis-1.0.jar:/root/.m2/repository/org/yaml/snakeyaml/1.16/snakeyaml-1.16.jar:/root/.m2/repository/com/google/code/findbugs/findbugs/3.0.1/findbugs-3.0.1.jar:/root/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/root/.m2/repository/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar:/root/.m2/repository/com/google/code/findbugs/bcel-findbugs/6.0/bcel-findbugs-6.0.jar:/root/.m2/repository/com/google/code/findbugs/jFormatString/2.0.1/jFormatString-2.0.1.jar:/root/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/root/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/root/.m2/repository/org/ow2/asm/asm-debug-all/5.0.2/asm-debug-all-5.0.2.jar:/root/.m2/repository/org/ow2/asm/asm-commons/5.0.2/asm-commons-5.0.2.jar:/root/.m2/repository/org/ow2/asm/asm-tree/5.0.2/asm-tree-5.0.2.jar:/root/.m2/repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/root/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/root/.m2/repository/com/apple/AppleJavaExtensions/1.4/AppleJavaExtensions-1.4.jar:/root/.m2/repository/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar:/root/.m2/repository/io/dropwizard/metrics/metrics-core/3.2.4/metrics-core-3.2.4.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/root/.m2/repository/org/apache/hadoop/hadoop-common/3.2.0/hadoop-common-3.2.0.jar:/root/.m2/repository/org/apache/hadoop/hadoop-annotations/3.2.0/hadoop-annotations-3.2.0.jar:/usr/lib/jvm/java-1.8-openjdk/jre/../lib/tools.jar:/root/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/root/.m2/repository/org/apache/commons/commons-math3/3.1.1/commons-math3-3.1.1.jar:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar:/root/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/root/.m2/repository/commons-io/commons-io/2.5/commons-io-2.5.jar:/root/.m2/repository/commons-net/commons-net/3.6/commons-net-3.6.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/root/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/root/.m2/repository/org/eclipse/jetty/jetty-server/9.3.24.v20180605/jetty-server-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-http/9.3.24.v20180605/jetty-http-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-io/9.3.24.v20180605/jetty-io-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-util/9.3.24.v20180605/jetty-util-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-servlet/9.3.24.v20180605/jetty-servlet-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-security/9.3.24.v20180605/jetty-security-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-webapp/9.3.24.v20180605/jetty-webapp-9.3.24.v20180605.jar:/root/.m2/repository/org/eclipse/jetty/jetty-xml/9.3.24.v20180605/jetty-xml-9.3.24.v20180605.jar:/root/.m2/repository/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar:/root/.m2/repository/com/sun/jersey/jersey-core/1.19/jersey-core-1.19.jar:/root/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/root/.m2/repository/com/sun/jersey/jersey-servlet/1.19/jersey-servlet-1.19.jar:/root/.m2/repository/com/sun/jersey/jersey-json/1.19/jersey-json-1.19.jar:/root/.m2/repository/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar:/root/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1.jar:/root/.m2/repository/javax/xml/bind/jaxb-api/2.2.11/jaxb-api-2.2.11.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar:/root/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.9.13/jackson-jaxrs-1.9.13.jar:/root/.m2/repository/org/codehaus/jackson/jackson-xc/1.9.13/jackson-xc-1.9.13.jar:/root/.m2/repository/com/sun/jersey/jersey-server/1.19/jersey-server-1.19.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/root/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/root/.m2/repository/commons-beanutils/commons-beanutils/1.9.3/commons-beanutils-1.9.3.jar:/root/.m2/repository/org/apache/commons/commons-configuration2/2.1.1/commons-configuration2-2.1.1.jar:/root/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/root/.m2/repository/org/apache/commons/commons-text/1.4/commons-text-1.4.jar:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar:/root/.m2/repository/org/apache/avro/avro/1.7.7/avro-1.7.7.jar:/root/.m2/repository/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar:/root/.m2/repository/org/xerial/snappy/snappy-java/1.0.5/snappy-java-1.0.5.jar:/root/.m2/repository/com/google/re2j/re2j/1.1/re2j-1.1.jar:/root/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar:/root/.m2/repository/org/apache/hadoop/hadoop-auth/3.2.0/hadoop-auth-3.2.0.jar:/root/.m2/repository/com/nimbusds/nimbus-jose-jwt/4.41.1/nimbus-jose-jwt-4.41.1.jar:/root/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/root/.m2/repository/net/minidev/json-smart/2.3/json-smart-2.3.jar:/root/.m2/repository/net/minidev/accessors-smart/1.2/accessors-smart-1.2.jar:/root/.m2/repository/org/apache/curator/curator-framework/2.12.0/curator-framework-2.12.0.jar:/root/.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar:/root/.m2/repository/org/apache/curator/curator-client/2.12.0/curator-client-2.12.0.jar:/root/.m2/repository/org/apache/curator/curator-recipes/2.12.0/curator-recipes-2.12.0.jar:/root/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/root/.m2/repository/org/apache/zookeeper/zookeeper/3.4.13/zookeeper-3.4.13.jar:/root/.m2/repository/org/apache/yetus/audience-annotations/0.5.0/audience-annotations-0.5.0.jar:/root/.m2/repository/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar:/root/.m2/repository/org/tukaani/xz/1.0/xz-1.0.jar:/root/.m2/repository/org/apache/kerby/kerb-simplekdc/1.0.1/kerb-simplekdc-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-client/1.0.1/kerb-client-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerby-config/1.0.1/kerby-config-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-core/1.0.1/kerb-core-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerby-pkix/1.0.1/kerby-pkix-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerby-asn1/1.0.1/kerby-asn1-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerby-util/1.0.1/kerby-util-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-common/1.0.1/kerb-common-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-crypto/1.0.1/kerb-crypto-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-util/1.0.1/kerb-util-1.0.1.jar:/root/.m2/repository/org/apache/kerby/token-provider/1.0.1/token-provider-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-admin/1.0.1/kerb-admin-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-server/1.0.1/kerb-server-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerb-identity/1.0.1/kerb-identity-1.0.1.jar:/root/.m2/repository/org/apache/kerby/kerby-xdr/1.0.1/kerby-xdr-1.0.1.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.5/jackson-databind-2.9.5.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.5/jackson-core-2.9.5.jar:/root/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar:/root/.m2/repository/com/fasterxml/woodstox/woodstox-core/5.0.3/woodstox-core-5.0.3.jar:/root/.m2/repository/dnsjava/dnsjava/2.1.7/dnsjava-2.1.7.jar:/root/.m2/repository/org/apache/hadoop/hadoop-hdfs/3.2.0/hadoop-hdfs-3.2.0.jar:/root/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.3.24.v20180605/jetty-util-ajax-9.3.24.v20180605.jar:/root/.m2/repository/commons-daemon/commons-daemon/1.0.13/commons-daemon-1.0.13.jar:/root/.m2/repository/io/netty/netty/3.10.5.Final/netty-3.10.5.Final.jar:/root/.m2/repository/io/netty/netty-all/4.0.52.Final/netty-all-4.0.52.Final.jar:/root/.m2/repository/org/apache/hadoop/hadoop-hdfs-client/3.2.0/hadoop-hdfs-client-3.2.0.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.5/jackson-annotations-2.9.5.jar:/root/.m2/repository/org/apache/hadoop/hadoop-common/3.2.0/hadoop-common-3.2.0-tests.jar:/root/.m2/repository/org/apache/hadoop/hadoop-hdfs/3.2.0/hadoop-hdfs-3.2.0-tests.jar:/root/.m2/repository/info/picocli/picocli/3.9.6/picocli-3.9.6.jar:/root/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar:/root/.m2/repository/com/google/guava/guava/11.0.2/guava-11.0.2.jar:/root/.m2/repository/junit/junit/4.11/junit-4.11.jar:/root/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-1.8-openjdk/jre"/>
+    <property name="java.security.krb5.conf" value="/opt/src/hadoop-hdds/container-service/target/test-classes/krb5.conf"/>
+    <property name="basedir" value="/opt/src/hadoop-hdds/container-service"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/opt/src/hadoop-hdds/container-service/target/surefire/surefirebooter185441459477302901.jar"/>
+    <property name="hadoop.log.dir" value="/opt/src/hadoop-hdds/container-service/target/log"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-1.8-openjdk/jre/lib/resources.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/rt.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/jce.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8-openjdk/jre/lib/jfr.jar:/usr/lib/jvm/java-1.8-openjdk/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_212-b04"/>
+    <property name="java.net.preferIPv4Stack" value="true"/>
+    <property name="user.name" value="root"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.security.egd" value="file:///dev/urandom"/>
+    <property name="os.version" value="4.15.0-1021-aws"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-1.8-openjdk/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="test.build.webapps" value=""/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://icedtea.classpath.org/bugzilla"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="require.test.libhadoop" value=""/>
+    <property name="java.version" value="1.8.0_212"/>
+    <property name="user.dir" value="/opt/src/hadoop-hdds/container-service"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="test.build.classes" value="/opt/src/hadoop-hdds/container-service/target/test-classes"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="hadoop.tmp.dir" value="/opt/src/hadoop-hdds/container-service/target/tmp"/>
+    <property name="java.library.path" value="/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server:/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64:/usr/lib/jvm/java-1.8-openjdk/jre/../lib/amd64:/opt/src/hadoop-hdds/container-service/target/native/target/usr/local/lib:/opt/src/hadoop-hdds/container-service/../../hadoop-common-project/hadoop-common/target/native/target/usr/local/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="IcedTea"/>
+    <property name="java.vm.version" value="25.212-b04"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-1.8-openjdk/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="testCloseContainerViaRatis" classname="org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler" time="5.024"/>
+  <testcase name="testCloseContainerViaStandalone" classname="org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler" time="2.225"/>
+  <testcase name="testQuasiCloseToClose" classname="org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler" time="2.153">
+    <error message="Server 3528f567-4891-45ae-85f4-05049543ab9e is not the leader (null). Request must be sent to leader." type="org.apache.ratis.protocol.NotLeaderException">org.apache.ratis.protocol.NotLeaderException: Server 3528f567-4891-45ae-85f4-05049543ab9e is not the leader (null). Request must be sent to leader.
+	at org.apache.ratis.server.impl.RaftServerImpl.generateNotLeaderException(RaftServerImpl.java:454)
+	at org.apache.ratis.server.impl.RaftServerImpl.checkLeaderState(RaftServerImpl.java:425)
+	at org.apache.ratis.server.impl.RaftServerImpl.submitClientRequestAsync(RaftServerImpl.java:520)
+	at org.apache.ratis.server.impl.RaftServerProxy.lambda$submitClientRequestAsync$7(RaftServerProxy.java:333)
+	at org.apache.ratis.server.impl.RaftServerProxy.lambda$null$5(RaftServerProxy.java:328)
+	at org.apache.ratis.util.JavaUtils.callAsUnchecked(JavaUtils.java:109)
+	at org.apache.ratis.server.impl.RaftServerProxy.lambda$submitRequest$6(RaftServerProxy.java:328)
+	at java.util.concurrent.CompletableFuture.uniComposeStage(CompletableFuture.java:981)
+	at java.util.concurrent.CompletableFuture.thenCompose(CompletableFuture.java:2124)
+	at org.apache.ratis.server.impl.RaftServerProxy.submitRequest(RaftServerProxy.java:327)
+	at org.apache.ratis.server.impl.RaftServerProxy.submitClientRequestAsync(RaftServerProxy.java:333)
+	at org.apache.hadoop.ozone.container.common.transport.server.ratis.XceiverServerRatis.submitRequest(XceiverServerRatis.java:492)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.createContainer(TestCloseContainerCommandHandler.java:311)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.testQuasiCloseToClose(TestCloseContainerCommandHandler.java:147)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</error>
+    <system-out><![CDATA[2019-06-13 09:34:21,094 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerf0951d22-84ff-4023-a904-25d938eb1383/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-13 09:34:21,094 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerf0951d22-84ff-4023-a904-25d938eb1383/hdds to VolumeSet
+2019-06-13 09:34:21,095 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@8bffb8b
+2019-06-13 09:34:21,101 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@8bffb8b
+2019-06-13 09:34:21,117 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 45297
+2019-06-13 09:34:21,118 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-13 09:34:21,119 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-13 09:34:21,119 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 45297 (custom)
+2019-06-13 09:34:21,119 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-13 09:34:21,120 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-13 09:34:21,120 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-13 09:34:21,120 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-13 09:34:21,121 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerf0951d22-84ff-4023-a904-25d938eb1383/ratis] (custom)
+2019-06-13 09:34:21,121 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 33213
+2019-06-13 09:34:21,122 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-13 09:34:21,122 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-13 09:34:21,122 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis 3528f567-4891-45ae-85f4-05049543ab9e at port 45297
+2019-06-13 09:34:21,135 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - 3528f567-4891-45ae-85f4-05049543ab9e: start RPC server
+2019-06-13 09:34:21,137 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - 3528f567-4891-45ae-85f4-05049543ab9e: GrpcService started, listening on 0.0.0.0/0.0.0.0:45297
+2019-06-13 09:34:21,148 INFO  impl.RaftServerProxy (RaftServerProxy.java:addNew(89)) - 3528f567-4891-45ae-85f4-05049543ab9e: addNew group-C801108BB277:[3528f567-4891-45ae-85f4-05049543ab9e:127.0.0.1:45297] returns group-C801108BB277:java.util.concurrent.CompletableFuture@6f10f84e[Not completed]
+2019-06-13 09:34:21,149 INFO  impl.RaftServerImpl (RaftServerImpl.java:<init>(91)) - 3528f567-4891-45ae-85f4-05049543ab9e: new RaftServerImpl for group-C801108BB277:[3528f567-4891-45ae-85f4-05049543ab9e:127.0.0.1:45297] with ContainerStateMachine:uninitialized
+2019-06-13 09:34:21,150 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.min = 1s (custom)
+2019-06-13 09:34:21,150 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.max = 1200ms (custom)
+2019-06-13 09:34:21,150 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpcslowness.timeout = 120s (custom)
+2019-06-13 09:34:21,150 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.install.snapshot.enabled = true (default)
+2019-06-13 09:34:21,150 INFO  impl.RaftServerImpl (ServerState.java:<init>(101)) - 3528f567-4891-45ae-85f4-05049543ab9e:group-C801108BB277 ConfigurationManager, init=-1: [3528f567-4891-45ae-85f4-05049543ab9e:127.0.0.1:45297], old=null, confs=<EMPTY_MAP>
+2019-06-13 09:34:21,150 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerf0951d22-84ff-4023-a904-25d938eb1383/ratis] (custom)
+2019-06-13 09:34:21,151 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:analyzeStorage(246)) - The storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerf0951d22-84ff-4023-a904-25d938eb1383/ratis/86b17534-9dc4-453e-b27a-c801108bb277 does not exist. Creating ...
+2019-06-13 09:34:21,153 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:tryLock(328)) - Lock on /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerf0951d22-84ff-4023-a904-25d938eb1383/ratis/86b17534-9dc4-453e-b27a-c801108bb277/in_use.lock acquired by nodename 4212@ozone-klxsl-3058060665
+2019-06-13 09:34:21,156 INFO  storage.RaftStorage (RaftStorage.java:format(75)) - Storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerf0951d22-84ff-4023-a904-25d938eb1383/ratis/86b17534-9dc4-453e-b27a-c801108bb277 has been successfully formatted.
+2019-06-13 09:34:21,156 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:loadSnapshot(199)) - The snapshot info is null.Setting the last applied index to:(t:0, i:~)
+2019-06-13 09:34:21,156 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.leader.election.timeout = 120s (custom)
+2019-06-13 09:34:21,156 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.use.memory = false (default)
+2019-06-13 09:34:21,156 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-13 09:34:21,157 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-13 09:34:21,157 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.cache.num.max = 2 (custom)
+2019-06-13 09:34:21,157 INFO  storage.RaftLogWorker (RaftLogWorker.java:<init>(123)) - new 3528f567-4891-45ae-85f4-05049543ab9e-RaftLogWorker for Storage Directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerf0951d22-84ff-4023-a904-25d938eb1383/ratis/86b17534-9dc4-453e-b27a-c801108bb277
+2019-06-13 09:34:21,157 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.byte-limit = 2147483647 (custom)
+2019-06-13 09:34:21,157 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.element-limit = 1024 (custom)
+2019-06-13 09:34:21,157 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-13 09:34:21,157 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.preallocated.size = 16384 (custom)
+2019-06-13 09:34:21,157 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.write.buffer.size = 33554432 (custom)
+2019-06-13 09:34:21,158 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.force.sync.num = 128 (default)
+2019-06-13 09:34:21,158 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync = true (default)
+2019-06-13 09:34:21,158 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout = 10s (default)
+2019-06-13 09:34:21,158 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout.retry = -1 (default)
+2019-06-13 09:34:21,158 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.caching.enabled = true (custom)
+2019-06-13 09:34:21,159 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.enabled = true (custom)
+2019-06-13 09:34:21,159 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.threshold = 10000 (custom)
+2019-06-13 09:34:21,159 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.retrycache.expirytime = 600000ms (custom)
+2019-06-13 09:34:21,160 INFO  impl.RaftServerImpl (RaftServerImpl.java:start(173)) - 3528f567-4891-45ae-85f4-05049543ab9e: start group-C801108BB277
+2019-06-13 09:34:21,160 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - 3528f567-4891-45ae-85f4-05049543ab9e:group-C801108BB277 changes role from null to FOLLOWER at term 0 for startAsFollower
+2019-06-13 09:34:21,160 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - 3528f567-4891-45ae-85f4-05049543ab9e: start FollowerState
+2019-06-13 09:34:21,160 INFO  util.JmxRegister (JmxRegister.java:tryRegister(44)) - Successfully registered JMX Bean with object name Ratis:service=RaftServer,group=group-C801108BB277,id=3528f567-4891-45ae-85f4-05049543ab9e
+2019-06-13 09:34:22,219 INFO  impl.FollowerState (FollowerState.java:run(101)) - 3528f567-4891-45ae-85f4-05049543ab9e:group-C801108BB277 changes to CANDIDATE, lastRpcTime:1059, electionTimeout:1059ms
+2019-06-13 09:34:22,219 INFO  impl.RoleInfo (RoleInfo.java:shutdownFollowerState(121)) - 3528f567-4891-45ae-85f4-05049543ab9e: shutdown FollowerState
+2019-06-13 09:34:22,220 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - 3528f567-4891-45ae-85f4-05049543ab9e:group-C801108BB277 changes role from FOLLOWER to CANDIDATE at term 0 for changeToCandidate
+2019-06-13 09:34:22,220 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - 3528f567-4891-45ae-85f4-05049543ab9e: start LeaderElection
+2019-06-13 09:34:23,165 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:stop(199)) - Attempting to stop container services.
+2019-06-13 09:34:23,166 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$close$4(314)) - 3528f567-4891-45ae-85f4-05049543ab9e: close
+2019-06-13 09:34:23,166 INFO  impl.RaftServerImpl (RaftServerImpl.java:lambda$shutdown$3(238)) - 3528f567-4891-45ae-85f4-05049543ab9e: shutdown group-C801108BB277
+2019-06-13 09:34:23,166 INFO  util.JmxRegister (JmxRegister.java:unregister(73)) - Successfully un-registered JMX Bean with object name Ratis:service=RaftServer,group=group-C801108BB277,id=3528f567-4891-45ae-85f4-05049543ab9e
+2019-06-13 09:34:23,166 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderElection(134)) - 3528f567-4891-45ae-85f4-05049543ab9e: shutdown LeaderElection
+2019-06-13 09:34:23,167 INFO  impl.StateMachineUpdater (StateMachineUpdater.java:stopAndJoin(109)) - StateMachineUpdater-3528f567-4891-45ae-85f4-05049543ab9e-group-C801108BB277: set stopIndex = -1
+2019-06-13 09:34:23,167 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(245)) - Taking snapshot at termIndex:(t:0, i:~)
+2019-06-13 09:34:23,168 INFO  impl.RaftServerImpl (ServerState.java:close(394)) - 3528f567-4891-45ae-85f4-05049543ab9e:group-C801108BB277 closes. The last applied log index is -1
+2019-06-13 09:34:23,168 INFO  storage.RaftLogWorker (RaftLogWorker.java:run(236)) - 3528f567-4891-45ae-85f4-05049543ab9e-RaftLogWorker was interrupted, exiting. There are 0 tasks remaining in the queue.
+2019-06-13 09:34:23,176 INFO  storage.RaftLogWorker (RaftLogWorker.java:close(168)) - 3528f567-4891-45ae-85f4-05049543ab9e-RaftLogWorker close()
+2019-06-13 09:34:23,177 INFO  server.GrpcService (GrpcService.java:closeImpl(154)) - 3528f567-4891-45ae-85f4-05049543ab9e: shutdown server with port 45297 now
+2019-06-13 09:34:23,179 INFO  server.GrpcService (GrpcService.java:closeImpl(162)) - 3528f567-4891-45ae-85f4-05049543ab9e: shutdown server with port 45297 successfully
+2019-06-13 09:34:23,190 INFO  impl.LeaderElection (LeaderElection.java:askForVotes(181)) - 3528f567-4891-45ae-85f4-05049543ab9e:group-C801108BB277:LeaderElection3: begin an election at term 1 for -1: [3528f567-4891-45ae-85f4-05049543ab9e:127.0.0.1:45297], old=null
+2019-06-13 09:34:23,203 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-13 09:34:23,212 INFO  impl.LeaderElection (LogUtils.java:infoOrTrace(149)) - Failed 3528f567-4891-45ae-85f4-05049543ab9e:group-C801108BB277:LeaderElection3, state=CLOSING: {}
+java.lang.IllegalArgumentException: 3528f567-4891-45ae-85f4-05049543ab9e-SegmentedRaftLog is expected to be opened but it is CLOSED
+	at org.apache.ratis.util.OpenCloseState.assertOpen(OpenCloseState.java:63)
+	at org.apache.ratis.server.storage.RaftLog.checkLogState(RaftLog.java:88)
+	at org.apache.ratis.server.storage.SegmentedRaftLog.getLastEntryTermIndex(SegmentedRaftLog.java:246)
+	at org.apache.ratis.server.impl.LeaderElection.askForVotes(LeaderElection.java:183)
+	at org.apache.ratis.server.impl.LeaderElection.run(LeaderElection.java:130)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.ratis.util.OpenCloseState$CloseTrace: Close 3528f567-4891-45ae-85f4-05049543ab9e-SegmentedRaftLog
+	at org.apache.ratis.util.OpenCloseState.lambda$close$1(OpenCloseState.java:109)
+	at java.util.concurrent.atomic.AtomicReference.getAndUpdate(AtomicReference.java:160)
+	at org.apache.ratis.util.OpenCloseState.close(OpenCloseState.java:109)
+	at org.apache.ratis.server.storage.RaftLog.close(RaftLog.java:412)
+	at org.apache.ratis.server.storage.SegmentedRaftLog.close(SegmentedRaftLog.java:420)
+	at org.apache.ratis.server.impl.ServerState.close(ServerState.java:397)
+	at org.apache.ratis.server.impl.RaftServerImpl.lambda$shutdown$3(RaftServerImpl.java:260)
+	at org.apache.ratis.util.LifeCycle.lambda$checkStateAndClose$2(LifeCycle.java:231)
+	at org.apache.ratis.util.LifeCycle.checkStateAndClose(LifeCycle.java:251)
+	at org.apache.ratis.util.LifeCycle.checkStateAndClose(LifeCycle.java:229)
+	at org.apache.ratis.server.impl.RaftServerImpl.shutdown(RaftServerImpl.java:237)
+	at org.apache.ratis.server.impl.RaftServerProxy$ImplMap.lambda$close$0(RaftServerProxy.java:107)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.concurrent.ConcurrentHashMap$ValueSpliterator.forEachRemaining(ConcurrentHashMap.java:3566)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:291)
+	at java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:731)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinTask.doInvoke(ForkJoinTask.java:401)
+	at java.util.concurrent.ForkJoinTask.invoke(ForkJoinTask.java:734)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateParallel(ForEachOps.java:160)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateParallel(ForEachOps.java:174)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:233)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:418)
+	at org.apache.ratis.server.impl.RaftServerProxy$ImplMap.close(RaftServerProxy.java:107)
+	at org.apache.ratis.server.impl.RaftServerProxy.lambda$close$4(RaftServerProxy.java:315)
+	at org.apache.ratis.util.LifeCycle.lambda$checkStateAndClose$2(LifeCycle.java:231)
+	at org.apache.ratis.util.LifeCycle.checkStateAndClose(LifeCycle.java:251)
+	at org.apache.ratis.util.LifeCycle.checkStateAndClose(LifeCycle.java:229)
+	at org.apache.ratis.server.impl.RaftServerProxy.close(RaftServerProxy.java:313)
+	at org.apache.hadoop.ozone.container.common.transport.server.ratis.XceiverServerRatis.stop(XceiverServerRatis.java:432)
+	at org.apache.hadoop.ozone.container.ozoneimpl.OzoneContainer.stop(OzoneContainer.java:201)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.testQuasiCloseToClose(TestCloseContainerCommandHandler.java:182)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+2019-06-13 09:34:23,219 INFO  impl.LeaderElection (LeaderElection.java:run(141)) - 3528f567-4891-45ae-85f4-05049543ab9e:group-C801108BB277:LeaderElection3: IllegalArgumentException is safely ignored since this is already CLOSING
+]]></system-out>
+  </testcase>
+  <testcase name="testForceCloseOpenContainer" classname="org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler" time="3.731">
+    <error message="org.apache.ratis.protocol.LeaderNotReadyException: e89a6b5b-30ad-4aa6-879f-38b20b67212d is in LEADER state but not ready yet." type="java.io.IOException">java.io.IOException: org.apache.ratis.protocol.LeaderNotReadyException: e89a6b5b-30ad-4aa6-879f-38b20b67212d is in LEADER state but not ready yet.
+	at org.apache.hadoop.ozone.container.common.transport.server.ratis.XceiverServerRatis.submitRequest(XceiverServerRatis.java:494)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.createContainer(TestCloseContainerCommandHandler.java:311)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.testForceCloseOpenContainer(TestCloseContainerCommandHandler.java:195)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.util.concurrent.ExecutionException: org.apache.ratis.protocol.LeaderNotReadyException: e89a6b5b-30ad-4aa6-879f-38b20b67212d is in LEADER state but not ready yet.
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:357)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1895)
+	at org.apache.hadoop.ozone.container.common.transport.server.ratis.XceiverServerRatis.submitRequest(XceiverServerRatis.java:492)
+	... 28 more
+Caused by: org.apache.ratis.protocol.LeaderNotReadyException: e89a6b5b-30ad-4aa6-879f-38b20b67212d is in LEADER state but not ready yet.
+	at org.apache.ratis.server.impl.RaftServerImpl.checkLeaderState(RaftServerImpl.java:435)
+	at org.apache.ratis.server.impl.RaftServerImpl.submitClientRequestAsync(RaftServerImpl.java:520)
+	at org.apache.ratis.server.impl.RaftServerProxy.lambda$submitClientRequestAsync$7(RaftServerProxy.java:333)
+	at org.apache.ratis.server.impl.RaftServerProxy.lambda$null$5(RaftServerProxy.java:328)
+	at org.apache.ratis.util.JavaUtils.callAsUnchecked(JavaUtils.java:109)
+	at org.apache.ratis.server.impl.RaftServerProxy.lambda$submitRequest$6(RaftServerProxy.java:328)
+	at java.util.concurrent.CompletableFuture.uniComposeStage(CompletableFuture.java:981)
+	at java.util.concurrent.CompletableFuture.thenCompose(CompletableFuture.java:2124)
+	at org.apache.ratis.server.impl.RaftServerProxy.submitRequest(RaftServerProxy.java:327)
+	at org.apache.ratis.server.impl.RaftServerProxy.submitClientRequestAsync(RaftServerProxy.java:333)
+	... 29 more
+</error>
+    <system-out><![CDATA[2019-06-13 09:34:23,240 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandleraa870128-05a1-42c0-871e-b632763a8941/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-13 09:34:23,240 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandleraa870128-05a1-42c0-871e-b632763a8941/hdds to VolumeSet
+2019-06-13 09:34:23,240 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@1023150a
+2019-06-13 09:34:23,241 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@1023150a
+2019-06-13 09:34:23,253 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 45627
+2019-06-13 09:34:23,254 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-13 09:34:23,254 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-13 09:34:23,255 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 45627 (custom)
+2019-06-13 09:34:23,255 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-13 09:34:23,255 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-13 09:34:23,255 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-13 09:34:23,256 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-13 09:34:23,256 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandleraa870128-05a1-42c0-871e-b632763a8941/ratis] (custom)
+2019-06-13 09:34:23,256 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 42043
+2019-06-13 09:34:23,257 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-13 09:34:23,257 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-13 09:34:23,257 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis e89a6b5b-30ad-4aa6-879f-38b20b67212d at port 45627
+2019-06-13 09:34:23,270 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: start RPC server
+2019-06-13 09:34:23,272 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: GrpcService started, listening on 0.0.0.0/0.0.0.0:45627
+2019-06-13 09:34:23,294 INFO  impl.RaftServerProxy (RaftServerProxy.java:addNew(89)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: addNew group-C8D304EC00B0:[e89a6b5b-30ad-4aa6-879f-38b20b67212d:127.0.0.1:45627] returns group-C8D304EC00B0:java.util.concurrent.CompletableFuture@5b45a002[Not completed]
+2019-06-13 09:34:23,294 INFO  impl.RaftServerImpl (RaftServerImpl.java:<init>(91)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: new RaftServerImpl for group-C8D304EC00B0:[e89a6b5b-30ad-4aa6-879f-38b20b67212d:127.0.0.1:45627] with ContainerStateMachine:uninitialized
+2019-06-13 09:34:23,295 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.min = 1s (custom)
+2019-06-13 09:34:23,295 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.max = 1200ms (custom)
+2019-06-13 09:34:23,295 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpcslowness.timeout = 120s (custom)
+2019-06-13 09:34:23,295 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.install.snapshot.enabled = true (default)
+2019-06-13 09:34:23,295 INFO  impl.RaftServerImpl (ServerState.java:<init>(101)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d:group-C8D304EC00B0 ConfigurationManager, init=-1: [e89a6b5b-30ad-4aa6-879f-38b20b67212d:127.0.0.1:45627], old=null, confs=<EMPTY_MAP>
+2019-06-13 09:34:23,296 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandleraa870128-05a1-42c0-871e-b632763a8941/ratis] (custom)
+2019-06-13 09:34:23,296 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:analyzeStorage(246)) - The storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandleraa870128-05a1-42c0-871e-b632763a8941/ratis/83786d72-9600-41e8-a171-c8d304ec00b0 does not exist. Creating ...
+2019-06-13 09:34:23,716 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:tryLock(328)) - Lock on /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandleraa870128-05a1-42c0-871e-b632763a8941/ratis/83786d72-9600-41e8-a171-c8d304ec00b0/in_use.lock acquired by nodename 4212@ozone-klxsl-3058060665
+2019-06-13 09:34:24,245 INFO  storage.RaftStorage (RaftStorage.java:format(75)) - Storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandleraa870128-05a1-42c0-871e-b632763a8941/ratis/83786d72-9600-41e8-a171-c8d304ec00b0 has been successfully formatted.
+2019-06-13 09:34:24,246 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:loadSnapshot(199)) - The snapshot info is null.Setting the last applied index to:(t:0, i:~)
+2019-06-13 09:34:24,246 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.leader.election.timeout = 120s (custom)
+2019-06-13 09:34:24,246 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.use.memory = false (default)
+2019-06-13 09:34:24,246 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-13 09:34:24,246 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-13 09:34:24,246 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.cache.num.max = 2 (custom)
+2019-06-13 09:34:24,246 INFO  storage.RaftLogWorker (RaftLogWorker.java:<init>(123)) - new e89a6b5b-30ad-4aa6-879f-38b20b67212d-RaftLogWorker for Storage Directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandleraa870128-05a1-42c0-871e-b632763a8941/ratis/83786d72-9600-41e8-a171-c8d304ec00b0
+2019-06-13 09:34:24,247 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.byte-limit = 2147483647 (custom)
+2019-06-13 09:34:24,247 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.element-limit = 1024 (custom)
+2019-06-13 09:34:24,247 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-13 09:34:24,247 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.preallocated.size = 16384 (custom)
+2019-06-13 09:34:24,247 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.write.buffer.size = 33554432 (custom)
+2019-06-13 09:34:24,247 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.force.sync.num = 128 (default)
+2019-06-13 09:34:24,247 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync = true (default)
+2019-06-13 09:34:24,247 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout = 10s (default)
+2019-06-13 09:34:24,248 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout.retry = -1 (default)
+2019-06-13 09:34:24,248 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.caching.enabled = true (custom)
+2019-06-13 09:34:24,248 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.enabled = true (custom)
+2019-06-13 09:34:24,248 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.threshold = 10000 (custom)
+2019-06-13 09:34:24,248 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.retrycache.expirytime = 600000ms (custom)
+2019-06-13 09:34:24,249 INFO  impl.RaftServerImpl (RaftServerImpl.java:start(173)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: start group-C8D304EC00B0
+2019-06-13 09:34:24,249 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d:group-C8D304EC00B0 changes role from null to FOLLOWER at term 0 for startAsFollower
+2019-06-13 09:34:24,249 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: start FollowerState
+2019-06-13 09:34:24,250 INFO  util.JmxRegister (JmxRegister.java:tryRegister(44)) - Successfully registered JMX Bean with object name Ratis:service=RaftServer,group=group-C8D304EC00B0,id=e89a6b5b-30ad-4aa6-879f-38b20b67212d
+2019-06-13 09:34:25,409 INFO  impl.FollowerState (FollowerState.java:run(101)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d:group-C8D304EC00B0 changes to CANDIDATE, lastRpcTime:1160, electionTimeout:1159ms
+2019-06-13 09:34:25,409 INFO  impl.RoleInfo (RoleInfo.java:shutdownFollowerState(121)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: shutdown FollowerState
+2019-06-13 09:34:25,409 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d:group-C8D304EC00B0 changes role from FOLLOWER to CANDIDATE at term 0 for changeToCandidate
+2019-06-13 09:34:25,409 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: start LeaderElection
+2019-06-13 09:34:25,888 INFO  impl.LeaderElection (LeaderElection.java:askForVotes(181)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d:group-C8D304EC00B0:LeaderElection4: begin an election at term 1 for -1: [e89a6b5b-30ad-4aa6-879f-38b20b67212d:127.0.0.1:45627], old=null
+2019-06-13 09:34:25,888 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderElection(134)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: shutdown LeaderElection
+2019-06-13 09:34:25,889 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d:group-C8D304EC00B0 changes role from CANDIDATE to LEADER at term 1 for changeToLeader
+2019-06-13 09:34:25,889 INFO  impl.RaftServerImpl (ServerState.java:setLeader(263)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d:group-C8D304EC00B0 change Leader from null to e89a6b5b-30ad-4aa6-879f-38b20b67212d at term 1 for becomeLeader, leader elected after 1643ms
+2019-06-13 09:34:25,889 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.staging.catchup.gap = 1000 (default)
+2019-06-13 09:34:25,889 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.sleep.time = 25ms (default)
+2019-06-13 09:34:25,889 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout = 10s (default)
+2019-06-13 09:34:25,890 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout.denomination = 1s (default)
+2019-06-13 09:34:25,890 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: start LeaderState
+2019-06-13 09:34:25,890 INFO  storage.RaftLogWorker (RaftLogWorker.java:startLogSegment(298)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d-RaftLogWorker: Starting segment from index:0
+2019-06-13 09:34:25,898 INFO  impl.RaftServerImpl (ServerState.java:setRaftConf(361)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d:group-C8D304EC00B0 set configuration 0: [e89a6b5b-30ad-4aa6-879f-38b20b67212d:127.0.0.1:45627], old=null at 0
+2019-06-13 09:34:26,255 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:stop(199)) - Attempting to stop container services.
+2019-06-13 09:34:26,255 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$close$4(314)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: close
+2019-06-13 09:34:26,255 INFO  impl.RaftServerImpl (RaftServerImpl.java:lambda$shutdown$3(238)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: shutdown group-C8D304EC00B0
+2019-06-13 09:34:26,256 INFO  util.JmxRegister (JmxRegister.java:unregister(73)) - Successfully un-registered JMX Bean with object name Ratis:service=RaftServer,group=group-C8D304EC00B0,id=e89a6b5b-30ad-4aa6-879f-38b20b67212d
+2019-06-13 09:34:26,256 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderState(104)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: shutdown LeaderState
+2019-06-13 09:34:26,256 INFO  impl.PendingRequests (PendingRequests.java:sendNotLeaderResponses(140)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d-PendingRequests: sendNotLeaderResponses
+2019-06-13 09:34:26,256 INFO  impl.StateMachineUpdater (StateMachineUpdater.java:stopAndJoin(109)) - StateMachineUpdater-e89a6b5b-30ad-4aa6-879f-38b20b67212d-group-C8D304EC00B0: set stopIndex = -1
+2019-06-13 09:34:26,256 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(245)) - Taking snapshot at termIndex:(t:0, i:~)
+2019-06-13 09:34:26,257 INFO  impl.RaftServerImpl (ServerState.java:close(394)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d:group-C8D304EC00B0 closes. The last applied log index is -1
+2019-06-13 09:34:26,905 WARN  storage.LogOutputStream (LogOutputStream.java:<init>(82)) - Hit IOException while creating log segment /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandleraa870128-05a1-42c0-871e-b632763a8941/ratis/83786d72-9600-41e8-a171-c8d304ec00b0/current/log_inprogress_0, delete the partial file.
+2019-06-13 09:34:26,935 INFO  storage.RaftLogWorker (RaftLogWorker.java:run(243)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d-RaftLogWorker got closed and hit exception
+java.nio.channels.ClosedByInterruptException
+	at java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at sun.nio.ch.FileChannelImpl.force(FileChannelImpl.java:392)
+	at org.apache.ratis.server.storage.BufferedWriteChannel.forceWrite(BufferedWriteChannel.java:150)
+	at org.apache.ratis.server.storage.BufferedWriteChannel.flush(BufferedWriteChannel.java:125)
+	at org.apache.ratis.server.storage.LogOutputStream.flush(LogOutputStream.java:165)
+	at org.apache.ratis.server.storage.LogOutputStream.create(LogOutputStream.java:140)
+	at org.apache.ratis.server.storage.LogOutputStream.<init>(LogOutputStream.java:79)
+	at org.apache.ratis.server.storage.RaftLogWorker$StartLogSegment.execute(RaftLogWorker.java:466)
+	at org.apache.ratis.server.storage.RaftLogWorker.run(RaftLogWorker.java:219)
+	at java.lang.Thread.run(Thread.java:748)
+2019-06-13 09:34:26,936 INFO  storage.RaftLogWorker (RaftLogWorker.java:close(168)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d-RaftLogWorker close()
+2019-06-13 09:34:26,937 INFO  server.GrpcService (GrpcService.java:closeImpl(154)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: shutdown server with port 45627 now
+2019-06-13 09:34:26,938 INFO  server.GrpcService (GrpcService.java:closeImpl(162)) - e89a6b5b-30ad-4aa6-879f-38b20b67212d: shutdown server with port 45627 successfully
+2019-06-13 09:34:26,945 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+]]></system-out>
+    <system-err><![CDATA[Jun 13, 2019 9:34:23 AM org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper$ManagedChannelReference cleanQueue
+SEVERE: *~*~*~ Channel ManagedChannelImpl{logId=18, target=127.0.0.1:41217} was not shutdown properly!!! ~*~*~*
+    Make sure to call shutdown()/shutdownNow() and wait until awaitTermination() returns true.
+java.lang.RuntimeException: ManagedChannel allocation site
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper$ManagedChannelReference.<init>(ManagedChannelOrphanWrapper.java:103)
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper.<init>(ManagedChannelOrphanWrapper.java:53)
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper.<init>(ManagedChannelOrphanWrapper.java:44)
+	at org.apache.ratis.thirdparty.io.grpc.internal.AbstractManagedChannelImplBuilder.build(AbstractManagedChannelImplBuilder.java:411)
+	at org.apache.ratis.grpc.client.GrpcClientProtocolClient.<init>(GrpcClientProtocolClient.java:118)
+	at org.apache.ratis.grpc.client.GrpcClientRpc.lambda$new$0(GrpcClientRpc.java:55)
+	at org.apache.ratis.util.PeerProxyMap$PeerAndProxy.lambda$getProxy$0(PeerProxyMap.java:61)
+	at org.apache.ratis.util.LifeCycle.startAndTransition(LifeCycle.java:202)
+	at org.apache.ratis.util.PeerProxyMap$PeerAndProxy.getProxy(PeerProxyMap.java:60)
+	at org.apache.ratis.util.PeerProxyMap.getProxy(PeerProxyMap.java:107)
+	at org.apache.ratis.grpc.client.GrpcClientRpc.sendRequest(GrpcClientRpc.java:91)
+	at org.apache.ratis.client.impl.RaftClientImpl.sendRequest(RaftClientImpl.java:401)
+	at org.apache.ratis.client.impl.RaftClientImpl.groupAdd(RaftClientImpl.java:270)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.createContainer(TestCloseContainerCommandHandler.java:300)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.testCloseContainerViaStandalone(TestCloseContainerCommandHandler.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+Jun 13, 2019 9:34:23 AM org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper$ManagedChannelReference cleanQueue
+SEVERE: *~*~*~ Channel ManagedChannelImpl{logId=29, target=127.0.0.1:45297} was not shutdown properly!!! ~*~*~*
+    Make sure to call shutdown()/shutdownNow() and wait until awaitTermination() returns true.
+java.lang.RuntimeException: ManagedChannel allocation site
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper$ManagedChannelReference.<init>(ManagedChannelOrphanWrapper.java:103)
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper.<init>(ManagedChannelOrphanWrapper.java:53)
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper.<init>(ManagedChannelOrphanWrapper.java:44)
+	at org.apache.ratis.thirdparty.io.grpc.internal.AbstractManagedChannelImplBuilder.build(AbstractManagedChannelImplBuilder.java:411)
+	at org.apache.ratis.grpc.client.GrpcClientProtocolClient.<init>(GrpcClientProtocolClient.java:118)
+	at org.apache.ratis.grpc.client.GrpcClientRpc.lambda$new$0(GrpcClientRpc.java:55)
+	at org.apache.ratis.util.PeerProxyMap$PeerAndProxy.lambda$getProxy$0(PeerProxyMap.java:61)
+	at org.apache.ratis.util.LifeCycle.startAndTransition(LifeCycle.java:202)
+	at org.apache.ratis.util.PeerProxyMap$PeerAndProxy.getProxy(PeerProxyMap.java:60)
+	at org.apache.ratis.util.PeerProxyMap.getProxy(PeerProxyMap.java:107)
+	at org.apache.ratis.grpc.client.GrpcClientRpc.sendRequest(GrpcClientRpc.java:91)
+	at org.apache.ratis.client.impl.RaftClientImpl.sendRequest(RaftClientImpl.java:401)
+	at org.apache.ratis.client.impl.RaftClientImpl.groupAdd(RaftClientImpl.java:270)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.createContainer(TestCloseContainerCommandHandler.java:300)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.testQuasiCloseToClose(TestCloseContainerCommandHandler.java:147)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+]]></system-err>
+  </testcase>
+  <testcase name="testQuasiCloseClosedContainer" classname="org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler" time="4.177"/>
+</testsuite>
