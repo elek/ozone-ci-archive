@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190615 13:55:57.708" generator="Robot 3.1.2 (Python 2.7.5 on linux2)">
+<suite source="/opt/hadoop/smoketest/basic/basic.robot" id="s1" name="basic">
+<test id="s1-t1" name="Check webui static resources">
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>curl -s -I http://scm:9876/static/bootstrap-3.3.7/js/bootstrap.min.js</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190615 13:55:57.780" level="INFO">Running command 'curl -s -I http://scm:9876/static/bootstrap-3.3.7/js/bootstrap.min.js 2&gt;&amp;1'.</msg>
+<msg timestamp="20190615 13:55:57.813" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190615 13:55:57.813" level="INFO">${output} = HTTP/1.1 200 OK
+Date: Sat, 15 Jun 2019 13:55:57 GMT
+X-Content-Type-Options: nosniff
+X-FRAME-OPTIONS: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Last-Modified: Sat, 15 Jun 2019 13:47:38 GMT
+Content-Typ...</msg>
+<status status="PASS" endtime="20190615 13:55:57.813" starttime="20190615 13:55:57.779"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190615 13:55:57.815" level="INFO">HTTP/1.1 200 OK
+Date: Sat, 15 Jun 2019 13:55:57 GMT
+X-Content-Type-Options: nosniff
+X-FRAME-OPTIONS: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Last-Modified: Sat, 15 Jun 2019 13:47:38 GMT
+Content-Type: application/javascript
+Accept-Ranges: bytes
+Content-Length: 37045
+</msg>
+<status status="PASS" endtime="20190615 13:55:57.815" starttime="20190615 13:55:57.814"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190615 13:55:57.815" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190615 13:55:57.816" starttime="20190615 13:55:57.815"></status>
+</kw>
+<msg timestamp="20190615 13:55:57.816" level="INFO">${result} = HTTP/1.1 200 OK
+Date: Sat, 15 Jun 2019 13:55:57 GMT
+X-Content-Type-Options: nosniff
+X-FRAME-OPTIONS: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Last-Modified: Sat, 15 Jun 2019 13:47:38 GMT
+Content-Typ...</msg>
+<status status="PASS" endtime="20190615 13:55:57.816" starttime="20190615 13:55:57.778"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" endtime="20190615 13:55:57.817" starttime="20190615 13:55:57.817"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>curl -s -I http://om:9874/static/bootstrap-3.3.7/js/bootstrap.min.js</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190615 13:55:57.825" level="INFO">Running command 'curl -s -I http://om:9874/static/bootstrap-3.3.7/js/bootstrap.min.js 2&gt;&amp;1'.</msg>
+<msg timestamp="20190615 13:55:57.984" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190615 13:55:57.984" level="INFO">${output} = HTTP/1.1 200 OK
+Date: Sat, 15 Jun 2019 13:55:57 GMT
+X-Content-Type-Options: nosniff
+X-FRAME-OPTIONS: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Last-Modified: Sat, 15 Jun 2019 13:47:38 GMT
+Content-Typ...</msg>
+<status status="PASS" endtime="20190615 13:55:57.984" starttime="20190615 13:55:57.818"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190615 13:55:57.985" level="INFO">HTTP/1.1 200 OK
+Date: Sat, 15 Jun 2019 13:55:57 GMT
+X-Content-Type-Options: nosniff
+X-FRAME-OPTIONS: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Last-Modified: Sat, 15 Jun 2019 13:47:38 GMT
+Content-Type: application/javascript
+Accept-Ranges: bytes
+Content-Length: 37045
+</msg>
+<status status="PASS" endtime="20190615 13:55:57.985" starttime="20190615 13:55:57.984"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190615 13:55:57.985" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190615 13:55:57.985" starttime="20190615 13:55:57.985"></status>
+</kw>
+<msg timestamp="20190615 13:55:57.986" level="INFO">${result} = HTTP/1.1 200 OK
+Date: Sat, 15 Jun 2019 13:55:57 GMT
+X-Content-Type-Options: nosniff
+X-FRAME-OPTIONS: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Last-Modified: Sat, 15 Jun 2019 13:47:38 GMT
+Content-Typ...</msg>
+<status status="PASS" endtime="20190615 13:55:57.986" starttime="20190615 13:55:57.817"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" endtime="20190615 13:55:57.986" starttime="20190615 13:55:57.986"></status>
+</kw>
+<status status="PASS" endtime="20190615 13:55:57.987" critical="yes" starttime="20190615 13:55:57.778"></status>
+</test>
+<test id="s1-t2" name="Start freon testing">
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone freon randomkeys --numOfVolumes 5 --numOfBuckets 5 --numOfKeys 5 --numOfThreads 1</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190615 13:55:57.990" level="INFO">Running command 'ozone freon randomkeys --numOfVolumes 5 --numOfBuckets 5 --numOfKeys 5 --numOfThreads 1 2&gt;&amp;1'.</msg>
+<msg timestamp="20190615 13:56:13.502" level="INFO">${rc} = 255</msg>
+<msg timestamp="20190615 13:56:13.502" level="INFO">${output} = 2019-06-15 13:56:01 INFO  RandomKeyGenerator:261 - Number of Threads: 1
+2019-06-15 13:56:02 INFO  RandomKeyGenerator:267 - Number of Volumes: 5.
+2019-06-15 13:56:02 INFO  RandomKeyGenerator:268 - Numb...</msg>
+<status status="PASS" endtime="20190615 13:56:13.503" starttime="20190615 13:55:57.989"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190615 13:56:13.504" level="INFO">2019-06-15 13:56:01 INFO  RandomKeyGenerator:261 - Number of Threads: 1
+2019-06-15 13:56:02 INFO  RandomKeyGenerator:267 - Number of Volumes: 5.
+2019-06-15 13:56:02 INFO  RandomKeyGenerator:268 - Number of Buckets per Volume: 5.
+2019-06-15 13:56:02 INFO  RandomKeyGenerator:269 - Number of Keys per Bucket: 5.
+2019-06-15 13:56:02 INFO  RandomKeyGenerator:270 - Key size: 10240 bytes
+2019-06-15 13:56:02 INFO  RandomKeyGenerator:271 - Buffer size: 4096 bytes
+2019-06-15 13:56:02 INFO  RandomKeyGenerator:300 - Starting progress bar Thread.
+
+ 0.00% |?                                                                                                    |  0/125 Time: 0:00:002019-06-15 13:56:02 INFO  RpcClient:289 - Creating Volume: vol-0-13835, with hadoop as owner.
+2019-06-15 13:56:02 INFO  RpcClient:426 - Creating Bucket: vol-0-13835/bucket-0-55272, with Versioning false and Storage Type set to DISK and Encryption set to false 
+ 0.00% |?                                                                                                    |  0/125 Time: 0:00:01 0.00% |?                                                                                                    |  0/125 Time: 0:00:02WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-thirdparty-misc-0.2.0.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+ 0.00% |?                                                                                                    |  0/125 Time: 0:00:032019-06-15 13:56:05 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:05 ERROR RandomKeyGenerator:675 - Exception while adding key: key-0-79265 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@10591628 of volume: org.apache.hadoop.ozone.client.OzoneVolume@7a60e16d.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:05 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:05 ERROR RandomKeyGenerator:675 - Exception while adding key: key-2-09923 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@10591628 of volume: org.apache.hadoop.ozone.client.OzoneVolume@7a60e16d.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:05 INFO  RpcClient:426 - Creating Bucket: vol-0-13835/bucket-1-94426, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:06 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+ 3.20% |????                                                                                                 |  4/125 Time: 0:00:042019-06-15 13:56:06 ERROR RandomKeyGenerator:675 - Exception while adding key: key-1-14497 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@31938758 of volume: org.apache.hadoop.ozone.client.OzoneVolume@7a60e16d.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:06 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:06 ERROR RandomKeyGenerator:675 - Exception while adding key: key-2-89426 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@31938758 of volume: org.apache.hadoop.ozone.client.OzoneVolume@7a60e16d.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:06 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:06 ERROR RandomKeyGenerator:675 - Exception while adding key: key-4-41106 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@31938758 of volume: org.apache.hadoop.ozone.client.OzoneVolume@7a60e16d.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:06 INFO  RpcClient:426 - Creating Bucket: vol-0-13835/bucket-2-08050, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:06 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:06 ERROR RandomKeyGenerator:675 - Exception while adding key: key-4-85794 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@7888a39f of volume: org.apache.hadoop.ozone.client.OzoneVolume@7a60e16d.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:06 INFO  RpcClient:426 - Creating Bucket: vol-0-13835/bucket-3-77962, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:06 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:07 ERROR RandomKeyGenerator:675 - Exception while adding key: key-1-33688 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@319a28e1 of volume: org.apache.hadoop.ozone.client.OzoneVolume@7a60e16d.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+ 8.00% |?????????                                                                                            |  10/125 Time: 0:00:052019-06-15 13:56:07 INFO  RpcClient:426 - Creating Bucket: vol-0-13835/bucket-4-73762, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:07 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:07 ERROR RandomKeyGenerator:675 - Exception while adding key: key-3-70725 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@463b29f1 of volume: org.apache.hadoop.ozone.client.OzoneVolume@7a60e16d.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:07 INFO  RpcClient:289 - Creating Volume: vol-1-75648, with hadoop as owner.
+2019-06-15 13:56:07 INFO  RpcClient:426 - Creating Bucket: vol-1-75648/bucket-0-17823, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:07 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:07 ERROR RandomKeyGenerator:675 - Exception while adding key: key-4-73469 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@72794aba of volume: org.apache.hadoop.ozone.client.OzoneVolume@136298d7.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:07 INFO  RpcClient:426 - Creating Bucket: vol-1-75648/bucket-1-82353, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:07 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:07 ERROR RandomKeyGenerator:675 - Exception while adding key: key-1-20539 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@55c5db83 of volume: org.apache.hadoop.ozone.client.OzoneVolume@136298d7.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+ 19.20% |????????????????????                                                                                 |  24/125 Time: 0:00:062019-06-15 13:56:08 INFO  RpcClient:426 - Creating Bucket: vol-1-75648/bucket-2-87704, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:08 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:08 ERROR RandomKeyGenerator:675 - Exception while adding key: key-3-29995 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@6521f1b7 of volume: org.apache.hadoop.ozone.client.OzoneVolume@136298d7.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:08 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:08 ERROR RandomKeyGenerator:675 - Exception while adding key: key-4-32966 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@6521f1b7 of volume: org.apache.hadoop.ozone.client.OzoneVolume@136298d7.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:08 INFO  RpcClient:426 - Creating Bucket: vol-1-75648/bucket-3-20312, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:08 INFO  RpcClient:426 - Creating Bucket: vol-1-75648/bucket-4-82636, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:08 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:08 ERROR RandomKeyGenerator:675 - Exception while adding key: key-0-67305 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@6dce033b of volume: org.apache.hadoop.ozone.client.OzoneVolume@136298d7.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:08 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:08 ERROR RandomKeyGenerator:675 - Exception while adding key: key-2-32033 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@6dce033b of volume: org.apache.hadoop.ozone.client.OzoneVolume@136298d7.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:08 INFO  RpcClient:289 - Creating Volume: vol-2-01252, with hadoop as owner.
+2019-06-15 13:56:08 INFO  RpcClient:426 - Creating Bucket: vol-2-01252/bucket-0-02720, with Versioning false and Storage Type set to DISK and Encryption set to false 
+ 30.40% |???????????????????????????????                                                                      |  38/125 Time: 0:00:072019-06-15 13:56:09 INFO  RpcClient:426 - Creating Bucket: vol-2-01252/bucket-1-58153, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:09 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:09 ERROR RandomKeyGenerator:675 - Exception while adding key: key-2-79539 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@602c5f29 of volume: org.apache.hadoop.ozone.client.OzoneVolume@507752be.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:09 INFO  RpcClient:426 - Creating Bucket: vol-2-01252/bucket-2-78417, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:09 INFO  RpcClient:426 - Creating Bucket: vol-2-01252/bucket-3-21908, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:09 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:09 ERROR RandomKeyGenerator:675 - Exception while adding key: key-1-38022 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@2847dccc of volume: org.apache.hadoop.ozone.client.OzoneVolume@507752be.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:09 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:10 ERROR RandomKeyGenerator:675 - Exception while adding key: key-3-50538 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@2847dccc of volume: org.apache.hadoop.ozone.client.OzoneVolume@507752be.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:10 INFO  RpcClient:426 - Creating Bucket: vol-2-01252/bucket-4-80566, with Versioning false and Storage Type set to DISK and Encryption set to false 
+ 42.40% |???????????????????????????????????????????                                                          |  53/125 Time: 0:00:082019-06-15 13:56:10 INFO  RpcClient:289 - Creating Volume: vol-3-82077, with hadoop as owner.
+2019-06-15 13:56:10 INFO  RpcClient:426 - Creating Bucket: vol-3-82077/bucket-0-18574, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:10 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:10 ERROR RandomKeyGenerator:675 - Exception while adding key: key-0-39037 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@54f06fc0 of volume: org.apache.hadoop.ozone.client.OzoneVolume@5cfa4579.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:10 INFO  RpcClient:426 - Creating Bucket: vol-3-82077/bucket-1-06335, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:10 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:10 ERROR RandomKeyGenerator:675 - Exception while adding key: key-4-53987 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@426b3369 of volume: org.apache.hadoop.ozone.client.OzoneVolume@5cfa4579.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:10 INFO  RpcClient:426 - Creating Bucket: vol-3-82077/bucket-2-57075, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:10 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:10 ERROR RandomKeyGenerator:675 - Exception while adding key: key-0-18232 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@2c5840d4 of volume: org.apache.hadoop.ozone.client.OzoneVolume@5cfa4579.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+ 55.20% |????????????????????????????????????????????????????????                                             |  69/125 Time: 0:00:092019-06-15 13:56:11 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:11 ERROR RandomKeyGenerator:675 - Exception while adding key: key-4-48723 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@2c5840d4 of volume: org.apache.hadoop.ozone.client.OzoneVolume@5cfa4579.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:11 INFO  RpcClient:426 - Creating Bucket: vol-3-82077/bucket-3-92903, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:11 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:11 ERROR RandomKeyGenerator:675 - Exception while adding key: key-1-00650 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@45652e83 of volume: org.apache.hadoop.ozone.client.OzoneVolume@5cfa4579.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:11 INFO  RpcClient:426 - Creating Bucket: vol-3-82077/bucket-4-47067, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:11 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:11 ERROR RandomKeyGenerator:675 - Exception while adding key: key-3-63666 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@73e24dee of volume: org.apache.hadoop.ozone.client.OzoneVolume@5cfa4579.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:11 INFO  RpcClient:289 - Creating Volume: vol-4-55738, with hadoop as owner.
+2019-06-15 13:56:11 INFO  RpcClient:426 - Creating Bucket: vol-4-55738/bucket-0-42822, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:11 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:11 ERROR RandomKeyGenerator:675 - Exception while adding key: key-0-81307 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@c515493 of volume: org.apache.hadoop.ozone.client.OzoneVolume@405ed360.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:11 INFO  RpcClient:426 - Creating Bucket: vol-4-55738/bucket-1-54975, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:11 INFO  RpcClient:426 - Creating Bucket: vol-4-55738/bucket-2-11048, with Versioning false and Storage Type set to DISK and Encryption set to false 
+ 69.60% |??????????????????????????????????????????????????????????????????????                               |  87/125 Time: 0:00:102019-06-15 13:56:12 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:12 ERROR RandomKeyGenerator:675 - Exception while adding key: key-1-19832 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@6c7f914f of volume: org.apache.hadoop.ozone.client.OzoneVolume@405ed360.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 9 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:12 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:12 ERROR RandomKeyGenerator:675 - Exception while adding key: key-4-85540 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@6c7f914f of volume: org.apache.hadoop.ozone.client.OzoneVolume@405ed360.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:12 INFO  RpcClient:426 - Creating Bucket: vol-4-55738/bucket-3-12371, with Versioning false and Storage Type set to DISK and Encryption set to false 
+2019-06-15 13:56:12 ERROR BlockOutputStream:538 - Unexpected Storage Container Exception: 
+org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-06-15 13:56:12 ERROR RandomKeyGenerator:675 - Exception while adding key: key-4-17697 in bucket: org.apache.hadoop.ozone.client.OzoneBucket@520d4c81 of volume: org.apache.hadoop.ozone.client.OzoneVolume@405ed360.
+java.io.IOException: Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.setIoException(BlockOutputStream.java:548)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:539)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.lambda$writeChunkToContainer$2(BlockOutputStream.java:614)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+	at org.apache.hadoop.hdds.scm.storage.ContainerProtocolCalls.validateContainerResponse(ContainerProtocolCalls.java:536)
+	at org.apache.hadoop.hdds.scm.storage.BlockOutputStream.validateResponse(BlockOutputStream.java:536)
+	... 6 more
+2019-06-15 13:56:12 INFO  RpcClient:426 - Creating Bucket: vol-4-55738/bucket-4-62616, with Versioning false and Storage Type set to DISK and Encryption set to false 
+ 100.00% |?????????????????????????????????????????????????????????????????????????????????????????????????????|  125/125 Time: 0:00:11
+Unexpected Storage Container Exception: org.apache.hadoop.hdds.scm.container.common.helpers.StorageContainerException: ContainerID 5 creation failed
+
+***************************************************
+Status: Failed
+Git Base Revision: e97acb3bd8f3befd27418996fa5d4b50bf2e17bf
+Number of Volumes created: 5
+Number of Buckets created: 25
+Number of Keys added: 98
+Ratis replication factor: ONE
+Ratis replication type: STAND_ALONE
+Average Time spent in volume creation: 00:00:00,087
+Average Time spent in bucket creation: 00:00:00,236
+Average Time spent in key creation: 00:00:01,337
+Average Time spent in key write: 00:00:04,422
+Total bytes written: 1003520
+Total Execution time: 00:00:13,065
+***************************************************</msg>
+<status status="PASS" endtime="20190615 13:56:13.506" starttime="20190615 13:56:13.503"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190615 13:56:13.508" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20190615 13:56:13.509" level="FAIL">255 != 0</msg>
+<status status="FAIL" endtime="20190615 13:56:13.509" starttime="20190615 13:56:13.508"></status>
+</kw>
+<status status="FAIL" endtime="20190615 13:56:13.509" starttime="20190615 13:55:57.988"></status>
+</kw>
+<status status="FAIL" endtime="20190615 13:56:13.509" critical="yes" starttime="20190615 13:55:57.987">255 != 0</status>
+</test>
+<doc>Smoketest ozone cluster startup</doc>
+<status status="FAIL" endtime="20190615 13:56:13.511" starttime="20190615 13:55:57.709"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="1">Critical Tests</stat>
+<stat fail="1" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="basic" pass="1">basic</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
