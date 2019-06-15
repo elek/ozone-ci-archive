@@ -1,0 +1,622 @@
+2019-06-15 14:46:38,179 INFO  util.log (Log.java:initialized(192)) - Logging initialized @820ms
+ERROR StatusLogger No Log4j 2 configuration file found. Using default configuration (logging only errors to the console), or user programmatically provided configurations. Set system property 'log4j2.debug' to show Log4j 2 internal initialization logging. See https://logging.apache.org/log4j/2.x/manual/configuration.html for instructions on how to configure Log4j 2
+2019-06-15 14:46:38,527 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:38,534 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:38,535 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context kms
+2019-06-15 14:46:38,535 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:38,535 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:38,557 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 39447
+2019-06-15 14:46:38,558 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:38,587 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@1b66c0fb{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:38,588 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@508dec2b{/static,jar:file:/home/user/.m2/repository/org/apache/hadoop/hadoop-kms/3.2.0/hadoop-kms-3.2.0.jar!/webapps/static,AVAILABLE}
+2019-06-15 14:46:38,647 INFO  server.KMSWebApp (KMSWebApp.java:contextInitialized(88)) - -------------------------------------------------------------
+2019-06-15 14:46:38,647 INFO  server.KMSWebApp (KMSWebApp.java:contextInitialized(89)) -   Java runtime version : 1.8.0_212-b04
+2019-06-15 14:46:38,647 INFO  server.KMSWebApp (KMSWebApp.java:contextInitialized(91)) -   User: jenkins1000
+2019-06-15 14:46:38,649 INFO  server.KMSWebApp (KMSWebApp.java:contextInitialized(92)) -   KMS Hadoop Version: 3.2.0
+2019-06-15 14:46:38,650 INFO  server.KMSWebApp (KMSWebApp.java:contextInitialized(93)) - -------------------------------------------------------------
+2019-06-15 14:46:38,658 INFO  server.KMSACLs (KMSACLs.java:setKMSACLs(107)) - 'CREATE' ACL '*'
+2019-06-15 14:46:38,659 INFO  server.KMSACLs (KMSACLs.java:setKMSACLs(107)) - 'DELETE' ACL '*'
+2019-06-15 14:46:38,659 INFO  server.KMSACLs (KMSACLs.java:setKMSACLs(107)) - 'ROLLOVER' ACL '*'
+2019-06-15 14:46:38,660 INFO  server.KMSACLs (KMSACLs.java:setKMSACLs(107)) - 'GET' ACL '*'
+2019-06-15 14:46:38,660 INFO  server.KMSACLs (KMSACLs.java:setKMSACLs(107)) - 'GET_KEYS' ACL '*'
+2019-06-15 14:46:38,660 INFO  server.KMSACLs (KMSACLs.java:setKMSACLs(107)) - 'GET_METADATA' ACL '*'
+2019-06-15 14:46:38,660 INFO  server.KMSACLs (KMSACLs.java:setKMSACLs(107)) - 'SET_KEY_MATERIAL' ACL '*'
+2019-06-15 14:46:38,660 INFO  server.KMSACLs (KMSACLs.java:setKMSACLs(107)) - 'GENERATE_EEK' ACL '*'
+2019-06-15 14:46:38,661 INFO  server.KMSACLs (KMSACLs.java:setKMSACLs(107)) - 'DECRYPT_EEK' ACL '*'
+2019-06-15 14:46:38,661 INFO  server.KMSACLs (KMSACLs.java:parseAclsWithPrefix(185)) - default.key.acl. for KEY_OP 'READ' is set to '*'
+2019-06-15 14:46:38,661 INFO  server.KMSACLs (KMSACLs.java:parseAclsWithPrefix(185)) - default.key.acl. for KEY_OP 'MANAGEMENT' is set to '*'
+2019-06-15 14:46:38,661 INFO  server.KMSACLs (KMSACLs.java:parseAclsWithPrefix(185)) - default.key.acl. for KEY_OP 'GENERATE_EEK' is set to '*'
+2019-06-15 14:46:38,662 INFO  server.KMSACLs (KMSACLs.java:parseAclsWithPrefix(185)) - default.key.acl. for KEY_OP 'DECRYPT_EEK' is set to '*'
+2019-06-15 14:46:38,723 INFO  server.KMSAudit (KMSAudit.java:initializeAuditLoggers(157)) - Initializing audit logger class org.apache.hadoop.crypto.key.kms.server.SimpleKMSAuditLogger
+2019-06-15 14:46:38,863 INFO  server.KMSWebApp (KMSWebApp.java:contextInitialized(143)) - Initialized KeyProvider CachingKeyProvider: jceks://file@/opt/src/hadoop-ozone/integration-test/target/test-dir/TestSecureOzoneRpcClient/f7e67906-46b6-4301-bfee-9e95b8c3d617/kms.keystore
+2019-06-15 14:46:38,869 INFO  server.KMSWebApp (KMSWebApp.java:contextInitialized(157)) - Initialized KeyProviderCryptoExtension EagerKeyGeneratorKeyProviderCryptoExtension: KeyProviderCryptoExtension: CachingKeyProvider: jceks://file@/opt/src/hadoop-ozone/integration-test/target/test-dir/TestSecureOzoneRpcClient/f7e67906-46b6-4301-bfee-9e95b8c3d617/kms.keystore
+2019-06-15 14:46:38,869 INFO  server.KMSWebApp (KMSWebApp.java:contextInitialized(162)) - Default key bitlength is 128
+2019-06-15 14:46:38,869 INFO  server.KMSWebApp (KMSWebApp.java:contextInitialized(163)) - KMS Started
+2019-06-15 14:46:38,891 INFO  delegation.AbstractDelegationTokenSecretManager (AbstractDelegationTokenSecretManager.java:updateCurrentKey(343)) - Updating the current master key for generating delegation tokens
+2019-06-15 14:46:38,892 INFO  delegation.AbstractDelegationTokenSecretManager (AbstractDelegationTokenSecretManager.java:run(675)) - Starting expired delegation token remover thread, tokenRemoverScanInterval=60 min(s)
+2019-06-15 14:46:38,893 INFO  delegation.AbstractDelegationTokenSecretManager (AbstractDelegationTokenSecretManager.java:updateCurrentKey(343)) - Updating the current master key for generating delegation tokens
+Jun 15, 2019 2:46:38 PM com.sun.jersey.api.core.PackagesResourceConfig init
+INFO: Scanning for root resource and provider classes in the packages:
+  org.apache.hadoop.crypto.key.kms.server
+Jun 15, 2019 2:46:38 PM com.sun.jersey.api.core.ScanningResourceConfig logClasses
+INFO: Root resource classes found:
+  class org.apache.hadoop.crypto.key.kms.server.KMS
+Jun 15, 2019 2:46:38 PM com.sun.jersey.api.core.ScanningResourceConfig logClasses
+INFO: Provider classes found:
+  class org.apache.hadoop.crypto.key.kms.server.KMSJSONReader
+  class org.apache.hadoop.crypto.key.kms.server.KMSExceptionsProvider
+  class org.apache.hadoop.crypto.key.kms.server.KMSJSONWriter
+Jun 15, 2019 2:46:39 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+2019-06-15 14:46:39,673 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@71178a52{/,file:///opt/src/hadoop-ozone/integration-test/target/tmp/kms/webapp/,AVAILABLE}{/kms}
+2019-06-15 14:46:39,679 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@79767781{HTTP/1.1,[http/1.1]}{localhost:39447}
+2019-06-15 14:46:39,679 INFO  server.Server (Server.java:doStart(419)) - Started @2322ms
+2019-06-15 14:46:39,732 WARN  impl.MetricsConfig (MetricsConfig.java:loadFirst(134)) - Cannot locate configuration: tried hadoop-metrics2-kms.properties,hadoop-metrics2.properties
+2019-06-15 14:46:39,749 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:startTimer(374)) - Scheduled Metric snapshot period at 10 second(s).
+2019-06-15 14:46:39,749 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:start(191)) - KMS metrics system started
+2019-06-15 14:46:39,756 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:40,826 WARN  server.ServerUtils (ServerUtils.java:getScmDbDir(145)) - ozone.scm.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-15 14:46:40,844 WARN  server.ServerUtils (ServerUtils.java:getScmDbDir(145)) - ozone.scm.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-15 14:46:40,847 WARN  server.ServerUtils (ServerUtils.java:getScmDbDir(145)) - ozone.scm.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-15 14:46:40,925 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: deletedBlocks
+2019-06-15 14:46:40,925 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:deletedBlocks
+2019-06-15 14:46:40,925 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: validCerts
+2019-06-15 14:46:40,926 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:validCerts
+2019-06-15 14:46:40,926 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: revokedCerts
+2019-06-15 14:46:40,926 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:revokedCerts
+2019-06-15 14:46:40,935 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: default
+2019-06-15 14:46:40,935 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(167)) - Using default column profile:DBProfile.DISK for Table:default
+2019-06-15 14:46:40,937 INFO  db.DBStoreBuilder (DBStoreBuilder.java:getDbProfile(198)) - Using default options. DBProfile.DISK
+2019-06-15 14:46:40,988 INFO  net.NodeSchemaLoader (NodeSchemaLoader.java:loadSchemaFromFile(125)) - Loading file from sun.misc.CompoundEnumeration@5fe7f967
+2019-06-15 14:46:40,989 INFO  net.NodeSchemaLoader (NodeSchemaLoader.java:loadSchema(171)) - Loading network topology layer schema file
+2019-06-15 14:46:41,013 WARN  server.ServerUtils (ServerUtils.java:sanitizeUserArgs(70)) - ozone.scm.stale.node.interval value = 300000 is larger than max = 100000 based on the key value of ozone.scm.heartbeat.thread.interval, reset to the max value 100000.
+2019-06-15 14:46:41,013 WARN  server.ServerUtils (ServerUtils.java:sanitizeUserArgs(70)) - ozone.scm.stale.node.interval value = 300000 is larger than max = 100000 based on the key value of ozone.scm.heartbeat.thread.interval, reset to the max value 100000.
+2019-06-15 14:46:41,014 INFO  node.SCMNodeManager (SCMNodeManager.java:<init>(119)) - Entering startup safe mode.
+2019-06-15 14:46:41,032 WARN  server.ServerUtils (ServerUtils.java:getScmDbDir(145)) - ozone.scm.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-15 14:46:41,051 INFO  pipeline.SCMPipelineManager (SCMPipelineManager.java:initializePipelineState(126)) - No pipeline exists in current db
+2019-06-15 14:46:41,052 WARN  server.ServerUtils (ServerUtils.java:getScmDbDir(145)) - ozone.scm.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-15 14:46:41,101 WARN  events.EventQueue (EventQueue.java:fireEvent(175)) - No event handler registered for event TypedEvent{payloadType=SafeModeStatus, name='SafeModeStatus'}
+2019-06-15 14:46:41,131 INFO  ipc.CallQueueManager (CallQueueManager.java:<init>(84)) - Using callQueue: class java.util.concurrent.LinkedBlockingQueue, queueCapacity: 2000, scheduler: class org.apache.hadoop.ipc.DefaultRpcScheduler, ipcBackoff: false.
+2019-06-15 14:46:41,145 INFO  ipc.Server (Server.java:run(1074)) - Starting Socket Reader #1 for port 38043
+2019-06-15 14:46:41,174 INFO  ipc.CallQueueManager (CallQueueManager.java:<init>(84)) - Using callQueue: class java.util.concurrent.LinkedBlockingQueue, queueCapacity: 2000, scheduler: class org.apache.hadoop.ipc.DefaultRpcScheduler, ipcBackoff: false.
+2019-06-15 14:46:41,174 INFO  ipc.Server (Server.java:run(1074)) - Starting Socket Reader #1 for port 44765
+2019-06-15 14:46:41,180 INFO  ipc.CallQueueManager (CallQueueManager.java:<init>(84)) - Using callQueue: class java.util.concurrent.LinkedBlockingQueue, queueCapacity: 2000, scheduler: class org.apache.hadoop.ipc.DefaultRpcScheduler, ipcBackoff: false.
+2019-06-15 14:46:41,181 INFO  ipc.Server (Server.java:run(1074)) - Starting Socket Reader #1 for port 36011
+2019-06-15 14:46:41,194 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for scm at: http://0.0.0.0:0
+2019-06-15 14:46:41,195 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:41,196 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:41,198 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:41,198 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context scm
+2019-06-15 14:46:41,198 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:41,198 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:41,208 INFO  server.StorageContainerManager (StorageContainerManager.java:start(753)) - StorageContainerLocationProtocol RPC server is listening at /0.0.0.0:36011
+2019-06-15 14:46:41,208 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - StorageContainerManager metrics system started (again)
+2019-06-15 14:46:41,210 INFO  server.SCMClientProtocolServer (SCMClientProtocolServer.java:start(149)) - RPC server for Client  is listening at /0.0.0.0:36011
+2019-06-15 14:46:41,210 INFO  ipc.Server (Server.java:run(1314)) - IPC Server Responder: starting
+2019-06-15 14:46:41,210 INFO  ipc.Server (Server.java:run(1153)) - IPC Server listener on 36011: starting
+2019-06-15 14:46:41,212 INFO  server.StorageContainerManager (StorageContainerManager.java:start(762)) - ScmBlockLocationProtocol RPC server is listening at /0.0.0.0:44765
+2019-06-15 14:46:41,213 INFO  server.SCMBlockProtocolServer (SCMBlockProtocolServer.java:start(137)) - RPC server for Block Protocol is listening at /0.0.0.0:44765
+2019-06-15 14:46:41,213 INFO  ipc.Server (Server.java:run(1314)) - IPC Server Responder: starting
+2019-06-15 14:46:41,213 INFO  ipc.Server (Server.java:run(1153)) - IPC Server listener on 44765: starting
+2019-06-15 14:46:41,215 INFO  server.StorageContainerManager (StorageContainerManager.java:start(766)) - ScmDatanodeProtocl RPC server is listening at /0.0.0.0:38043
+2019-06-15 14:46:41,215 INFO  server.SCMDatanodeProtocolServer (SCMDatanodeProtocolServer.java:start(191)) - RPC server for DataNodes is listening at /0.0.0.0:38043
+2019-06-15 14:46:41,215 INFO  ipc.Server (Server.java:run(1314)) - IPC Server Responder: starting
+2019-06-15 14:46:41,216 INFO  ipc.Server (Server.java:run(1153)) - IPC Server listener on 38043: starting
+2019-06-15 14:46:41,219 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 35281
+2019-06-15 14:46:41,220 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:41,221 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@cb7fa71{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:41,221 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@4b6e1c0{/static,file:///opt/src/hadoop-ozone/integration-test/target/test-classes/webapps/static,AVAILABLE}
+2019-06-15 14:46:41,225 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@28da7d11{/,file:///opt/src/hadoop-ozone/integration-test/target/test-classes/webapps/scm/,AVAILABLE}{/scm}
+2019-06-15 14:46:41,225 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@77b919a3{HTTP/1.1,[http/1.1]}{0.0.0.0:35281}
+2019-06-15 14:46:41,225 INFO  server.Server (Server.java:doStart(419)) - Started @3868ms
+2019-06-15 14:46:41,226 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of SCM is listening at http://0.0.0.0:35281
+2019-06-15 14:46:41,229 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:41,232 WARN  scm.ScmUtils (ScmUtils.java:getDBPath(63)) - ozone.om.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-15 14:46:41,236 WARN  scm.ScmUtils (ScmUtils.java:getDBPath(63)) - ozone.om.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-15 14:46:41,237 INFO  om.OzoneManager (OzoneManager.java:setOMNodeDetails(532)) - OM Service ID is not set. Setting it to the default ID: omServiceIdDefault
+2019-06-15 14:46:41,237 INFO  om.OzoneManager (OzoneManager.java:setOMNodeDetails(538)) - OM Node ID is not set. Setting it to the OmStorage's OmID: da3cf31e-98fe-447b-9b40-6af0f533cb31
+2019-06-15 14:46:41,238 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-15 14:46:41,238 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-15 14:46:41,239 INFO  om.OzoneManager (OzoneManager.java:loadOMHAConfigs(489)) - Found matching OM address with OMServiceId: null, OMNodeId: null, RPC Address: localhost:0 and Ratis port: 9872
+2019-06-15 14:46:41,288 WARN  scm.ScmUtils (ScmUtils.java:getDBPath(63)) - ozone.om.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-15 14:46:41,292 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: userTable
+2019-06-15 14:46:41,293 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:userTable
+2019-06-15 14:46:41,293 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: volumeTable
+2019-06-15 14:46:41,293 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:volumeTable
+2019-06-15 14:46:41,293 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: bucketTable
+2019-06-15 14:46:41,293 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:bucketTable
+2019-06-15 14:46:41,293 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: keyTable
+2019-06-15 14:46:41,293 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:keyTable
+2019-06-15 14:46:41,294 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: deletedTable
+2019-06-15 14:46:41,294 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:deletedTable
+2019-06-15 14:46:41,294 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: openKeyTable
+2019-06-15 14:46:41,294 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:openKeyTable
+2019-06-15 14:46:41,294 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: s3Table
+2019-06-15 14:46:41,294 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:s3Table
+2019-06-15 14:46:41,294 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: multipartInfoTable
+2019-06-15 14:46:41,295 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:multipartInfoTable
+2019-06-15 14:46:41,295 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: dTokenTable
+2019-06-15 14:46:41,295 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:dTokenTable
+2019-06-15 14:46:41,295 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: s3SecretTable
+2019-06-15 14:46:41,295 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:s3SecretTable
+2019-06-15 14:46:41,295 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: prefixTable
+2019-06-15 14:46:41,296 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(161)) - Using default column profile:DBProfile.DISK for Table:prefixTable
+2019-06-15 14:46:41,296 INFO  db.DBStoreBuilder (DBStoreBuilder.java:addTable(110)) - using custom profile for table: default
+2019-06-15 14:46:41,296 INFO  db.DBStoreBuilder (DBStoreBuilder.java:processTables(167)) - Using default column profile:DBProfile.DISK for Table:default
+2019-06-15 14:46:41,296 INFO  db.DBStoreBuilder (DBStoreBuilder.java:getDbProfile(198)) - Using default options. DBProfile.DISK
+2019-06-15 14:46:41,459 INFO  ipc.CallQueueManager (CallQueueManager.java:<init>(84)) - Using callQueue: class java.util.concurrent.LinkedBlockingQueue, queueCapacity: 2000, scheduler: class org.apache.hadoop.ipc.DefaultRpcScheduler, ipcBackoff: false.
+2019-06-15 14:46:41,460 INFO  ipc.Server (Server.java:run(1074)) - Starting Socket Reader #1 for port 33171
+2019-06-15 14:46:41,483 WARN  scm.ScmUtils (ScmUtils.java:getDBPath(63)) - ozone.om.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-15 14:46:41,483 INFO  om.OzoneManager (OzoneManager.java:start(1230)) - OzoneManager RPC server is listening at localhost/127.0.0.1:33171
+2019-06-15 14:46:41,483 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - OzoneManager metrics system started (again)
+2019-06-15 14:46:41,484 INFO  ipc.Server (Server.java:run(1153)) - IPC Server listener on 33171: starting
+2019-06-15 14:46:41,487 INFO  ipc.Server (Server.java:run(1314)) - IPC Server Responder: starting
+2019-06-15 14:46:41,496 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for ozoneManager at: http://0.0.0.0:0
+2019-06-15 14:46:41,497 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:41,497 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:41,499 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:41,499 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context ozoneManager
+2019-06-15 14:46:41,500 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:41,500 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:41,501 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 44759
+2019-06-15 14:46:41,502 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:41,503 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@59bbe88a{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:41,504 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@ed91d8d{/static,file:///opt/src/hadoop-ozone/integration-test/target/test-classes/webapps/static,AVAILABLE}
+2019-06-15 14:46:41,508 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@707b1a44{/,file:///opt/src/hadoop-ozone/integration-test/target/test-classes/webapps/ozoneManager/,AVAILABLE}{/ozoneManager}
+2019-06-15 14:46:41,511 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@7132a9dc{HTTP/1.1,[http/1.1]}{0.0.0.0:44759}
+2019-06-15 14:46:41,511 INFO  server.Server (Server.java:doStart(419)) - Started @4154ms
+2019-06-15 14:46:41,512 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of OZONEMANAGER is listening at http://0.0.0.0:44759
+2019-06-15 14:46:41,610 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - HddsDatanode metrics system started (again)
+2019-06-15 14:46:41,698 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:start(185)) - HddsDatanodeService host:ozone-unit-076618677d3-4xtgz-810526965 ip:192.168.11.227
+2019-06-15 14:46:41,728 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-0/data/containers/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-15 14:46:41,729 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-0/data/containers/hdds to VolumeSet
+2019-06-15 14:46:41,732 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@5dc0ff7d
+2019-06-15 14:46:41,747 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@5dc0ff7d
+2019-06-15 14:46:41,786 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 39067
+2019-06-15 14:46:41,850 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-15 14:46:41,860 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 39067 (custom)
+2019-06-15 14:46:41,861 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-15 14:46:41,862 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-15 14:46:41,863 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-15 14:46:41,864 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-15 14:46:42,002 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-0/data/ratis] (custom)
+2019-06-15 14:46:42,011 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 42047
+2019-06-15 14:46:42,035 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-15 14:46:42,045 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for hddsDatanode at: http://0.0.0.0:0
+2019-06-15 14:46:42,046 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:42,046 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:42,047 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:42,048 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hddsDatanode
+2019-06-15 14:46:42,048 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:42,048 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:42,049 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 36425
+2019-06-15 14:46:42,049 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:42,051 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@7186b202{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:42,051 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@65ef48f2{/static,jar:file:/home/user/.m2/repository/org/apache/hadoop/hadoop-hdds-container-service/0.5.0-SNAPSHOT/hadoop-hdds-container-service-0.5.0-SNAPSHOT.jar!/webapps/static,AVAILABLE}
+2019-06-15 14:46:42,077 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@3cdc7b09{/,file:///opt/src/hadoop-ozone/integration-test/target/tmp/kms/webapp/,AVAILABLE}{/hddsDatanode}
+2019-06-15 14:46:42,078 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@7364eed1{HTTP/1.1,[http/1.1]}{0.0.0.0:36425}
+2019-06-15 14:46:42,078 INFO  server.Server (Server.java:doStart(419)) - Started @4721ms
+2019-06-15 14:46:42,079 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of HDDSDATANODE is listening at http://0.0.0.0:36425
+Jun 15, 2019 2:46:42 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+2019-06-15 14:46:42,564 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:startPlugins(396)) - Started plug-in org.apache.hadoop.ozone.web.OzoneHddsDatanodeService@2bab618
+2019-06-15 14:46:42,565 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - HddsDatanode metrics system started (again)
+2019-06-15 14:46:42,567 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:start(185)) - HddsDatanodeService host:ozone-unit-076618677d3-4xtgz-810526965 ip:192.168.11.227
+2019-06-15 14:46:42,571 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:42,575 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-1/data/containers/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-15 14:46:42,579 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-1/data/containers/hdds to VolumeSet
+2019-06-15 14:46:42,579 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@67328bcb
+2019-06-15 14:46:42,583 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@67328bcb
+2019-06-15 14:46:42,598 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 39273
+2019-06-15 14:46:42,600 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-15 14:46:42,600 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 39273 (custom)
+2019-06-15 14:46:42,600 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-15 14:46:42,601 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-15 14:46:42,601 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-15 14:46:42,601 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-15 14:46:42,602 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-1/data/ratis] (custom)
+2019-06-15 14:46:42,602 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 38983
+2019-06-15 14:46:42,603 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-15 14:46:42,604 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for hddsDatanode at: http://0.0.0.0:0
+2019-06-15 14:46:42,605 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:42,615 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:42,616 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:42,617 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hddsDatanode
+2019-06-15 14:46:42,617 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:42,617 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:42,618 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 43783
+2019-06-15 14:46:42,618 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:42,672 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@585513a8{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:42,673 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@30f28b5{/static,jar:file:/home/user/.m2/repository/org/apache/hadoop/hadoop-hdds-container-service/0.5.0-SNAPSHOT/hadoop-hdds-container-service-0.5.0-SNAPSHOT.jar!/webapps/static,AVAILABLE}
+2019-06-15 14:46:42,725 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@1e226bcd{/,file:///opt/src/hadoop-ozone/integration-test/target/tmp/kms/webapp/,AVAILABLE}{/hddsDatanode}
+2019-06-15 14:46:42,730 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@2a8dd942{HTTP/1.1,[http/1.1]}{0.0.0.0:43783}
+2019-06-15 14:46:42,731 INFO  server.Server (Server.java:doStart(419)) - Started @5374ms
+2019-06-15 14:46:42,732 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of HDDSDATANODE is listening at http://0.0.0.0:43783
+2019-06-15 14:46:42,732 INFO  datanode.InitDatanodeState (InitDatanodeState.java:persistContainerDatanodeDetails(140)) - DatanodeDetails is persisted to /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-0/meta/datanode.id
+Jun 15, 2019 2:46:42 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+2019-06-15 14:46:42,843 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:startPlugins(396)) - Started plug-in org.apache.hadoop.ozone.web.OzoneHddsDatanodeService@1e2445f6
+2019-06-15 14:46:42,845 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - HddsDatanode metrics system started (again)
+2019-06-15 14:46:42,846 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:start(185)) - HddsDatanodeService host:ozone-unit-076618677d3-4xtgz-810526965 ip:192.168.11.227
+2019-06-15 14:46:42,848 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:42,855 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-2/data/containers/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-15 14:46:42,856 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-2/data/containers/hdds to VolumeSet
+2019-06-15 14:46:42,856 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@7841bd30
+2019-06-15 14:46:42,857 INFO  datanode.InitDatanodeState (InitDatanodeState.java:persistContainerDatanodeDetails(140)) - DatanodeDetails is persisted to /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-1/meta/datanode.id
+2019-06-15 14:46:42,858 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@7841bd30
+2019-06-15 14:46:42,867 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 33271
+2019-06-15 14:46:42,868 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-15 14:46:42,868 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 33271 (custom)
+2019-06-15 14:46:42,868 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-15 14:46:42,868 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-15 14:46:42,869 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-15 14:46:42,869 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-15 14:46:42,869 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-2/data/ratis] (custom)
+2019-06-15 14:46:42,870 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 32813
+2019-06-15 14:46:42,870 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-15 14:46:42,871 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for hddsDatanode at: http://0.0.0.0:0
+2019-06-15 14:46:42,872 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:42,874 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:42,876 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:42,876 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hddsDatanode
+2019-06-15 14:46:42,876 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:42,877 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:42,877 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 46403
+2019-06-15 14:46:42,877 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:42,879 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@71531dd7{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:42,880 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@624b3544{/static,jar:file:/home/user/.m2/repository/org/apache/hadoop/hadoop-hdds-container-service/0.5.0-SNAPSHOT/hadoop-hdds-container-service-0.5.0-SNAPSHOT.jar!/webapps/static,AVAILABLE}
+2019-06-15 14:46:42,903 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@58a7dc4{/,file:///opt/src/hadoop-ozone/integration-test/target/tmp/kms/webapp/,AVAILABLE}{/hddsDatanode}
+2019-06-15 14:46:42,904 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@61b60600{HTTP/1.1,[http/1.1]}{0.0.0.0:46403}
+2019-06-15 14:46:42,905 INFO  server.Server (Server.java:doStart(419)) - Started @5548ms
+2019-06-15 14:46:42,906 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of HDDSDATANODE is listening at http://0.0.0.0:46403
+Jun 15, 2019 2:46:42 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+2019-06-15 14:46:43,039 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:startPlugins(396)) - Started plug-in org.apache.hadoop.ozone.web.OzoneHddsDatanodeService@3b170235
+2019-06-15 14:46:43,041 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - HddsDatanode metrics system started (again)
+2019-06-15 14:46:43,042 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:start(185)) - HddsDatanodeService host:ozone-unit-076618677d3-4xtgz-810526965 ip:192.168.11.227
+2019-06-15 14:46:43,055 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:43,057 INFO  datanode.InitDatanodeState (InitDatanodeState.java:persistContainerDatanodeDetails(140)) - DatanodeDetails is persisted to /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-2/meta/datanode.id
+2019-06-15 14:46:43,059 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-3/data/containers/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-15 14:46:43,059 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-3/data/containers/hdds to VolumeSet
+2019-06-15 14:46:43,059 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@54326e9
+2019-06-15 14:46:43,063 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@54326e9
+2019-06-15 14:46:43,075 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 40733
+2019-06-15 14:46:43,076 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-15 14:46:43,076 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 40733 (custom)
+2019-06-15 14:46:43,076 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-15 14:46:43,076 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-15 14:46:43,076 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-15 14:46:43,077 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-15 14:46:43,077 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-3/data/ratis] (custom)
+2019-06-15 14:46:43,077 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 44425
+2019-06-15 14:46:43,078 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-15 14:46:43,079 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for hddsDatanode at: http://0.0.0.0:0
+2019-06-15 14:46:43,080 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:43,080 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:43,081 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:43,081 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hddsDatanode
+2019-06-15 14:46:43,081 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:43,081 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:43,082 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 34499
+2019-06-15 14:46:43,082 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:43,091 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@799f354a{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:43,091 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@159ac15f{/static,jar:file:/home/user/.m2/repository/org/apache/hadoop/hadoop-hdds-container-service/0.5.0-SNAPSHOT/hadoop-hdds-container-service-0.5.0-SNAPSHOT.jar!/webapps/static,AVAILABLE}
+2019-06-15 14:46:43,120 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@4e17442f{/,file:///opt/src/hadoop-ozone/integration-test/target/tmp/kms/webapp/,AVAILABLE}{/hddsDatanode}
+2019-06-15 14:46:43,121 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@4f5c30b1{HTTP/1.1,[http/1.1]}{0.0.0.0:34499}
+2019-06-15 14:46:43,121 INFO  server.Server (Server.java:doStart(419)) - Started @5764ms
+2019-06-15 14:46:43,122 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of HDDSDATANODE is listening at http://0.0.0.0:34499
+Jun 15, 2019 2:46:43 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+2019-06-15 14:46:43,224 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:startPlugins(396)) - Started plug-in org.apache.hadoop.ozone.web.OzoneHddsDatanodeService@3e74fd84
+2019-06-15 14:46:43,225 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - HddsDatanode metrics system started (again)
+2019-06-15 14:46:43,226 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:start(185)) - HddsDatanodeService host:ozone-unit-076618677d3-4xtgz-810526965 ip:192.168.11.227
+2019-06-15 14:46:43,235 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:43,241 INFO  datanode.InitDatanodeState (InitDatanodeState.java:persistContainerDatanodeDetails(140)) - DatanodeDetails is persisted to /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-3/meta/datanode.id
+2019-06-15 14:46:43,243 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-4/data/containers/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-15 14:46:43,243 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-4/data/containers/hdds to VolumeSet
+2019-06-15 14:46:43,243 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@2d4fb0d8
+2019-06-15 14:46:43,246 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@2d4fb0d8
+2019-06-15 14:46:43,256 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 42215
+2019-06-15 14:46:43,257 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-15 14:46:43,257 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 42215 (custom)
+2019-06-15 14:46:43,258 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-15 14:46:43,258 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-15 14:46:43,258 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-15 14:46:43,258 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-15 14:46:43,259 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-4/data/ratis] (custom)
+2019-06-15 14:46:43,259 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 36401
+2019-06-15 14:46:43,260 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-15 14:46:43,261 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for hddsDatanode at: http://0.0.0.0:0
+2019-06-15 14:46:43,262 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:43,262 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:43,264 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:43,264 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hddsDatanode
+2019-06-15 14:46:43,265 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:43,265 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:43,265 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 37539
+2019-06-15 14:46:43,266 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:43,267 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@5d5d3a5c{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:43,268 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@7e18ced7{/static,jar:file:/home/user/.m2/repository/org/apache/hadoop/hadoop-hdds-container-service/0.5.0-SNAPSHOT/hadoop-hdds-container-service-0.5.0-SNAPSHOT.jar!/webapps/static,AVAILABLE}
+2019-06-15 14:46:43,297 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@62735b13{/,file:///opt/src/hadoop-ozone/integration-test/target/tmp/kms/webapp/,AVAILABLE}{/hddsDatanode}
+2019-06-15 14:46:43,298 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@7aae1170{HTTP/1.1,[http/1.1]}{0.0.0.0:37539}
+2019-06-15 14:46:43,298 INFO  server.Server (Server.java:doStart(419)) - Started @5941ms
+2019-06-15 14:46:43,299 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of HDDSDATANODE is listening at http://0.0.0.0:37539
+Jun 15, 2019 2:46:43 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+2019-06-15 14:46:43,425 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:startPlugins(396)) - Started plug-in org.apache.hadoop.ozone.web.OzoneHddsDatanodeService@8b670c0
+2019-06-15 14:46:43,426 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - HddsDatanode metrics system started (again)
+2019-06-15 14:46:43,427 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:start(185)) - HddsDatanodeService host:ozone-unit-076618677d3-4xtgz-810526965 ip:192.168.11.227
+2019-06-15 14:46:43,431 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:43,439 INFO  datanode.InitDatanodeState (InitDatanodeState.java:persistContainerDatanodeDetails(140)) - DatanodeDetails is persisted to /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-4/meta/datanode.id
+2019-06-15 14:46:43,440 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-5/data/containers/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-15 14:46:43,440 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-5/data/containers/hdds to VolumeSet
+2019-06-15 14:46:43,440 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@7cc1f72c
+2019-06-15 14:46:43,443 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@7cc1f72c
+2019-06-15 14:46:43,452 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 34473
+2019-06-15 14:46:43,453 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-15 14:46:43,453 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 34473 (custom)
+2019-06-15 14:46:43,454 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-15 14:46:43,454 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-15 14:46:43,454 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-15 14:46:43,454 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-15 14:46:43,455 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-5/data/ratis] (custom)
+2019-06-15 14:46:43,455 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 36649
+2019-06-15 14:46:43,456 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-15 14:46:43,457 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for hddsDatanode at: http://0.0.0.0:0
+2019-06-15 14:46:43,457 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:43,458 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:43,459 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:43,460 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hddsDatanode
+2019-06-15 14:46:43,460 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:43,460 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:43,461 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 41731
+2019-06-15 14:46:43,461 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:43,462 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@2c34402{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:43,462 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@7e58f697{/static,jar:file:/home/user/.m2/repository/org/apache/hadoop/hadoop-hdds-container-service/0.5.0-SNAPSHOT/hadoop-hdds-container-service-0.5.0-SNAPSHOT.jar!/webapps/static,AVAILABLE}
+2019-06-15 14:46:43,483 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@46ea78f0{/,file:///opt/src/hadoop-ozone/integration-test/target/tmp/kms/webapp/,AVAILABLE}{/hddsDatanode}
+2019-06-15 14:46:43,483 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@5889fc44{HTTP/1.1,[http/1.1]}{0.0.0.0:41731}
+2019-06-15 14:46:43,483 INFO  server.Server (Server.java:doStart(419)) - Started @6126ms
+2019-06-15 14:46:43,484 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of HDDSDATANODE is listening at http://0.0.0.0:41731
+Jun 15, 2019 2:46:43 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+2019-06-15 14:46:43,645 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:startPlugins(396)) - Started plug-in org.apache.hadoop.ozone.web.OzoneHddsDatanodeService@4b691611
+2019-06-15 14:46:43,645 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - HddsDatanode metrics system started (again)
+2019-06-15 14:46:43,646 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:start(185)) - HddsDatanodeService host:ozone-unit-076618677d3-4xtgz-810526965 ip:192.168.11.227
+2019-06-15 14:46:43,652 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:43,654 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-6/data/containers/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-15 14:46:43,654 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-6/data/containers/hdds to VolumeSet
+2019-06-15 14:46:43,654 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@5d92e8e2
+2019-06-15 14:46:43,655 INFO  datanode.InitDatanodeState (InitDatanodeState.java:persistContainerDatanodeDetails(140)) - DatanodeDetails is persisted to /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-5/meta/datanode.id
+2019-06-15 14:46:43,656 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@5d92e8e2
+2019-06-15 14:46:43,668 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 46007
+2019-06-15 14:46:43,671 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-15 14:46:43,671 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 46007 (custom)
+2019-06-15 14:46:43,671 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-15 14:46:43,671 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-15 14:46:43,672 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-15 14:46:43,672 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-15 14:46:43,672 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-6/data/ratis] (custom)
+2019-06-15 14:46:43,673 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 34191
+2019-06-15 14:46:43,673 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-15 14:46:43,675 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for hddsDatanode at: http://0.0.0.0:0
+2019-06-15 14:46:43,676 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:43,677 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:43,679 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:43,679 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hddsDatanode
+2019-06-15 14:46:43,680 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:43,680 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:43,680 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 36233
+2019-06-15 14:46:43,680 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:43,682 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@266da047{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:43,682 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@d84418a{/static,jar:file:/home/user/.m2/repository/org/apache/hadoop/hadoop-hdds-container-service/0.5.0-SNAPSHOT/hadoop-hdds-container-service-0.5.0-SNAPSHOT.jar!/webapps/static,AVAILABLE}
+2019-06-15 14:46:43,705 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@5f45bc8e{/,file:///opt/src/hadoop-ozone/integration-test/target/tmp/kms/webapp/,AVAILABLE}{/hddsDatanode}
+2019-06-15 14:46:43,706 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@33e50ff2{HTTP/1.1,[http/1.1]}{0.0.0.0:36233}
+2019-06-15 14:46:43,706 INFO  server.Server (Server.java:doStart(419)) - Started @6349ms
+2019-06-15 14:46:43,708 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of HDDSDATANODE is listening at http://0.0.0.0:36233
+Jun 15, 2019 2:46:43 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+2019-06-15 14:46:43,799 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:startPlugins(396)) - Started plug-in org.apache.hadoop.ozone.web.OzoneHddsDatanodeService@50bf795f
+2019-06-15 14:46:43,800 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - HddsDatanode metrics system started (again)
+2019-06-15 14:46:43,801 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:start(185)) - HddsDatanodeService host:ozone-unit-076618677d3-4xtgz-810526965 ip:192.168.11.227
+2019-06-15 14:46:43,815 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-7/data/containers/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-15 14:46:43,816 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-7/data/containers/hdds to VolumeSet
+2019-06-15 14:46:43,816 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@22aee519
+2019-06-15 14:46:43,816 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:43,827 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@22aee519
+2019-06-15 14:46:43,830 INFO  datanode.InitDatanodeState (InitDatanodeState.java:persistContainerDatanodeDetails(140)) - DatanodeDetails is persisted to /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-6/meta/datanode.id
+2019-06-15 14:46:43,838 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 44425
+2019-06-15 14:46:43,840 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-15 14:46:43,840 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 44425 (custom)
+2019-06-15 14:46:43,840 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-15 14:46:43,840 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-15 14:46:43,840 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-15 14:46:43,840 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-15 14:46:43,841 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-7/data/ratis] (custom)
+2019-06-15 14:46:43,841 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 41195
+2019-06-15 14:46:43,842 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-15 14:46:43,843 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for hddsDatanode at: http://0.0.0.0:0
+2019-06-15 14:46:43,844 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:43,844 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:43,846 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:43,846 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hddsDatanode
+2019-06-15 14:46:43,846 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:43,846 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:43,847 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 38203
+2019-06-15 14:46:43,847 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:43,849 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@13e1e816{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:43,849 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@33187485{/static,jar:file:/home/user/.m2/repository/org/apache/hadoop/hadoop-hdds-container-service/0.5.0-SNAPSHOT/hadoop-hdds-container-service-0.5.0-SNAPSHOT.jar!/webapps/static,AVAILABLE}
+2019-06-15 14:46:43,877 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@6c5ae8fd{/,file:///opt/src/hadoop-ozone/integration-test/target/tmp/kms/webapp/,AVAILABLE}{/hddsDatanode}
+2019-06-15 14:46:43,877 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@17354708{HTTP/1.1,[http/1.1]}{0.0.0.0:38203}
+2019-06-15 14:46:43,878 INFO  server.Server (Server.java:doStart(419)) - Started @6521ms
+2019-06-15 14:46:43,879 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of HDDSDATANODE is listening at http://0.0.0.0:38203
+Jun 15, 2019 2:46:43 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+2019-06-15 14:46:43,996 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:startPlugins(396)) - Started plug-in org.apache.hadoop.ozone.web.OzoneHddsDatanodeService@100eeedc
+2019-06-15 14:46:43,996 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - HddsDatanode metrics system started (again)
+2019-06-15 14:46:43,998 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:start(185)) - HddsDatanodeService host:ozone-unit-076618677d3-4xtgz-810526965 ip:192.168.11.227
+2019-06-15 14:46:43,999 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:44,001 INFO  datanode.InitDatanodeState (InitDatanodeState.java:persistContainerDatanodeDetails(140)) - DatanodeDetails is persisted to /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-7/meta/datanode.id
+2019-06-15 14:46:44,023 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-8/data/containers/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-15 14:46:44,023 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-8/data/containers/hdds to VolumeSet
+2019-06-15 14:46:44,023 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@139089a4
+2019-06-15 14:46:44,024 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@139089a4
+2019-06-15 14:46:44,035 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 45633
+2019-06-15 14:46:44,035 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-15 14:46:44,036 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 45633 (custom)
+2019-06-15 14:46:44,036 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-15 14:46:44,037 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-15 14:46:44,037 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-15 14:46:44,037 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-15 14:46:44,038 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-8/data/ratis] (custom)
+2019-06-15 14:46:44,038 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 38177
+2019-06-15 14:46:44,038 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-15 14:46:44,039 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for hddsDatanode at: http://0.0.0.0:0
+2019-06-15 14:46:44,041 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:44,041 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:44,042 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:44,043 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hddsDatanode
+2019-06-15 14:46:44,043 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:44,043 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:44,044 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 32809
+2019-06-15 14:46:44,044 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:44,045 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@21f91efa{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:44,046 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@35e75f7a{/static,jar:file:/home/user/.m2/repository/org/apache/hadoop/hadoop-hdds-container-service/0.5.0-SNAPSHOT/hadoop-hdds-container-service-0.5.0-SNAPSHOT.jar!/webapps/static,AVAILABLE}
+2019-06-15 14:46:44,094 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@5fe5c68b{/,file:///opt/src/hadoop-ozone/integration-test/target/tmp/kms/webapp/,AVAILABLE}{/hddsDatanode}
+2019-06-15 14:46:44,095 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@2ffb0d10{HTTP/1.1,[http/1.1]}{0.0.0.0:32809}
+2019-06-15 14:46:44,096 INFO  server.Server (Server.java:doStart(419)) - Started @6738ms
+2019-06-15 14:46:44,097 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of HDDSDATANODE is listening at http://0.0.0.0:32809
+Jun 15, 2019 2:46:44 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+2019-06-15 14:46:44,210 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:startPlugins(396)) - Started plug-in org.apache.hadoop.ozone.web.OzoneHddsDatanodeService@6533629
+2019-06-15 14:46:44,211 INFO  impl.MetricsSystemImpl (MetricsSystemImpl.java:init(158)) - HddsDatanode metrics system started (again)
+2019-06-15 14:46:44,217 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:start(185)) - HddsDatanodeService host:ozone-unit-076618677d3-4xtgz-810526965 ip:192.168.11.227
+2019-06-15 14:46:44,226 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:44,236 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-9/data/containers/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-15 14:46:44,236 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-9/data/containers/hdds to VolumeSet
+2019-06-15 14:46:44,236 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@391d28ea
+2019-06-15 14:46:44,236 INFO  datanode.InitDatanodeState (InitDatanodeState.java:persistContainerDatanodeDetails(140)) - DatanodeDetails is persisted to /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-8/meta/datanode.id
+2019-06-15 14:46:44,239 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@391d28ea
+2019-06-15 14:46:44,248 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 42301
+2019-06-15 14:46:44,249 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-15 14:46:44,250 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 42301 (custom)
+2019-06-15 14:46:44,250 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-15 14:46:44,250 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-15 14:46:44,250 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-15 14:46:44,250 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-15 14:46:44,251 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-9/data/ratis] (custom)
+2019-06-15 14:46:44,251 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 33935
+2019-06-15 14:46:44,251 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-15 14:46:44,252 INFO  hdfs.DFSUtil (DFSUtil.java:httpServerTemplateForNNAndJN(1641)) - Starting Web-server for hddsDatanode at: http://0.0.0.0:0
+2019-06-15 14:46:44,254 INFO  server.AuthenticationFilter (AuthenticationFilter.java:constructSecretProvider(240)) - Unable to initialize FileSignerSecretProvider, falling back to use random secrets.
+2019-06-15 14:46:44,254 WARN  http.HttpRequestLog (HttpRequestLog.java:getRequestLog(97)) - Jetty request log can only be enabled using Log4j
+2019-06-15 14:46:44,255 INFO  http.HttpServer2 (HttpServer2.java:addGlobalFilter(975)) - Added global filter 'safety' (class=org.apache.hadoop.http.HttpServer2$QuotingInputFilter)
+2019-06-15 14:46:44,255 INFO  http.HttpServer2 (HttpServer2.java:addFilter(948)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context hddsDatanode
+2019-06-15 14:46:44,256 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2019-06-15 14:46:44,256 INFO  http.HttpServer2 (HttpServer2.java:addFilter(958)) - Added filter static_user_filter (class=org.apache.hadoop.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2019-06-15 14:46:44,256 INFO  http.HttpServer2 (HttpServer2.java:bindListener(1191)) - Jetty bound to port 40819
+2019-06-15 14:46:44,256 INFO  server.Server (Server.java:doStart(351)) - jetty-9.3.24.v20180605, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+2019-06-15 14:46:44,264 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@4f20b022{/logs,file:///opt/src/hadoop-ozone/integration-test/target/log,AVAILABLE}
+2019-06-15 14:46:44,264 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.s.ServletContextHandler@24fef542{/static,jar:file:/home/user/.m2/repository/org/apache/hadoop/hadoop-hdds-container-service/0.5.0-SNAPSHOT/hadoop-hdds-container-service-0.5.0-SNAPSHOT.jar!/webapps/static,AVAILABLE}
+2019-06-15 14:46:44,285 INFO  handler.ContextHandler (ContextHandler.java:doStart(781)) - Started o.e.j.w.WebAppContext@5fa5c8cf{/,file:///opt/src/hadoop-ozone/integration-test/target/tmp/kms/webapp/,AVAILABLE}{/hddsDatanode}
+2019-06-15 14:46:44,285 INFO  server.AbstractConnector (AbstractConnector.java:doStart(278)) - Started ServerConnector@d7055be{HTTP/1.1,[http/1.1]}{0.0.0.0:40819}
+2019-06-15 14:46:44,286 INFO  server.Server (Server.java:doStart(419)) - Started @6929ms
+2019-06-15 14:46:44,287 INFO  server.BaseHttpServer (BaseHttpServer.java:updateConnectorAddress(207)) - HTTP server of HDDSDATANODE is listening at http://0.0.0.0:40819
+Jun 15, 2019 2:46:44 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.19 02/11/2015 03:25 AM'
+2019-06-15 14:46:44,405 INFO  ozone.HddsDatanodeService (HddsDatanodeService.java:startPlugins(396)) - Started plug-in org.apache.hadoop.ozone.web.OzoneHddsDatanodeService@4ac19bc6
+2019-06-15 14:46:44,405 INFO  om.OzoneManager (OzoneManager.java:readKeyPair(779)) - Reading keypair and certificate from file system.
+2019-06-15 14:46:44,409 INFO  om.OzoneManager (OzoneManager.java:startSecretManager(745)) - Starting OM block token secret manager
+2019-06-15 14:46:44,409 INFO  security.OzoneBlockTokenSecretManager (OzoneSecretManager.java:updateCurrentKey(167)) - Updating the current master key for generating tokens
+2019-06-15 14:46:44,410 INFO  ozone.MiniOzoneClusterImpl (MiniOzoneClusterImpl.java:lambda$waitForClusterToBeReady$0(142)) - Waiting for cluster to be ready. Got 0 of 10 DN Heartbeats.
+2019-06-15 14:46:44,413 INFO  util.JvmPauseMonitor (JvmPauseMonitor.java:run(188)) - Starting JVM pause monitor
+2019-06-15 14:46:44,415 INFO  datanode.InitDatanodeState (InitDatanodeState.java:persistContainerDatanodeDetails(140)) - DatanodeDetails is persisted to /opt/src/hadoop-ozone/integration-test/target/test-dir/MiniOzoneClusterImpl-445cbcdb-60fe-4dc7-8e5c-48796b8b4cf2/datanode-9/meta/datanode.id
+2019-06-15 14:46:44,690 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-15 14:46:44,690 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-15 14:46:44,690 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis 48f31a62-4f6f-477d-876b-e2f738f9e61d at port 39067
+2019-06-15 14:46:44,705 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - 48f31a62-4f6f-477d-876b-e2f738f9e61d: start RPC server
+2019-06-15 14:46:44,848 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - 48f31a62-4f6f-477d-876b-e2f738f9e61d: GrpcService started, listening on 0.0.0.0/0.0.0.0:39067
+2019-06-15 14:46:44,855 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-15 14:46:44,855 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-15 14:46:44,855 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis eb1d09c8-f0f3-49f3-8f21-5b6f6b23699f at port 39273
+2019-06-15 14:46:44,885 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - eb1d09c8-f0f3-49f3-8f21-5b6f6b23699f: start RPC server
+2019-06-15 14:46:44,889 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - eb1d09c8-f0f3-49f3-8f21-5b6f6b23699f: GrpcService started, listening on 0.0.0.0/0.0.0.0:39273
+2019-06-15 14:46:45,055 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-15 14:46:45,055 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-15 14:46:45,056 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis bf074251-9f46-4833-b6b9-08ee40def018 at port 33271
+2019-06-15 14:46:45,075 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - bf074251-9f46-4833-b6b9-08ee40def018: start RPC server
+2019-06-15 14:46:45,077 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - bf074251-9f46-4833-b6b9-08ee40def018: GrpcService started, listening on 0.0.0.0/0.0.0.0:33271
+2019-06-15 14:46:45,239 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-15 14:46:45,239 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-15 14:46:45,240 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis dcded1e2-46f8-4916-80ed-c8e030e6129a at port 40733
+2019-06-15 14:46:45,257 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - dcded1e2-46f8-4916-80ed-c8e030e6129a: start RPC server
+2019-06-15 14:46:45,260 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - dcded1e2-46f8-4916-80ed-c8e030e6129a: GrpcService started, listening on 0.0.0.0/0.0.0.0:40733
+2019-06-15 14:46:45,410 INFO  ozone.MiniOzoneClusterImpl (MiniOzoneClusterImpl.java:lambda$waitForClusterToBeReady$0(142)) - Waiting for cluster to be ready. Got 0 of 10 DN Heartbeats.
+2019-06-15 14:46:45,435 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-15 14:46:45,435 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-15 14:46:45,435 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis 08c752fa-1540-44dd-957f-3704b6ba57e2 at port 42215
+2019-06-15 14:46:45,441 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - 08c752fa-1540-44dd-957f-3704b6ba57e2: start RPC server
+2019-06-15 14:46:45,443 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - 08c752fa-1540-44dd-957f-3704b6ba57e2: GrpcService started, listening on 0.0.0.0/0.0.0.0:42215
+2019-06-15 14:46:45,656 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-15 14:46:45,656 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-15 14:46:45,656 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis 43ad34f4-bfbe-407b-b505-5c88b0db17cb at port 34473
+2019-06-15 14:46:45,664 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - 43ad34f4-bfbe-407b-b505-5c88b0db17cb: start RPC server
+2019-06-15 14:46:45,666 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - 43ad34f4-bfbe-407b-b505-5c88b0db17cb: GrpcService started, listening on 0.0.0.0/0.0.0.0:34473
+2019-06-15 14:46:45,819 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-15 14:46:45,819 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-15 14:46:45,819 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis 1f989493-2485-4680-a150-b8b9c56cced0 at port 46007
+2019-06-15 14:46:45,823 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - 1f989493-2485-4680-a150-b8b9c56cced0: start RPC server
+2019-06-15 14:46:45,826 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - 1f989493-2485-4680-a150-b8b9c56cced0: GrpcService started, listening on 0.0.0.0/0.0.0.0:46007
+2019-06-15 14:46:46,004 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-15 14:46:46,004 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-15 14:46:46,004 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis 6f8a1c5a-43f5-4578-b5d4-017c9ed0880a at port 44425
+2019-06-15 14:46:46,008 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - 6f8a1c5a-43f5-4578-b5d4-017c9ed0880a: start RPC server
+2019-06-15 14:46:46,012 ERROR server.GrpcService (ExitUtils.java:terminate(133)) - Terminating with exit status 1: Failed to start Grpc server
+java.io.IOException: Failed to bind
+	at org.apache.ratis.thirdparty.io.grpc.netty.NettyServer.start(NettyServer.java:253)
+	at org.apache.ratis.thirdparty.io.grpc.internal.ServerImpl.start(ServerImpl.java:166)
+	at org.apache.ratis.thirdparty.io.grpc.internal.ServerImpl.start(ServerImpl.java:81)
+	at org.apache.ratis.grpc.server.GrpcService.startImpl(GrpcService.java:144)
+	at org.apache.ratis.util.LifeCycle.startAndTransition(LifeCycle.java:202)
+	at org.apache.ratis.server.impl.RaftServerRpcWithProxy.start(RaftServerRpcWithProxy.java:69)
+	at org.apache.ratis.server.impl.RaftServerProxy.lambda$start$3(RaftServerProxy.java:300)
+	at org.apache.ratis.util.LifeCycle.startAndTransition(LifeCycle.java:202)
+	at org.apache.ratis.server.impl.RaftServerProxy.start(RaftServerProxy.java:298)
+	at org.apache.hadoop.ozone.container.common.transport.server.ratis.XceiverServerRatis.start(XceiverServerRatis.java:421)
+	at org.apache.hadoop.ozone.container.ozoneimpl.OzoneContainer.start(OzoneContainer.java:188)
+	at org.apache.hadoop.ozone.container.common.states.endpoint.VersionEndpointTask.call(VersionEndpointTask.java:110)
+	at org.apache.hadoop.ozone.container.common.states.endpoint.VersionEndpointTask.call(VersionEndpointTask.java:42)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.BindException: Address in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at org.apache.ratis.thirdparty.io.netty.channel.socket.nio.NioServerSocketChannel.doBind(NioServerSocketChannel.java:130)
+	at org.apache.ratis.thirdparty.io.netty.channel.AbstractChannel$AbstractUnsafe.bind(AbstractChannel.java:558)
+	at org.apache.ratis.thirdparty.io.netty.channel.DefaultChannelPipeline$HeadContext.bind(DefaultChannelPipeline.java:1358)
+	at org.apache.ratis.thirdparty.io.netty.channel.AbstractChannelHandlerContext.invokeBind(AbstractChannelHandlerContext.java:501)
+	at org.apache.ratis.thirdparty.io.netty.channel.AbstractChannelHandlerContext.bind(AbstractChannelHandlerContext.java:486)
+	at org.apache.ratis.thirdparty.io.netty.channel.DefaultChannelPipeline.bind(DefaultChannelPipeline.java:1019)
+	at org.apache.ratis.thirdparty.io.netty.channel.AbstractChannel.bind(AbstractChannel.java:254)
+	at org.apache.ratis.thirdparty.io.netty.bootstrap.AbstractBootstrap$2.run(AbstractBootstrap.java:366)
+	at org.apache.ratis.thirdparty.io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at org.apache.ratis.thirdparty.io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at org.apache.ratis.thirdparty.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at org.apache.ratis.thirdparty.io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at org.apache.ratis.thirdparty.io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+2019-06-15 14:46:46,027 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-15 14:46:46,028 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-15 14:46:46,029 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-15 14:46:46,030 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-15 14:46:46,030 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-15 14:46:46,030 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-15 14:46:46,030 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-15 14:46:46,031 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-15 14:46:46,031 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-15 14:46:46,031 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
