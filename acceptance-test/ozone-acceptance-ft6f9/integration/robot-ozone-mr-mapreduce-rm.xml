@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190615 08:35:39.672" generator="Robot 3.1.1 (Python 2.7.5 on linux2)">
+<suite source="/opt/ozone/smoketest/mapreduce.robot" id="s1" name="mapreduce">
+<test id="s1-t1" name="Execute PI calculation">
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>yarn jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-${hadoop.version}.jar pi 3 3</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190615 08:35:39.704" level="INFO">Running command 'yarn jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.0.jar pi 3 3 2&gt;&amp;1'.</msg>
+<msg timestamp="20190615 08:36:15.005" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190615 08:36:15.005" level="INFO">${output} = Number of Maps  = 3
+Samples per Map = 3
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-...</msg>
+<status status="PASS" endtime="20190615 08:36:15.005" starttime="20190615 08:35:39.703"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190615 08:36:15.006" level="INFO">Number of Maps  = 3
+Samples per Map = 3
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=0, SUCCESS, logIndex=1, commits[fa814321-282f-49af-a9c5-f8337e70c382:c2]
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=1, SUCCESS, logIndex=3, commits[fa814321-282f-49af-a9c5-f8337e70c382:c4]
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=2, SUCCESS, logIndex=5, commits[fa814321-282f-49af-a9c5-f8337e70c382:c5]
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=3, SUCCESS, logIndex=7, commits[fa814321-282f-49af-a9c5-f8337e70c382:c8]
+Wrote input for Map #0
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=4, SUCCESS, logIndex=1, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c2]
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=5, SUCCESS, logIndex=3, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c4]
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=6, SUCCESS, logIndex=5, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c5]
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=7, SUCCESS, logIndex=7, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c8]
+Wrote input for Map #1
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=8, SUCCESS, logIndex=9, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c9]
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=9, SUCCESS, logIndex=11, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c12]
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=10, SUCCESS, logIndex=13, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c13]
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=11, SUCCESS, logIndex=15, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c16]
+Wrote input for Map #2
+Starting Job
+2019-06-15 08:35:43 INFO  RMProxy:133 - Connecting to ResourceManager at rm/172.18.0.3:8032
+2019-06-15 08:35:43 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=12, SUCCESS, logIndex=9, commits[fa814321-282f-49af-a9c5-f8337e70c382:c10]
+2019-06-15 08:35:43 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=13, SUCCESS, logIndex=11, commits[fa814321-282f-49af-a9c5-f8337e70c382:c12]
+2019-06-15 08:35:43 INFO  FileInputFormat:292 - Total input files to process : 3
+2019-06-15 08:35:43 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=14, SUCCESS, logIndex=13, commits[fa814321-282f-49af-a9c5-f8337e70c382:c14]
+2019-06-15 08:35:43 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=15, SUCCESS, logIndex=15, commits[fa814321-282f-49af-a9c5-f8337e70c382:c16]
+2019-06-15 08:35:43 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=16, SUCCESS, logIndex=17, commits[fa814321-282f-49af-a9c5-f8337e70c382:c17]
+2019-06-15 08:35:43 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=17, SUCCESS, logIndex=19, commits[fa814321-282f-49af-a9c5-f8337e70c382:c19]
+2019-06-15 08:35:43 INFO  JobSubmitter:202 - number of splits:3
+2019-06-15 08:35:43 INFO  deprecation:1394 - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2019-06-15 08:35:43 INFO  GrpcClientProtocolClient:254 - client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=18, SUCCESS, logIndex=17, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c18]
+2019-06-15 08:35:43 INFO  GrpcClientProtocolClient:254 - client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-D7848B6F6686-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=19, SUCCESS, logIndex=19, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c20]
+2019-06-15 08:35:43 INFO  JobSubmitter:298 - Submitting tokens for job: job_1560587709100_0001
+2019-06-15 08:35:43 INFO  JobSubmitter:299 - Executing with tokens: []
+2019-06-15 08:35:43 INFO  Configuration:2752 - resource-types.xml not found
+2019-06-15 08:35:43 INFO  ResourceUtils:419 - Unable to find 'resource-types.xml'.
+2019-06-15 08:35:44 INFO  YarnClientImpl:311 - Submitted application application_1560587709100_0001
+2019-06-15 08:35:44 INFO  Job:1574 - The url to track the job: http://rm:8088/proxy/application_1560587709100_0001/
+2019-06-15 08:35:44 INFO  Job:1619 - Running job: job_1560587709100_0001
+2019-06-15 08:35:53 INFO  Job:1640 - Job job_1560587709100_0001 running in uber mode : false
+2019-06-15 08:35:53 INFO  Job:1647 -  map 0% reduce 0%
+2019-06-15 08:35:59 INFO  Job:1647 -  map 33% reduce 0%
+2019-06-15 08:36:04 INFO  Job:1647 -  map 67% reduce 0%
+2019-06-15 08:36:09 INFO  Job:1647 -  map 100% reduce 0%
+2019-06-15 08:36:14 INFO  Job:1647 -  map 100% reduce 100%
+2019-06-15 08:36:14 INFO  Job:1658 - Job job_1560587709100_0001 completed successfully
+2019-06-15 08:36:14 INFO  Job:1665 - Counters: 53
+	File System Counters
+		FILE: Number of bytes read=72
+		FILE: Number of bytes written=1045405
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		O3FS: Number of bytes read=0
+		O3FS: Number of bytes written=215
+		O3FS: Number of read operations=15
+		O3FS: Number of large read operations=0
+		O3FS: Number of write operations=9
+	Job Counters 
+		Launched map tasks=3
+		Launched reduce tasks=1
+		Rack-local map tasks=3
+		Total time spent by all maps in occupied slots (ms)=36068
+		Total time spent by all reduces in occupied slots (ms)=13552
+		Total time spent by all map tasks (ms)=9017
+		Total time spent by all reduce tasks (ms)=3388
+		Total vcore-milliseconds taken by all map tasks=9017
+		Total vcore-milliseconds taken by all reduce tasks=3388
+		Total megabyte-milliseconds taken by all map tasks=36933632
+		Total megabyte-milliseconds taken by all reduce tasks=13877248
+	Map-Reduce Framework
+		Map input records=3
+		Map output records=6
+		Map output bytes=54
+		Map output materialized bytes=84
+		Input split bytes=435
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=2
+		Reduce shuffle bytes=84
+		Reduce input records=6
+		Reduce output records=0
+		Spilled Records=12
+		Shuffled Maps =3
+		Failed Shuffles=0
+		Merged Map outputs=3
+		GC time elapsed (ms)=481
+		CPU time spent (ms)=7610
+		Physical memory (bytes) snapshot=1842573312
+		Virtual memory (bytes) snapshot=16335011840
+		Total committed heap usage (bytes)=2791309312
+		Peak Map Physical memory (bytes)=453832704
+		Peak Map Virtual memory (bytes)=4091965440
+		Peak Reduce Physical memory (bytes)=508002304
+		Peak Reduce Virtual memory (bytes)=4103995392
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=97
+Job Finished in 31.456 seconds
+Estimated value of Pi is 3.55555555555555555556</msg>
+<status status="PASS" endtime="20190615 08:36:15.007" starttime="20190615 08:36:15.006"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190615 08:36:15.007" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190615 08:36:15.007" starttime="20190615 08:36:15.007"></status>
+</kw>
+<msg timestamp="20190615 08:36:15.008" level="INFO">${output} = Number of Maps  = 3
+Samples per Map = 3
+2019-06-15 08:35:42 INFO  GrpcClientProtocolClient:254 - client-045723C168BF-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-045723C168BF-...</msg>
+<status status="PASS" endtime="20190615 08:36:15.008" starttime="20190615 08:35:39.702"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>completed successfully</arg>
+</arguments>
+<status status="PASS" endtime="20190615 08:36:15.008" starttime="20190615 08:36:15.008"></status>
+</kw>
+<timeout value="2 minutes"></timeout>
+<status status="PASS" endtime="20190615 08:36:15.008" critical="yes" starttime="20190615 08:35:39.701"></status>
+</test>
+<test id="s1-t2" name="Execute WordCount">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>2</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${random}</var>
+</assign>
+<msg timestamp="20190615 08:36:15.010" level="INFO">${random} = 76</msg>
+<status status="PASS" endtime="20190615 08:36:15.010" starttime="20190615 08:36:15.010"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>yarn jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-${hadoop.version}.jar wordcount o3fs://bucket1.vol1/key1 o3fs://bucket1.vol1/key1-${random}.count</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190615 08:36:15.012" level="INFO">Running command 'yarn jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.0.jar wordcount o3fs://bucket1.vol1/key1 o3fs://bucket1.vol1/key1-76.count 2&gt;&amp;1'.</msg>
+<msg timestamp="20190615 08:36:40.215" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190615 08:36:40.215" level="INFO">${output} = 2019-06-15 08:36:16 INFO  RMProxy:133 - Connecting to ResourceManager at rm/172.18.0.3:8032
+2019-06-15 08:36:16 INFO  JobSubmissionFiles:156 - Permissions on staging directory /user/hadoop/.staging ar...</msg>
+<status status="PASS" endtime="20190615 08:36:40.215" starttime="20190615 08:36:15.011"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190615 08:36:40.216" level="INFO">2019-06-15 08:36:16 INFO  RMProxy:133 - Connecting to ResourceManager at rm/172.18.0.3:8032
+2019-06-15 08:36:16 INFO  JobSubmissionFiles:156 - Permissions on staging directory /user/hadoop/.staging are incorrect: rwxrwxrwx. Fixing permissions to correct value rwx------
+2019-06-15 08:36:18 INFO  GrpcClientProtocolClient:254 - client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=0, SUCCESS, logIndex=33, commits[fa814321-282f-49af-a9c5-f8337e70c382:c33]
+2019-06-15 08:36:18 INFO  GrpcClientProtocolClient:254 - client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=1, SUCCESS, logIndex=35, commits[fa814321-282f-49af-a9c5-f8337e70c382:c35]
+2019-06-15 08:36:18 INFO  FileInputFormat:292 - Total input files to process : 1
+2019-06-15 08:36:18 INFO  GrpcClientProtocolClient:254 - client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=2, SUCCESS, logIndex=37, commits[fa814321-282f-49af-a9c5-f8337e70c382:c37]
+2019-06-15 08:36:18 INFO  GrpcClientProtocolClient:254 - client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=3, SUCCESS, logIndex=39, commits[fa814321-282f-49af-a9c5-f8337e70c382:c39]
+2019-06-15 08:36:18 INFO  GrpcClientProtocolClient:254 - client-002545C41397-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-002545C41397-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=4, SUCCESS, logIndex=121, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c121]
+2019-06-15 08:36:18 INFO  GrpcClientProtocolClient:254 - client-002545C41397-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3: receive RaftClientReply:client-002545C41397-&gt;8d2fe7f5-47b3-4624-a5d6-4818f5f290d3@group-391915C6D3D1, cid=5, SUCCESS, logIndex=123, commits[8d2fe7f5-47b3-4624-a5d6-4818f5f290d3:c123]
+2019-06-15 08:36:18 INFO  JobSubmitter:202 - number of splits:1
+2019-06-15 08:36:18 INFO  deprecation:1394 - yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+2019-06-15 08:36:18 INFO  GrpcClientProtocolClient:254 - client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=6, SUCCESS, logIndex=41, commits[fa814321-282f-49af-a9c5-f8337e70c382:c41]
+2019-06-15 08:36:18 INFO  GrpcClientProtocolClient:254 - client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382: receive RaftClientReply:client-74914A9EC211-&gt;fa814321-282f-49af-a9c5-f8337e70c382@group-CDA268516B46, cid=7, SUCCESS, logIndex=43, commits[fa814321-282f-49af-a9c5-f8337e70c382:c43]
+2019-06-15 08:36:18 INFO  JobSubmitter:298 - Submitting tokens for job: job_1560587709100_0002
+2019-06-15 08:36:18 INFO  JobSubmitter:299 - Executing with tokens: []
+2019-06-15 08:36:18 INFO  Configuration:2752 - resource-types.xml not found
+2019-06-15 08:36:18 INFO  ResourceUtils:419 - Unable to find 'resource-types.xml'.
+2019-06-15 08:36:18 INFO  YarnClientImpl:311 - Submitted application application_1560587709100_0002
+2019-06-15 08:36:18 INFO  Job:1574 - The url to track the job: http://rm:8088/proxy/application_1560587709100_0002/
+2019-06-15 08:36:18 INFO  Job:1619 - Running job: job_1560587709100_0002
+2019-06-15 08:36:26 INFO  Job:1640 - Job job_1560587709100_0002 running in uber mode : false
+2019-06-15 08:36:26 INFO  Job:1647 -  map 0% reduce 0%
+2019-06-15 08:36:33 INFO  Job:1647 -  map 100% reduce 0%
+2019-06-15 08:36:39 INFO  Job:1647 -  map 100% reduce 100%
+2019-06-15 08:36:39 INFO  Job:1658 - Job job_1560587709100_0002 completed successfully
+2019-06-15 08:36:39 INFO  Job:1665 - Counters: 53
+	File System Counters
+		FILE: Number of bytes read=47365
+		FILE: Number of bytes written=616629
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		O3FS: Number of bytes read=0
+		O3FS: Number of bytes written=35779
+		O3FS: Number of read operations=10
+		O3FS: Number of large read operations=0
+		O3FS: Number of write operations=4
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Rack-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=12768
+		Total time spent by all reduces in occupied slots (ms)=12852
+		Total time spent by all map tasks (ms)=3192
+		Total time spent by all reduce tasks (ms)=3213
+		Total vcore-milliseconds taken by all map tasks=3192
+		Total vcore-milliseconds taken by all reduce tasks=3213
+		Total megabyte-milliseconds taken by all map tasks=13074432
+		Total megabyte-milliseconds taken by all reduce tasks=13160448
+	Map-Reduce Framework
+		Map input records=2887
+		Map output records=22348
+		Map output bytes=239134
+		Map output materialized bytes=47365
+		Input split bytes=89
+		Combine input records=22348
+		Combine output records=3001
+		Reduce input groups=3001
+		Reduce shuffle bytes=47365
+		Reduce input records=3001
+		Reduce output records=3001
+		Spilled Records=6002
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=238
+		CPU time spent (ms)=4990
+		Physical memory (bytes) snapshot=969977856
+		Virtual memory (bytes) snapshot=8155435008
+		Total committed heap usage (bytes)=1411383296
+		Peak Map Physical memory (bytes)=456294400
+		Peak Map Virtual memory (bytes)=4091678720
+		Peak Reduce Physical memory (bytes)=513683456
+		Peak Reduce Virtual memory (bytes)=4063756288
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=35779</msg>
+<status status="PASS" endtime="20190615 08:36:40.216" starttime="20190615 08:36:40.216"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190615 08:36:40.217" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190615 08:36:40.217" starttime="20190615 08:36:40.216"></status>
+</kw>
+<msg timestamp="20190615 08:36:40.217" level="INFO">${output} = 2019-06-15 08:36:16 INFO  RMProxy:133 - Connecting to ResourceManager at rm/172.18.0.3:8032
+2019-06-15 08:36:16 INFO  JobSubmissionFiles:156 - Permissions on staging directory /user/hadoop/.staging ar...</msg>
+<status status="PASS" endtime="20190615 08:36:40.217" starttime="20190615 08:36:15.010"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>completed successfully</arg>
+</arguments>
+<status status="PASS" endtime="20190615 08:36:40.217" starttime="20190615 08:36:40.217"></status>
+</kw>
+<timeout value="2 minutes"></timeout>
+<status status="PASS" endtime="20190615 08:36:40.218" critical="yes" starttime="20190615 08:36:15.009"></status>
+</test>
+<doc>Execute MR jobs</doc>
+<status status="PASS" endtime="20190615 08:36:40.218" starttime="20190615 08:35:39.672"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="mapreduce" pass="2">mapreduce</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
