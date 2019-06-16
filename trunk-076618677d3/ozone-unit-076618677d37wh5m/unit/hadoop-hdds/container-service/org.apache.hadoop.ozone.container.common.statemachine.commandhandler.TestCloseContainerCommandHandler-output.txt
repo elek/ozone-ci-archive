@@ -1,0 +1,523 @@
+2019-06-16 20:34:22,364 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler36500a16-f73a-4a9a-a0fb-0a3ab7eb11c2/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-16 20:34:22,368 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler36500a16-f73a-4a9a-a0fb-0a3ab7eb11c2/hdds to VolumeSet
+2019-06-16 20:34:22,391 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@28cda624
+2019-06-16 20:34:22,415 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@28cda624
+ERROR StatusLogger No Log4j 2 configuration file found. Using default configuration (logging only errors to the console), or user programmatically provided configurations. Set system property 'log4j2.debug' to show Log4j 2 internal initialization logging. See https://logging.apache.org/log4j/2.x/manual/configuration.html for instructions on how to configure Log4j 2
+2019-06-16 20:34:22,734 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 44685
+2019-06-16 20:34:23,171 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-16 20:34:23,194 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-16 20:34:23,201 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 44685 (custom)
+2019-06-16 20:34:23,202 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-16 20:34:23,204 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-16 20:34:23,205 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-16 20:34:23,206 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-16 20:34:23,323 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler36500a16-f73a-4a9a-a0fb-0a3ab7eb11c2/ratis] (custom)
+2019-06-16 20:34:23,332 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 45809
+2019-06-16 20:34:23,350 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-16 20:34:23,351 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-16 20:34:23,352 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis a6f35187-80e1-45aa-ace0-361640d1da76 at port 44685
+2019-06-16 20:34:23,363 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - a6f35187-80e1-45aa-ace0-361640d1da76: start RPC server
+2019-06-16 20:34:23,482 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - a6f35187-80e1-45aa-ace0-361640d1da76: GrpcService started, listening on 0.0.0.0/0.0.0.0:44685
+2019-06-16 20:34:23,750 INFO  impl.RaftServerProxy (RaftServerProxy.java:addNew(89)) - a6f35187-80e1-45aa-ace0-361640d1da76: addNew group-D5CB88B1D054:[a6f35187-80e1-45aa-ace0-361640d1da76:127.0.0.1:44685] returns group-D5CB88B1D054:java.util.concurrent.CompletableFuture@6a65e08e[Not completed]
+2019-06-16 20:34:23,775 INFO  impl.RaftServerImpl (RaftServerImpl.java:<init>(91)) - a6f35187-80e1-45aa-ace0-361640d1da76: new RaftServerImpl for group-D5CB88B1D054:[a6f35187-80e1-45aa-ace0-361640d1da76:127.0.0.1:44685] with ContainerStateMachine:uninitialized
+2019-06-16 20:34:23,776 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.min = 1s (custom)
+2019-06-16 20:34:23,777 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.max = 1200ms (custom)
+2019-06-16 20:34:23,777 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpcslowness.timeout = 120s (custom)
+2019-06-16 20:34:23,777 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.install.snapshot.enabled = true (default)
+2019-06-16 20:34:23,782 INFO  impl.RaftServerImpl (ServerState.java:<init>(101)) - a6f35187-80e1-45aa-ace0-361640d1da76:group-D5CB88B1D054 ConfigurationManager, init=-1: [a6f35187-80e1-45aa-ace0-361640d1da76:127.0.0.1:44685], old=null, confs=<EMPTY_MAP>
+2019-06-16 20:34:23,782 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler36500a16-f73a-4a9a-a0fb-0a3ab7eb11c2/ratis] (custom)
+2019-06-16 20:34:23,787 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:analyzeStorage(246)) - The storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler36500a16-f73a-4a9a-a0fb-0a3ab7eb11c2/ratis/4571e0de-2ef8-4e75-8bde-d5cb88b1d054 does not exist. Creating ...
+2019-06-16 20:34:23,795 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:tryLock(328)) - Lock on /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler36500a16-f73a-4a9a-a0fb-0a3ab7eb11c2/ratis/4571e0de-2ef8-4e75-8bde-d5cb88b1d054/in_use.lock acquired by nodename 4300@ozone-unit-076618677d37wh5m-2660526777
+2019-06-16 20:34:23,802 INFO  storage.RaftStorage (RaftStorage.java:format(75)) - Storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler36500a16-f73a-4a9a-a0fb-0a3ab7eb11c2/ratis/4571e0de-2ef8-4e75-8bde-d5cb88b1d054 has been successfully formatted.
+2019-06-16 20:34:23,804 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:loadSnapshot(199)) - The snapshot info is null.Setting the last applied index to:(t:0, i:~)
+2019-06-16 20:34:23,804 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.leader.election.timeout = 120s (custom)
+2019-06-16 20:34:23,806 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.use.memory = false (default)
+2019-06-16 20:34:23,808 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-16 20:34:23,811 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-16 20:34:23,815 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.cache.num.max = 2 (custom)
+2019-06-16 20:34:23,818 INFO  storage.RaftLogWorker (RaftLogWorker.java:<init>(123)) - new a6f35187-80e1-45aa-ace0-361640d1da76-RaftLogWorker for Storage Directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler36500a16-f73a-4a9a-a0fb-0a3ab7eb11c2/ratis/4571e0de-2ef8-4e75-8bde-d5cb88b1d054
+2019-06-16 20:34:23,819 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.byte-limit = 2147483647 (custom)
+2019-06-16 20:34:23,819 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.element-limit = 1024 (custom)
+2019-06-16 20:34:23,821 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-16 20:34:23,821 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.preallocated.size = 16384 (custom)
+2019-06-16 20:34:23,822 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.write.buffer.size = 33554432 (custom)
+2019-06-16 20:34:23,822 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.force.sync.num = 128 (default)
+2019-06-16 20:34:23,823 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync = true (default)
+2019-06-16 20:34:23,823 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout = 10s (default)
+2019-06-16 20:34:23,824 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout.retry = -1 (default)
+2019-06-16 20:34:23,826 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.caching.enabled = true (custom)
+2019-06-16 20:34:23,831 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.enabled = true (custom)
+2019-06-16 20:34:23,832 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.threshold = 10000 (custom)
+2019-06-16 20:34:23,833 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.retrycache.expirytime = 600000ms (custom)
+2019-06-16 20:34:23,935 INFO  impl.RaftServerImpl (RaftServerImpl.java:start(173)) - a6f35187-80e1-45aa-ace0-361640d1da76: start group-D5CB88B1D054
+2019-06-16 20:34:23,936 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - a6f35187-80e1-45aa-ace0-361640d1da76:group-D5CB88B1D054 changes role from null to FOLLOWER at term 0 for startAsFollower
+2019-06-16 20:34:23,937 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - a6f35187-80e1-45aa-ace0-361640d1da76: start FollowerState
+2019-06-16 20:34:23,939 INFO  util.JmxRegister (JmxRegister.java:tryRegister(44)) - Successfully registered JMX Bean with object name Ratis:service=RaftServer,group=group-D5CB88B1D054,id=a6f35187-80e1-45aa-ace0-361640d1da76
+2019-06-16 20:34:25,068 INFO  impl.FollowerState (FollowerState.java:run(101)) - a6f35187-80e1-45aa-ace0-361640d1da76:group-D5CB88B1D054 changes to CANDIDATE, lastRpcTime:1130, electionTimeout:1130ms
+2019-06-16 20:34:25,068 INFO  impl.RoleInfo (RoleInfo.java:shutdownFollowerState(121)) - a6f35187-80e1-45aa-ace0-361640d1da76: shutdown FollowerState
+2019-06-16 20:34:25,068 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - a6f35187-80e1-45aa-ace0-361640d1da76:group-D5CB88B1D054 changes role from FOLLOWER to CANDIDATE at term 0 for changeToCandidate
+2019-06-16 20:34:25,069 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - a6f35187-80e1-45aa-ace0-361640d1da76: start LeaderElection
+2019-06-16 20:34:25,072 INFO  impl.LeaderElection (LeaderElection.java:askForVotes(181)) - a6f35187-80e1-45aa-ace0-361640d1da76:group-D5CB88B1D054:LeaderElection1: begin an election at term 1 for -1: [a6f35187-80e1-45aa-ace0-361640d1da76:127.0.0.1:44685], old=null
+2019-06-16 20:34:25,073 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderElection(134)) - a6f35187-80e1-45aa-ace0-361640d1da76: shutdown LeaderElection
+2019-06-16 20:34:25,074 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - a6f35187-80e1-45aa-ace0-361640d1da76:group-D5CB88B1D054 changes role from CANDIDATE to LEADER at term 1 for changeToLeader
+2019-06-16 20:34:25,074 INFO  impl.RaftServerImpl (ServerState.java:setLeader(263)) - a6f35187-80e1-45aa-ace0-361640d1da76:group-D5CB88B1D054 change Leader from null to a6f35187-80e1-45aa-ace0-361640d1da76 at term 1 for becomeLeader, leader elected after 1269ms
+2019-06-16 20:34:25,077 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.staging.catchup.gap = 1000 (default)
+2019-06-16 20:34:25,078 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.sleep.time = 25ms (default)
+2019-06-16 20:34:25,080 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout = 10s (default)
+2019-06-16 20:34:25,080 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout.denomination = 1s (default)
+2019-06-16 20:34:25,089 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - a6f35187-80e1-45aa-ace0-361640d1da76: start LeaderState
+2019-06-16 20:34:25,100 INFO  storage.RaftLogWorker (RaftLogWorker.java:startLogSegment(298)) - a6f35187-80e1-45aa-ace0-361640d1da76-RaftLogWorker: Starting segment from index:0
+2019-06-16 20:34:25,106 INFO  impl.RaftServerImpl (ServerState.java:setRaftConf(361)) - a6f35187-80e1-45aa-ace0-361640d1da76:group-D5CB88B1D054 set configuration 0: [a6f35187-80e1-45aa-ace0-361640d1da76:127.0.0.1:44685], old=null at 0
+2019-06-16 20:34:25,228 INFO  storage.RaftLogWorker (RaftLogWorker.java:execute(469)) - a6f35187-80e1-45aa-ace0-361640d1da76-RaftLogWorker: created new log segment /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler36500a16-f73a-4a9a-a0fb-0a3ab7eb11c2/ratis/4571e0de-2ef8-4e75-8bde-d5cb88b1d054/current/log_inprogress_0
+2019-06-16 20:34:26,155 WARN  util.NativeCodeLoader (NativeCodeLoader.java:<clinit>(60)) - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2019-06-16 20:34:26,207 INFO  interfaces.Container (KeyValueContainer.java:compactDB(356)) - Container 4399211191812834517 is closed with bcsId 0.
+2019-06-16 20:34:26,207 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:stop(199)) - Attempting to stop container services.
+2019-06-16 20:34:26,208 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$close$4(314)) - a6f35187-80e1-45aa-ace0-361640d1da76: close
+2019-06-16 20:34:26,209 INFO  impl.RaftServerImpl (RaftServerImpl.java:lambda$shutdown$3(238)) - a6f35187-80e1-45aa-ace0-361640d1da76: shutdown group-D5CB88B1D054
+2019-06-16 20:34:26,210 INFO  util.JmxRegister (JmxRegister.java:unregister(73)) - Successfully un-registered JMX Bean with object name Ratis:service=RaftServer,group=group-D5CB88B1D054,id=a6f35187-80e1-45aa-ace0-361640d1da76
+2019-06-16 20:34:26,210 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderState(104)) - a6f35187-80e1-45aa-ace0-361640d1da76: shutdown LeaderState
+2019-06-16 20:34:26,210 INFO  impl.PendingRequests (PendingRequests.java:sendNotLeaderResponses(140)) - a6f35187-80e1-45aa-ace0-361640d1da76-PendingRequests: sendNotLeaderResponses
+2019-06-16 20:34:26,212 INFO  impl.StateMachineUpdater (StateMachineUpdater.java:stopAndJoin(109)) - StateMachineUpdater-a6f35187-80e1-45aa-ace0-361640d1da76-group-D5CB88B1D054: set stopIndex = 4
+2019-06-16 20:34:26,212 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(245)) - Taking snapshot at termIndex:(t:1, i:4)
+2019-06-16 20:34:26,213 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(249)) - Taking a snapshot to file /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler36500a16-f73a-4a9a-a0fb-0a3ab7eb11c2/ratis/4571e0de-2ef8-4e75-8bde-d5cb88b1d054/sm/snapshot.1_4
+2019-06-16 20:34:26,220 INFO  impl.RaftServerImpl (ServerState.java:close(394)) - a6f35187-80e1-45aa-ace0-361640d1da76:group-D5CB88B1D054 closes. The last applied log index is 4
+2019-06-16 20:34:26,221 INFO  storage.RaftLogWorker (RaftLogWorker.java:run(236)) - a6f35187-80e1-45aa-ace0-361640d1da76-RaftLogWorker was interrupted, exiting. There are 0 tasks remaining in the queue.
+2019-06-16 20:34:26,222 INFO  storage.RaftLogWorker (RaftLogWorker.java:close(168)) - a6f35187-80e1-45aa-ace0-361640d1da76-RaftLogWorker close()
+2019-06-16 20:34:26,222 INFO  server.GrpcService (GrpcService.java:closeImpl(154)) - a6f35187-80e1-45aa-ace0-361640d1da76: shutdown server with port 44685 now
+2019-06-16 20:34:26,226 INFO  server.GrpcService (GrpcService.java:closeImpl(162)) - a6f35187-80e1-45aa-ace0-361640d1da76: shutdown server with port 44685 successfully
+2019-06-16 20:34:26,233 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-16 20:34:26,266 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler6835abe9-a252-4ebf-92aa-47a119cade96/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-16 20:34:26,266 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler6835abe9-a252-4ebf-92aa-47a119cade96/hdds to VolumeSet
+2019-06-16 20:34:26,267 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@6f7e336b
+2019-06-16 20:34:26,267 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@6f7e336b
+2019-06-16 20:34:26,277 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 33783
+2019-06-16 20:34:26,277 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-16 20:34:26,278 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-16 20:34:26,278 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 33783 (custom)
+2019-06-16 20:34:26,278 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-16 20:34:26,278 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-16 20:34:26,278 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-16 20:34:26,279 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-16 20:34:26,279 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler6835abe9-a252-4ebf-92aa-47a119cade96/ratis] (custom)
+2019-06-16 20:34:26,280 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 43129
+2019-06-16 20:34:26,280 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-16 20:34:26,280 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-16 20:34:26,280 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis 074da7ff-f34b-4d9e-b0f0-f7813e1161e7 at port 33783
+2019-06-16 20:34:26,293 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: start RPC server
+2019-06-16 20:34:26,294 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: GrpcService started, listening on 0.0.0.0/0.0.0.0:33783
+2019-06-16 20:34:26,303 INFO  impl.RaftServerProxy (RaftServerProxy.java:addNew(89)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: addNew group-B1E0560FBB9B:[074da7ff-f34b-4d9e-b0f0-f7813e1161e7:127.0.0.1:33783] returns group-B1E0560FBB9B:java.util.concurrent.CompletableFuture@3253b014[Not completed]
+2019-06-16 20:34:26,310 INFO  impl.RaftServerImpl (RaftServerImpl.java:<init>(91)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: new RaftServerImpl for group-B1E0560FBB9B:[074da7ff-f34b-4d9e-b0f0-f7813e1161e7:127.0.0.1:33783] with ContainerStateMachine:uninitialized
+2019-06-16 20:34:26,310 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.min = 1s (custom)
+2019-06-16 20:34:26,310 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.max = 1200ms (custom)
+2019-06-16 20:34:26,310 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpcslowness.timeout = 120s (custom)
+2019-06-16 20:34:26,311 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.install.snapshot.enabled = true (default)
+2019-06-16 20:34:26,311 INFO  impl.RaftServerImpl (ServerState.java:<init>(101)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7:group-B1E0560FBB9B ConfigurationManager, init=-1: [074da7ff-f34b-4d9e-b0f0-f7813e1161e7:127.0.0.1:33783], old=null, confs=<EMPTY_MAP>
+2019-06-16 20:34:26,311 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler6835abe9-a252-4ebf-92aa-47a119cade96/ratis] (custom)
+2019-06-16 20:34:26,311 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:analyzeStorage(246)) - The storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler6835abe9-a252-4ebf-92aa-47a119cade96/ratis/ced11b41-d098-4cd2-9e10-b1e0560fbb9b does not exist. Creating ...
+2019-06-16 20:34:26,314 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:tryLock(328)) - Lock on /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler6835abe9-a252-4ebf-92aa-47a119cade96/ratis/ced11b41-d098-4cd2-9e10-b1e0560fbb9b/in_use.lock acquired by nodename 4300@ozone-unit-076618677d37wh5m-2660526777
+2019-06-16 20:34:26,316 INFO  storage.RaftStorage (RaftStorage.java:format(75)) - Storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler6835abe9-a252-4ebf-92aa-47a119cade96/ratis/ced11b41-d098-4cd2-9e10-b1e0560fbb9b has been successfully formatted.
+2019-06-16 20:34:26,316 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:loadSnapshot(199)) - The snapshot info is null.Setting the last applied index to:(t:0, i:~)
+2019-06-16 20:34:26,316 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.leader.election.timeout = 120s (custom)
+2019-06-16 20:34:26,317 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.use.memory = false (default)
+2019-06-16 20:34:26,317 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-16 20:34:26,318 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-16 20:34:26,319 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.cache.num.max = 2 (custom)
+2019-06-16 20:34:26,319 INFO  storage.RaftLogWorker (RaftLogWorker.java:<init>(123)) - new 074da7ff-f34b-4d9e-b0f0-f7813e1161e7-RaftLogWorker for Storage Directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler6835abe9-a252-4ebf-92aa-47a119cade96/ratis/ced11b41-d098-4cd2-9e10-b1e0560fbb9b
+2019-06-16 20:34:26,319 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.byte-limit = 2147483647 (custom)
+2019-06-16 20:34:26,319 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.element-limit = 1024 (custom)
+2019-06-16 20:34:26,319 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-16 20:34:26,319 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.preallocated.size = 16384 (custom)
+2019-06-16 20:34:26,320 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.write.buffer.size = 33554432 (custom)
+2019-06-16 20:34:26,320 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.force.sync.num = 128 (default)
+2019-06-16 20:34:26,320 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync = true (default)
+2019-06-16 20:34:26,320 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout = 10s (default)
+2019-06-16 20:34:26,320 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout.retry = -1 (default)
+2019-06-16 20:34:26,320 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.caching.enabled = true (custom)
+2019-06-16 20:34:26,323 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.enabled = true (custom)
+2019-06-16 20:34:26,323 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.threshold = 10000 (custom)
+2019-06-16 20:34:26,323 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.retrycache.expirytime = 600000ms (custom)
+2019-06-16 20:34:26,323 INFO  impl.RaftServerImpl (RaftServerImpl.java:start(173)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: start group-B1E0560FBB9B
+2019-06-16 20:34:26,323 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7:group-B1E0560FBB9B changes role from null to FOLLOWER at term 0 for startAsFollower
+2019-06-16 20:34:26,324 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: start FollowerState
+2019-06-16 20:34:26,324 INFO  util.JmxRegister (JmxRegister.java:tryRegister(44)) - Successfully registered JMX Bean with object name Ratis:service=RaftServer,group=group-B1E0560FBB9B,id=074da7ff-f34b-4d9e-b0f0-f7813e1161e7
+2019-06-16 20:34:27,341 INFO  impl.FollowerState (FollowerState.java:run(101)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7:group-B1E0560FBB9B changes to CANDIDATE, lastRpcTime:1017, electionTimeout:1017ms
+2019-06-16 20:34:27,341 INFO  impl.RoleInfo (RoleInfo.java:shutdownFollowerState(121)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: shutdown FollowerState
+2019-06-16 20:34:27,341 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7:group-B1E0560FBB9B changes role from FOLLOWER to CANDIDATE at term 0 for changeToCandidate
+2019-06-16 20:34:27,341 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: start LeaderElection
+2019-06-16 20:34:27,345 INFO  impl.LeaderElection (LeaderElection.java:askForVotes(181)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7:group-B1E0560FBB9B:LeaderElection2: begin an election at term 1 for -1: [074da7ff-f34b-4d9e-b0f0-f7813e1161e7:127.0.0.1:33783], old=null
+2019-06-16 20:34:27,345 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderElection(134)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: shutdown LeaderElection
+2019-06-16 20:34:27,346 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7:group-B1E0560FBB9B changes role from CANDIDATE to LEADER at term 1 for changeToLeader
+2019-06-16 20:34:27,346 INFO  impl.RaftServerImpl (ServerState.java:setLeader(263)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7:group-B1E0560FBB9B change Leader from null to 074da7ff-f34b-4d9e-b0f0-f7813e1161e7 at term 1 for becomeLeader, leader elected after 1029ms
+2019-06-16 20:34:27,346 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.staging.catchup.gap = 1000 (default)
+2019-06-16 20:34:27,346 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.sleep.time = 25ms (default)
+2019-06-16 20:34:27,346 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout = 10s (default)
+2019-06-16 20:34:27,346 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout.denomination = 1s (default)
+2019-06-16 20:34:27,347 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: start LeaderState
+2019-06-16 20:34:27,347 INFO  storage.RaftLogWorker (RaftLogWorker.java:startLogSegment(298)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7-RaftLogWorker: Starting segment from index:0
+2019-06-16 20:34:27,347 INFO  impl.RaftServerImpl (ServerState.java:setRaftConf(361)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7:group-B1E0560FBB9B set configuration 0: [074da7ff-f34b-4d9e-b0f0-f7813e1161e7:127.0.0.1:33783], old=null at 0
+2019-06-16 20:34:27,386 INFO  storage.RaftLogWorker (RaftLogWorker.java:execute(469)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7-RaftLogWorker: created new log segment /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler6835abe9-a252-4ebf-92aa-47a119cade96/ratis/ced11b41-d098-4cd2-9e10-b1e0560fbb9b/current/log_inprogress_0
+2019-06-16 20:34:28,356 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:stop(199)) - Attempting to stop container services.
+2019-06-16 20:34:28,357 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$close$4(314)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: close
+2019-06-16 20:34:28,357 INFO  impl.RaftServerImpl (RaftServerImpl.java:lambda$shutdown$3(238)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: shutdown group-B1E0560FBB9B
+2019-06-16 20:34:28,357 INFO  util.JmxRegister (JmxRegister.java:unregister(73)) - Successfully un-registered JMX Bean with object name Ratis:service=RaftServer,group=group-B1E0560FBB9B,id=074da7ff-f34b-4d9e-b0f0-f7813e1161e7
+2019-06-16 20:34:28,357 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderState(104)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: shutdown LeaderState
+2019-06-16 20:34:28,358 INFO  impl.PendingRequests (PendingRequests.java:sendNotLeaderResponses(140)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7-PendingRequests: sendNotLeaderResponses
+2019-06-16 20:34:28,359 INFO  impl.StateMachineUpdater (StateMachineUpdater.java:stopAndJoin(109)) - StateMachineUpdater-074da7ff-f34b-4d9e-b0f0-f7813e1161e7-group-B1E0560FBB9B: set stopIndex = 2
+2019-06-16 20:34:28,359 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(245)) - Taking snapshot at termIndex:(t:1, i:2)
+2019-06-16 20:34:28,359 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(249)) - Taking a snapshot to file /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler6835abe9-a252-4ebf-92aa-47a119cade96/ratis/ced11b41-d098-4cd2-9e10-b1e0560fbb9b/sm/snapshot.1_2
+2019-06-16 20:34:28,359 INFO  impl.RaftServerImpl (ServerState.java:close(394)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7:group-B1E0560FBB9B closes. The last applied log index is 2
+2019-06-16 20:34:28,360 INFO  storage.RaftLogWorker (RaftLogWorker.java:run(236)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7-RaftLogWorker was interrupted, exiting. There are 0 tasks remaining in the queue.
+2019-06-16 20:34:28,361 INFO  storage.RaftLogWorker (RaftLogWorker.java:close(168)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7-RaftLogWorker close()
+2019-06-16 20:34:28,361 INFO  server.GrpcService (GrpcService.java:closeImpl(154)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: shutdown server with port 33783 now
+2019-06-16 20:34:28,362 INFO  server.GrpcService (GrpcService.java:closeImpl(162)) - 074da7ff-f34b-4d9e-b0f0-f7813e1161e7: shutdown server with port 33783 successfully
+2019-06-16 20:34:28,366 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-16 20:34:28,392 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler63707007-c6ed-4b40-b8ee-625d6a745be9/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-16 20:34:28,393 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler63707007-c6ed-4b40-b8ee-625d6a745be9/hdds to VolumeSet
+2019-06-16 20:34:28,393 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@1f51431
+2019-06-16 20:34:28,393 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@1f51431
+2019-06-16 20:34:28,404 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 39243
+2019-06-16 20:34:28,405 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-16 20:34:28,406 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-16 20:34:28,406 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 39243 (custom)
+2019-06-16 20:34:28,406 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-16 20:34:28,406 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-16 20:34:28,407 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-16 20:34:28,407 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-16 20:34:28,408 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler63707007-c6ed-4b40-b8ee-625d6a745be9/ratis] (custom)
+2019-06-16 20:34:28,408 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 38977
+2019-06-16 20:34:28,408 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-16 20:34:28,408 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-16 20:34:28,409 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f at port 39243
+2019-06-16 20:34:28,418 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: start RPC server
+2019-06-16 20:34:28,419 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: GrpcService started, listening on 0.0.0.0/0.0.0.0:39243
+2019-06-16 20:34:28,428 INFO  impl.RaftServerProxy (RaftServerProxy.java:addNew(89)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: addNew group-AA566BCD0E96:[0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:127.0.0.1:39243] returns group-AA566BCD0E96:java.util.concurrent.CompletableFuture@15a1e56b[Not completed]
+2019-06-16 20:34:28,429 INFO  impl.RaftServerImpl (RaftServerImpl.java:<init>(91)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: new RaftServerImpl for group-AA566BCD0E96:[0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:127.0.0.1:39243] with ContainerStateMachine:uninitialized
+2019-06-16 20:34:28,429 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.min = 1s (custom)
+2019-06-16 20:34:28,429 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.max = 1200ms (custom)
+2019-06-16 20:34:28,430 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpcslowness.timeout = 120s (custom)
+2019-06-16 20:34:28,430 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.install.snapshot.enabled = true (default)
+2019-06-16 20:34:28,430 INFO  impl.RaftServerImpl (ServerState.java:<init>(101)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:group-AA566BCD0E96 ConfigurationManager, init=-1: [0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:127.0.0.1:39243], old=null, confs=<EMPTY_MAP>
+2019-06-16 20:34:28,430 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler63707007-c6ed-4b40-b8ee-625d6a745be9/ratis] (custom)
+2019-06-16 20:34:28,430 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:analyzeStorage(246)) - The storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler63707007-c6ed-4b40-b8ee-625d6a745be9/ratis/5f92fdfe-feeb-4536-b3be-aa566bcd0e96 does not exist. Creating ...
+2019-06-16 20:34:28,432 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:tryLock(328)) - Lock on /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler63707007-c6ed-4b40-b8ee-625d6a745be9/ratis/5f92fdfe-feeb-4536-b3be-aa566bcd0e96/in_use.lock acquired by nodename 4300@ozone-unit-076618677d37wh5m-2660526777
+2019-06-16 20:34:28,435 INFO  storage.RaftStorage (RaftStorage.java:format(75)) - Storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler63707007-c6ed-4b40-b8ee-625d6a745be9/ratis/5f92fdfe-feeb-4536-b3be-aa566bcd0e96 has been successfully formatted.
+2019-06-16 20:34:28,435 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:loadSnapshot(199)) - The snapshot info is null.Setting the last applied index to:(t:0, i:~)
+2019-06-16 20:34:28,435 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.leader.election.timeout = 120s (custom)
+2019-06-16 20:34:28,435 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.use.memory = false (default)
+2019-06-16 20:34:28,435 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-16 20:34:28,435 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-16 20:34:28,435 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.cache.num.max = 2 (custom)
+2019-06-16 20:34:28,435 INFO  storage.RaftLogWorker (RaftLogWorker.java:<init>(123)) - new 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f-RaftLogWorker for Storage Directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler63707007-c6ed-4b40-b8ee-625d6a745be9/ratis/5f92fdfe-feeb-4536-b3be-aa566bcd0e96
+2019-06-16 20:34:28,435 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.byte-limit = 2147483647 (custom)
+2019-06-16 20:34:28,435 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.element-limit = 1024 (custom)
+2019-06-16 20:34:28,436 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-16 20:34:28,436 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.preallocated.size = 16384 (custom)
+2019-06-16 20:34:28,436 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.write.buffer.size = 33554432 (custom)
+2019-06-16 20:34:28,436 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.force.sync.num = 128 (default)
+2019-06-16 20:34:28,436 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync = true (default)
+2019-06-16 20:34:28,436 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout = 10s (default)
+2019-06-16 20:34:28,436 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout.retry = -1 (default)
+2019-06-16 20:34:28,436 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.caching.enabled = true (custom)
+2019-06-16 20:34:28,437 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.enabled = true (custom)
+2019-06-16 20:34:28,437 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.threshold = 10000 (custom)
+2019-06-16 20:34:28,437 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.retrycache.expirytime = 600000ms (custom)
+2019-06-16 20:34:28,437 INFO  impl.RaftServerImpl (RaftServerImpl.java:start(173)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: start group-AA566BCD0E96
+2019-06-16 20:34:28,437 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:group-AA566BCD0E96 changes role from null to FOLLOWER at term 0 for startAsFollower
+2019-06-16 20:34:28,437 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: start FollowerState
+2019-06-16 20:34:28,438 INFO  util.JmxRegister (JmxRegister.java:tryRegister(44)) - Successfully registered JMX Bean with object name Ratis:service=RaftServer,group=group-AA566BCD0E96,id=0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f
+2019-06-16 20:34:29,498 INFO  impl.FollowerState (FollowerState.java:run(101)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:group-AA566BCD0E96 changes to CANDIDATE, lastRpcTime:1060, electionTimeout:1060ms
+2019-06-16 20:34:29,498 INFO  impl.RoleInfo (RoleInfo.java:shutdownFollowerState(121)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: shutdown FollowerState
+2019-06-16 20:34:29,498 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:group-AA566BCD0E96 changes role from FOLLOWER to CANDIDATE at term 0 for changeToCandidate
+2019-06-16 20:34:29,498 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: start LeaderElection
+2019-06-16 20:34:29,501 INFO  impl.LeaderElection (LeaderElection.java:askForVotes(181)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:group-AA566BCD0E96:LeaderElection3: begin an election at term 1 for -1: [0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:127.0.0.1:39243], old=null
+2019-06-16 20:34:29,501 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderElection(134)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: shutdown LeaderElection
+2019-06-16 20:34:29,502 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:group-AA566BCD0E96 changes role from CANDIDATE to LEADER at term 1 for changeToLeader
+2019-06-16 20:34:29,502 INFO  impl.RaftServerImpl (ServerState.java:setLeader(263)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:group-AA566BCD0E96 change Leader from null to 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f at term 1 for becomeLeader, leader elected after 1066ms
+2019-06-16 20:34:29,502 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.staging.catchup.gap = 1000 (default)
+2019-06-16 20:34:29,502 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.sleep.time = 25ms (default)
+2019-06-16 20:34:29,502 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout = 10s (default)
+2019-06-16 20:34:29,502 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout.denomination = 1s (default)
+2019-06-16 20:34:29,502 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: start LeaderState
+2019-06-16 20:34:29,503 INFO  storage.RaftLogWorker (RaftLogWorker.java:startLogSegment(298)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f-RaftLogWorker: Starting segment from index:0
+2019-06-16 20:34:29,507 INFO  impl.RaftServerImpl (ServerState.java:setRaftConf(361)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:group-AA566BCD0E96 set configuration 0: [0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:127.0.0.1:39243], old=null at 0
+2019-06-16 20:34:29,540 INFO  storage.RaftLogWorker (RaftLogWorker.java:execute(469)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f-RaftLogWorker: created new log segment /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler63707007-c6ed-4b40-b8ee-625d6a745be9/ratis/5f92fdfe-feeb-4536-b3be-aa566bcd0e96/current/log_inprogress_0
+2019-06-16 20:34:30,482 INFO  interfaces.Container (KeyValueContainer.java:compactDB(356)) - Container 567741238952185769 is closed with bcsId 0.
+2019-06-16 20:34:30,483 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:stop(199)) - Attempting to stop container services.
+2019-06-16 20:34:30,483 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$close$4(314)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: close
+2019-06-16 20:34:30,484 INFO  impl.RaftServerImpl (RaftServerImpl.java:lambda$shutdown$3(238)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: shutdown group-AA566BCD0E96
+2019-06-16 20:34:30,484 INFO  util.JmxRegister (JmxRegister.java:unregister(73)) - Successfully un-registered JMX Bean with object name Ratis:service=RaftServer,group=group-AA566BCD0E96,id=0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f
+2019-06-16 20:34:30,484 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderState(104)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: shutdown LeaderState
+2019-06-16 20:34:30,484 INFO  impl.PendingRequests (PendingRequests.java:sendNotLeaderResponses(140)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f-PendingRequests: sendNotLeaderResponses
+2019-06-16 20:34:30,485 INFO  impl.StateMachineUpdater (StateMachineUpdater.java:stopAndJoin(109)) - StateMachineUpdater-0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f-group-AA566BCD0E96: set stopIndex = 2
+2019-06-16 20:34:30,485 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(245)) - Taking snapshot at termIndex:(t:1, i:2)
+2019-06-16 20:34:30,485 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(249)) - Taking a snapshot to file /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler63707007-c6ed-4b40-b8ee-625d6a745be9/ratis/5f92fdfe-feeb-4536-b3be-aa566bcd0e96/sm/snapshot.1_2
+2019-06-16 20:34:30,486 INFO  impl.RaftServerImpl (ServerState.java:close(394)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f:group-AA566BCD0E96 closes. The last applied log index is 2
+2019-06-16 20:34:30,486 INFO  storage.RaftLogWorker (RaftLogWorker.java:run(236)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f-RaftLogWorker was interrupted, exiting. There are 0 tasks remaining in the queue.
+2019-06-16 20:34:30,487 INFO  storage.RaftLogWorker (RaftLogWorker.java:close(168)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f-RaftLogWorker close()
+2019-06-16 20:34:30,488 INFO  server.GrpcService (GrpcService.java:closeImpl(154)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: shutdown server with port 39243 now
+2019-06-16 20:34:30,489 INFO  server.GrpcService (GrpcService.java:closeImpl(162)) - 0bf4a2f4-82fb-4f9d-81f4-f96e075fa88f: shutdown server with port 39243 successfully
+2019-06-16 20:34:30,491 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-16 20:34:30,522 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler69e84616-d02c-4f47-84a9-a33f811fdac3/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-16 20:34:30,522 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler69e84616-d02c-4f47-84a9-a33f811fdac3/hdds to VolumeSet
+2019-06-16 20:34:30,522 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@23940f86
+2019-06-16 20:34:30,527 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@23940f86
+2019-06-16 20:34:30,534 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 42191
+2019-06-16 20:34:30,535 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-16 20:34:30,536 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-16 20:34:30,536 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 42191 (custom)
+2019-06-16 20:34:30,536 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-16 20:34:30,536 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-16 20:34:30,536 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-16 20:34:30,536 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-16 20:34:30,537 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler69e84616-d02c-4f47-84a9-a33f811fdac3/ratis] (custom)
+2019-06-16 20:34:30,537 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 42839
+2019-06-16 20:34:30,537 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-16 20:34:30,538 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-16 20:34:30,538 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis d9488995-53b9-4997-8a06-c18dcb9ebd0c at port 42191
+2019-06-16 20:34:30,547 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: start RPC server
+2019-06-16 20:34:30,548 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: GrpcService started, listening on 0.0.0.0/0.0.0.0:42191
+Jun 16, 2019 8:34:30 PM org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper$ManagedChannelReference cleanQueue
+SEVERE: *~*~*~ Channel ManagedChannelImpl{logId=18, target=127.0.0.1:33783} was not shutdown properly!!! ~*~*~*
+    Make sure to call shutdown()/shutdownNow() and wait until awaitTermination() returns true.
+java.lang.RuntimeException: ManagedChannel allocation site
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper$ManagedChannelReference.<init>(ManagedChannelOrphanWrapper.java:103)
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper.<init>(ManagedChannelOrphanWrapper.java:53)
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper.<init>(ManagedChannelOrphanWrapper.java:44)
+	at org.apache.ratis.thirdparty.io.grpc.internal.AbstractManagedChannelImplBuilder.build(AbstractManagedChannelImplBuilder.java:411)
+	at org.apache.ratis.grpc.client.GrpcClientProtocolClient.<init>(GrpcClientProtocolClient.java:118)
+	at org.apache.ratis.grpc.client.GrpcClientRpc.lambda$new$0(GrpcClientRpc.java:55)
+	at org.apache.ratis.util.PeerProxyMap$PeerAndProxy.lambda$getProxy$0(PeerProxyMap.java:61)
+	at org.apache.ratis.util.LifeCycle.startAndTransition(LifeCycle.java:202)
+	at org.apache.ratis.util.PeerProxyMap$PeerAndProxy.getProxy(PeerProxyMap.java:60)
+	at org.apache.ratis.util.PeerProxyMap.getProxy(PeerProxyMap.java:107)
+	at org.apache.ratis.grpc.client.GrpcClientRpc.sendRequest(GrpcClientRpc.java:91)
+	at org.apache.ratis.client.impl.RaftClientImpl.sendRequest(RaftClientImpl.java:401)
+	at org.apache.ratis.client.impl.RaftClientImpl.groupAdd(RaftClientImpl.java:270)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.createContainer(TestCloseContainerCommandHandler.java:300)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.testCloseContainerViaStandalone(TestCloseContainerCommandHandler.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+Jun 16, 2019 8:34:30 PM org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper$ManagedChannelReference cleanQueue
+SEVERE: *~*~*~ Channel ManagedChannelImpl{logId=29, target=127.0.0.1:39243} was not shutdown properly!!! ~*~*~*
+    Make sure to call shutdown()/shutdownNow() and wait until awaitTermination() returns true.
+java.lang.RuntimeException: ManagedChannel allocation site
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper$ManagedChannelReference.<init>(ManagedChannelOrphanWrapper.java:103)
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper.<init>(ManagedChannelOrphanWrapper.java:53)
+	at org.apache.ratis.thirdparty.io.grpc.internal.ManagedChannelOrphanWrapper.<init>(ManagedChannelOrphanWrapper.java:44)
+	at org.apache.ratis.thirdparty.io.grpc.internal.AbstractManagedChannelImplBuilder.build(AbstractManagedChannelImplBuilder.java:411)
+	at org.apache.ratis.grpc.client.GrpcClientProtocolClient.<init>(GrpcClientProtocolClient.java:118)
+	at org.apache.ratis.grpc.client.GrpcClientRpc.lambda$new$0(GrpcClientRpc.java:55)
+	at org.apache.ratis.util.PeerProxyMap$PeerAndProxy.lambda$getProxy$0(PeerProxyMap.java:61)
+	at org.apache.ratis.util.LifeCycle.startAndTransition(LifeCycle.java:202)
+	at org.apache.ratis.util.PeerProxyMap$PeerAndProxy.getProxy(PeerProxyMap.java:60)
+	at org.apache.ratis.util.PeerProxyMap.getProxy(PeerProxyMap.java:107)
+	at org.apache.ratis.grpc.client.GrpcClientRpc.sendRequest(GrpcClientRpc.java:91)
+	at org.apache.ratis.client.impl.RaftClientImpl.sendRequest(RaftClientImpl.java:401)
+	at org.apache.ratis.client.impl.RaftClientImpl.groupAdd(RaftClientImpl.java:270)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.createContainer(TestCloseContainerCommandHandler.java:300)
+	at org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler.testQuasiCloseToClose(TestCloseContainerCommandHandler.java:147)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+2019-06-16 20:34:30,560 INFO  impl.RaftServerProxy (RaftServerProxy.java:addNew(89)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: addNew group-8C5B2DFAC81E:[d9488995-53b9-4997-8a06-c18dcb9ebd0c:127.0.0.1:42191] returns group-8C5B2DFAC81E:java.util.concurrent.CompletableFuture@43de10fd[Not completed]
+2019-06-16 20:34:30,560 INFO  impl.RaftServerImpl (RaftServerImpl.java:<init>(91)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: new RaftServerImpl for group-8C5B2DFAC81E:[d9488995-53b9-4997-8a06-c18dcb9ebd0c:127.0.0.1:42191] with ContainerStateMachine:uninitialized
+2019-06-16 20:34:30,561 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.min = 1s (custom)
+2019-06-16 20:34:30,561 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.max = 1200ms (custom)
+2019-06-16 20:34:30,561 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpcslowness.timeout = 120s (custom)
+2019-06-16 20:34:30,561 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.install.snapshot.enabled = true (default)
+2019-06-16 20:34:30,561 INFO  impl.RaftServerImpl (ServerState.java:<init>(101)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c:group-8C5B2DFAC81E ConfigurationManager, init=-1: [d9488995-53b9-4997-8a06-c18dcb9ebd0c:127.0.0.1:42191], old=null, confs=<EMPTY_MAP>
+2019-06-16 20:34:30,561 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler69e84616-d02c-4f47-84a9-a33f811fdac3/ratis] (custom)
+2019-06-16 20:34:30,562 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:analyzeStorage(246)) - The storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler69e84616-d02c-4f47-84a9-a33f811fdac3/ratis/d0d7f457-efa8-42fa-a278-8c5b2dfac81e does not exist. Creating ...
+2019-06-16 20:34:30,564 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:tryLock(328)) - Lock on /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler69e84616-d02c-4f47-84a9-a33f811fdac3/ratis/d0d7f457-efa8-42fa-a278-8c5b2dfac81e/in_use.lock acquired by nodename 4300@ozone-unit-076618677d37wh5m-2660526777
+2019-06-16 20:34:30,566 INFO  storage.RaftStorage (RaftStorage.java:format(75)) - Storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler69e84616-d02c-4f47-84a9-a33f811fdac3/ratis/d0d7f457-efa8-42fa-a278-8c5b2dfac81e has been successfully formatted.
+2019-06-16 20:34:30,566 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:loadSnapshot(199)) - The snapshot info is null.Setting the last applied index to:(t:0, i:~)
+2019-06-16 20:34:30,567 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.leader.election.timeout = 120s (custom)
+2019-06-16 20:34:30,567 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.use.memory = false (default)
+2019-06-16 20:34:30,567 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-16 20:34:30,567 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-16 20:34:30,567 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.cache.num.max = 2 (custom)
+2019-06-16 20:34:30,567 INFO  storage.RaftLogWorker (RaftLogWorker.java:<init>(123)) - new d9488995-53b9-4997-8a06-c18dcb9ebd0c-RaftLogWorker for Storage Directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler69e84616-d02c-4f47-84a9-a33f811fdac3/ratis/d0d7f457-efa8-42fa-a278-8c5b2dfac81e
+2019-06-16 20:34:30,567 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.byte-limit = 2147483647 (custom)
+2019-06-16 20:34:30,567 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.element-limit = 1024 (custom)
+2019-06-16 20:34:30,567 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-16 20:34:30,567 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.preallocated.size = 16384 (custom)
+2019-06-16 20:34:30,567 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.write.buffer.size = 33554432 (custom)
+2019-06-16 20:34:30,567 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.force.sync.num = 128 (default)
+2019-06-16 20:34:30,568 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync = true (default)
+2019-06-16 20:34:30,568 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout = 10s (default)
+2019-06-16 20:34:30,568 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout.retry = -1 (default)
+2019-06-16 20:34:30,568 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.caching.enabled = true (custom)
+2019-06-16 20:34:30,568 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.enabled = true (custom)
+2019-06-16 20:34:30,568 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.threshold = 10000 (custom)
+2019-06-16 20:34:30,568 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.retrycache.expirytime = 600000ms (custom)
+2019-06-16 20:34:30,569 INFO  impl.RaftServerImpl (RaftServerImpl.java:start(173)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: start group-8C5B2DFAC81E
+2019-06-16 20:34:30,569 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c:group-8C5B2DFAC81E changes role from null to FOLLOWER at term 0 for startAsFollower
+2019-06-16 20:34:30,569 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: start FollowerState
+2019-06-16 20:34:30,569 INFO  util.JmxRegister (JmxRegister.java:tryRegister(44)) - Successfully registered JMX Bean with object name Ratis:service=RaftServer,group=group-8C5B2DFAC81E,id=d9488995-53b9-4997-8a06-c18dcb9ebd0c
+2019-06-16 20:34:31,708 INFO  impl.FollowerState (FollowerState.java:run(101)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c:group-8C5B2DFAC81E changes to CANDIDATE, lastRpcTime:1139, electionTimeout:1139ms
+2019-06-16 20:34:31,708 INFO  impl.RoleInfo (RoleInfo.java:shutdownFollowerState(121)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: shutdown FollowerState
+2019-06-16 20:34:31,708 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c:group-8C5B2DFAC81E changes role from FOLLOWER to CANDIDATE at term 0 for changeToCandidate
+2019-06-16 20:34:31,708 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: start LeaderElection
+2019-06-16 20:34:31,711 INFO  impl.LeaderElection (LeaderElection.java:askForVotes(181)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c:group-8C5B2DFAC81E:LeaderElection4: begin an election at term 1 for -1: [d9488995-53b9-4997-8a06-c18dcb9ebd0c:127.0.0.1:42191], old=null
+2019-06-16 20:34:31,711 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderElection(134)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: shutdown LeaderElection
+2019-06-16 20:34:31,711 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c:group-8C5B2DFAC81E changes role from CANDIDATE to LEADER at term 1 for changeToLeader
+2019-06-16 20:34:31,711 INFO  impl.RaftServerImpl (ServerState.java:setLeader(263)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c:group-8C5B2DFAC81E change Leader from null to d9488995-53b9-4997-8a06-c18dcb9ebd0c at term 1 for becomeLeader, leader elected after 1144ms
+2019-06-16 20:34:31,712 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.staging.catchup.gap = 1000 (default)
+2019-06-16 20:34:31,712 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.sleep.time = 25ms (default)
+2019-06-16 20:34:31,712 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout = 10s (default)
+2019-06-16 20:34:31,712 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout.denomination = 1s (default)
+2019-06-16 20:34:31,712 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: start LeaderState
+2019-06-16 20:34:31,712 INFO  storage.RaftLogWorker (RaftLogWorker.java:startLogSegment(298)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c-RaftLogWorker: Starting segment from index:0
+2019-06-16 20:34:31,713 INFO  impl.RaftServerImpl (ServerState.java:setRaftConf(361)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c:group-8C5B2DFAC81E set configuration 0: [d9488995-53b9-4997-8a06-c18dcb9ebd0c:127.0.0.1:42191], old=null at 0
+2019-06-16 20:34:31,747 INFO  storage.RaftLogWorker (RaftLogWorker.java:execute(469)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c-RaftLogWorker: created new log segment /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler69e84616-d02c-4f47-84a9-a33f811fdac3/ratis/d0d7f457-efa8-42fa-a278-8c5b2dfac81e/current/log_inprogress_0
+2019-06-16 20:34:32,607 INFO  interfaces.Container (KeyValueContainer.java:compactDB(356)) - Container 6249172821593457725 is closed with bcsId 0.
+2019-06-16 20:34:32,607 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:stop(199)) - Attempting to stop container services.
+2019-06-16 20:34:32,607 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$close$4(314)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: close
+2019-06-16 20:34:32,608 INFO  impl.RaftServerImpl (RaftServerImpl.java:lambda$shutdown$3(238)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: shutdown group-8C5B2DFAC81E
+2019-06-16 20:34:32,608 INFO  util.JmxRegister (JmxRegister.java:unregister(73)) - Successfully un-registered JMX Bean with object name Ratis:service=RaftServer,group=group-8C5B2DFAC81E,id=d9488995-53b9-4997-8a06-c18dcb9ebd0c
+2019-06-16 20:34:32,608 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderState(104)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: shutdown LeaderState
+2019-06-16 20:34:32,608 INFO  impl.PendingRequests (PendingRequests.java:sendNotLeaderResponses(140)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c-PendingRequests: sendNotLeaderResponses
+2019-06-16 20:34:32,609 INFO  impl.StateMachineUpdater (StateMachineUpdater.java:stopAndJoin(109)) - StateMachineUpdater-d9488995-53b9-4997-8a06-c18dcb9ebd0c-group-8C5B2DFAC81E: set stopIndex = 2
+2019-06-16 20:34:32,609 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(245)) - Taking snapshot at termIndex:(t:1, i:2)
+2019-06-16 20:34:32,609 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(249)) - Taking a snapshot to file /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandler69e84616-d02c-4f47-84a9-a33f811fdac3/ratis/d0d7f457-efa8-42fa-a278-8c5b2dfac81e/sm/snapshot.1_2
+2019-06-16 20:34:32,610 INFO  impl.RaftServerImpl (ServerState.java:close(394)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c:group-8C5B2DFAC81E closes. The last applied log index is 2
+2019-06-16 20:34:32,610 INFO  storage.RaftLogWorker (RaftLogWorker.java:run(236)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c-RaftLogWorker was interrupted, exiting. There are 0 tasks remaining in the queue.
+2019-06-16 20:34:32,610 INFO  storage.RaftLogWorker (RaftLogWorker.java:close(168)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c-RaftLogWorker close()
+2019-06-16 20:34:32,611 INFO  server.GrpcService (GrpcService.java:closeImpl(154)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: shutdown server with port 42191 now
+2019-06-16 20:34:32,612 INFO  server.GrpcService (GrpcService.java:closeImpl(162)) - d9488995-53b9-4997-8a06-c18dcb9ebd0c: shutdown server with port 42191 successfully
+2019-06-16 20:34:32,614 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-16 20:34:32,632 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerde818f66-e142-451a-83f7-1f29f9fd43f7/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-16 20:34:32,632 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerde818f66-e142-451a-83f7-1f29f9fd43f7/hdds to VolumeSet
+2019-06-16 20:34:32,632 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@1bf39d06
+2019-06-16 20:34:32,632 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@1bf39d06
+2019-06-16 20:34:32,644 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 43013
+2019-06-16 20:34:32,645 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-16 20:34:32,646 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-16 20:34:32,646 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 43013 (custom)
+2019-06-16 20:34:32,646 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-16 20:34:32,647 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-16 20:34:32,647 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-16 20:34:32,647 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-16 20:34:32,647 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerde818f66-e142-451a-83f7-1f29f9fd43f7/ratis] (custom)
+2019-06-16 20:34:32,648 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 41983
+2019-06-16 20:34:32,648 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-16 20:34:32,648 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-16 20:34:32,649 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis c0f318bd-5755-498b-b9d4-1797d83acc94 at port 43013
+2019-06-16 20:34:32,662 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - c0f318bd-5755-498b-b9d4-1797d83acc94: start RPC server
+2019-06-16 20:34:32,663 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - c0f318bd-5755-498b-b9d4-1797d83acc94: GrpcService started, listening on 0.0.0.0/0.0.0.0:43013
+2019-06-16 20:34:32,671 INFO  impl.RaftServerProxy (RaftServerProxy.java:addNew(89)) - c0f318bd-5755-498b-b9d4-1797d83acc94: addNew group-CD7A73BCBC3F:[c0f318bd-5755-498b-b9d4-1797d83acc94:127.0.0.1:43013] returns group-CD7A73BCBC3F:java.util.concurrent.CompletableFuture@29d7872f[Not completed]
+2019-06-16 20:34:32,671 INFO  impl.RaftServerImpl (RaftServerImpl.java:<init>(91)) - c0f318bd-5755-498b-b9d4-1797d83acc94: new RaftServerImpl for group-CD7A73BCBC3F:[c0f318bd-5755-498b-b9d4-1797d83acc94:127.0.0.1:43013] with ContainerStateMachine:uninitialized
+2019-06-16 20:34:32,672 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.min = 1s (custom)
+2019-06-16 20:34:32,672 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.timeout.max = 1200ms (custom)
+2019-06-16 20:34:32,672 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpcslowness.timeout = 120s (custom)
+2019-06-16 20:34:32,672 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.install.snapshot.enabled = true (default)
+2019-06-16 20:34:32,672 INFO  impl.RaftServerImpl (ServerState.java:<init>(101)) - c0f318bd-5755-498b-b9d4-1797d83acc94:group-CD7A73BCBC3F ConfigurationManager, init=-1: [c0f318bd-5755-498b-b9d4-1797d83acc94:127.0.0.1:43013], old=null, confs=<EMPTY_MAP>
+2019-06-16 20:34:32,672 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerde818f66-e142-451a-83f7-1f29f9fd43f7/ratis] (custom)
+2019-06-16 20:34:32,672 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:analyzeStorage(246)) - The storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerde818f66-e142-451a-83f7-1f29f9fd43f7/ratis/efc6d213-1b89-48ec-ab59-cd7a73bcbc3f does not exist. Creating ...
+2019-06-16 20:34:32,675 INFO  storage.RaftStorageDirectory (RaftStorageDirectory.java:tryLock(328)) - Lock on /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerde818f66-e142-451a-83f7-1f29f9fd43f7/ratis/efc6d213-1b89-48ec-ab59-cd7a73bcbc3f/in_use.lock acquired by nodename 4300@ozone-unit-076618677d37wh5m-2660526777
+2019-06-16 20:34:32,677 INFO  storage.RaftStorage (RaftStorage.java:format(75)) - Storage directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerde818f66-e142-451a-83f7-1f29f9fd43f7/ratis/efc6d213-1b89-48ec-ab59-cd7a73bcbc3f has been successfully formatted.
+2019-06-16 20:34:32,677 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:loadSnapshot(199)) - The snapshot info is null.Setting the last applied index to:(t:0, i:~)
+2019-06-16 20:34:32,677 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.leader.election.timeout = 120s (custom)
+2019-06-16 20:34:32,678 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.use.memory = false (default)
+2019-06-16 20:34:32,678 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-16 20:34:32,678 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-16 20:34:32,678 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.cache.num.max = 2 (custom)
+2019-06-16 20:34:32,678 INFO  storage.RaftLogWorker (RaftLogWorker.java:<init>(123)) - new c0f318bd-5755-498b-b9d4-1797d83acc94-RaftLogWorker for Storage Directory /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerde818f66-e142-451a-83f7-1f29f9fd43f7/ratis/efc6d213-1b89-48ec-ab59-cd7a73bcbc3f
+2019-06-16 20:34:32,678 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.byte-limit = 2147483647 (custom)
+2019-06-16 20:34:32,678 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.queue.element-limit = 1024 (custom)
+2019-06-16 20:34:32,678 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.segment.size.max = 16384 (custom)
+2019-06-16 20:34:32,678 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.preallocated.size = 16384 (custom)
+2019-06-16 20:34:32,678 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.write.buffer.size = 33554432 (custom)
+2019-06-16 20:34:32,678 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.force.sync.num = 128 (default)
+2019-06-16 20:34:32,679 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync = true (default)
+2019-06-16 20:34:32,679 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout = 10s (default)
+2019-06-16 20:34:32,679 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.sync.timeout.retry = -1 (default)
+2019-06-16 20:34:32,679 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.statemachine.data.caching.enabled = true (custom)
+2019-06-16 20:34:32,679 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.enabled = true (custom)
+2019-06-16 20:34:32,679 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.snapshot.auto.trigger.threshold = 10000 (custom)
+2019-06-16 20:34:32,679 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.retrycache.expirytime = 600000ms (custom)
+2019-06-16 20:34:32,680 INFO  impl.RaftServerImpl (RaftServerImpl.java:start(173)) - c0f318bd-5755-498b-b9d4-1797d83acc94: start group-CD7A73BCBC3F
+2019-06-16 20:34:32,680 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - c0f318bd-5755-498b-b9d4-1797d83acc94:group-CD7A73BCBC3F changes role from null to FOLLOWER at term 0 for startAsFollower
+2019-06-16 20:34:32,680 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - c0f318bd-5755-498b-b9d4-1797d83acc94: start FollowerState
+2019-06-16 20:34:32,680 INFO  util.JmxRegister (JmxRegister.java:tryRegister(44)) - Successfully registered JMX Bean with object name Ratis:service=RaftServer,group=group-CD7A73BCBC3F,id=c0f318bd-5755-498b-b9d4-1797d83acc94
+2019-06-16 20:34:33,810 INFO  impl.FollowerState (FollowerState.java:run(101)) - c0f318bd-5755-498b-b9d4-1797d83acc94:group-CD7A73BCBC3F changes to CANDIDATE, lastRpcTime:1130, electionTimeout:1130ms
+2019-06-16 20:34:33,810 INFO  impl.RoleInfo (RoleInfo.java:shutdownFollowerState(121)) - c0f318bd-5755-498b-b9d4-1797d83acc94: shutdown FollowerState
+2019-06-16 20:34:33,810 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - c0f318bd-5755-498b-b9d4-1797d83acc94:group-CD7A73BCBC3F changes role from FOLLOWER to CANDIDATE at term 0 for changeToCandidate
+2019-06-16 20:34:33,810 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - c0f318bd-5755-498b-b9d4-1797d83acc94: start LeaderElection
+2019-06-16 20:34:33,813 INFO  impl.LeaderElection (LeaderElection.java:askForVotes(181)) - c0f318bd-5755-498b-b9d4-1797d83acc94:group-CD7A73BCBC3F:LeaderElection5: begin an election at term 1 for -1: [c0f318bd-5755-498b-b9d4-1797d83acc94:127.0.0.1:43013], old=null
+2019-06-16 20:34:33,814 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderElection(134)) - c0f318bd-5755-498b-b9d4-1797d83acc94: shutdown LeaderElection
+2019-06-16 20:34:33,814 INFO  impl.RaftServerImpl (RaftServerImpl.java:setRole(164)) - c0f318bd-5755-498b-b9d4-1797d83acc94:group-CD7A73BCBC3F changes role from CANDIDATE to LEADER at term 1 for changeToLeader
+2019-06-16 20:34:33,814 INFO  impl.RaftServerImpl (ServerState.java:setLeader(263)) - c0f318bd-5755-498b-b9d4-1797d83acc94:group-CD7A73BCBC3F change Leader from null to c0f318bd-5755-498b-b9d4-1797d83acc94 at term 1 for becomeLeader, leader elected after 1136ms
+2019-06-16 20:34:33,814 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.staging.catchup.gap = 1000 (default)
+2019-06-16 20:34:33,814 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.sleep.time = 25ms (default)
+2019-06-16 20:34:33,814 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout = 10s (default)
+2019-06-16 20:34:33,814 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.watch.timeout.denomination = 1s (default)
+2019-06-16 20:34:33,814 INFO  impl.RoleInfo (RoleInfo.java:updateAndGet(143)) - c0f318bd-5755-498b-b9d4-1797d83acc94: start LeaderState
+2019-06-16 20:34:33,814 INFO  storage.RaftLogWorker (RaftLogWorker.java:startLogSegment(298)) - c0f318bd-5755-498b-b9d4-1797d83acc94-RaftLogWorker: Starting segment from index:0
+2019-06-16 20:34:33,815 INFO  impl.RaftServerImpl (ServerState.java:setRaftConf(361)) - c0f318bd-5755-498b-b9d4-1797d83acc94:group-CD7A73BCBC3F set configuration 0: [c0f318bd-5755-498b-b9d4-1797d83acc94:127.0.0.1:43013], old=null at 0
+2019-06-16 20:34:33,849 INFO  storage.RaftLogWorker (RaftLogWorker.java:execute(469)) - c0f318bd-5755-498b-b9d4-1797d83acc94-RaftLogWorker: created new log segment /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerde818f66-e142-451a-83f7-1f29f9fd43f7/ratis/efc6d213-1b89-48ec-ab59-cd7a73bcbc3f/current/log_inprogress_0
+2019-06-16 20:34:34,720 INFO  interfaces.Container (KeyValueContainer.java:compactDB(356)) - Container 9219601424495913121 is closed with bcsId 0.
+2019-06-16 20:34:34,720 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:stop(199)) - Attempting to stop container services.
+2019-06-16 20:34:34,721 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$close$4(314)) - c0f318bd-5755-498b-b9d4-1797d83acc94: close
+2019-06-16 20:34:34,721 INFO  impl.RaftServerImpl (RaftServerImpl.java:lambda$shutdown$3(238)) - c0f318bd-5755-498b-b9d4-1797d83acc94: shutdown group-CD7A73BCBC3F
+2019-06-16 20:34:34,721 INFO  util.JmxRegister (JmxRegister.java:unregister(73)) - Successfully un-registered JMX Bean with object name Ratis:service=RaftServer,group=group-CD7A73BCBC3F,id=c0f318bd-5755-498b-b9d4-1797d83acc94
+2019-06-16 20:34:34,721 INFO  impl.RoleInfo (RoleInfo.java:shutdownLeaderState(104)) - c0f318bd-5755-498b-b9d4-1797d83acc94: shutdown LeaderState
+2019-06-16 20:34:34,722 INFO  impl.PendingRequests (PendingRequests.java:sendNotLeaderResponses(140)) - c0f318bd-5755-498b-b9d4-1797d83acc94-PendingRequests: sendNotLeaderResponses
+2019-06-16 20:34:34,723 INFO  impl.StateMachineUpdater (StateMachineUpdater.java:stopAndJoin(109)) - StateMachineUpdater-c0f318bd-5755-498b-b9d4-1797d83acc94-group-CD7A73BCBC3F: set stopIndex = 4
+2019-06-16 20:34:34,723 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(245)) - Taking snapshot at termIndex:(t:1, i:4)
+2019-06-16 20:34:34,724 INFO  ratis.ContainerStateMachine (ContainerStateMachine.java:takeSnapshot(249)) - Taking a snapshot to file /opt/src/hadoop-hdds/container-service/target/test-dir/org.apache.hadoop.ozone.container.common.statemachine.commandhandler.TestCloseContainerCommandHandlerde818f66-e142-451a-83f7-1f29f9fd43f7/ratis/efc6d213-1b89-48ec-ab59-cd7a73bcbc3f/sm/snapshot.1_4
+2019-06-16 20:34:34,724 INFO  impl.RaftServerImpl (ServerState.java:close(394)) - c0f318bd-5755-498b-b9d4-1797d83acc94:group-CD7A73BCBC3F closes. The last applied log index is 4
+2019-06-16 20:34:34,725 INFO  storage.RaftLogWorker (RaftLogWorker.java:run(236)) - c0f318bd-5755-498b-b9d4-1797d83acc94-RaftLogWorker was interrupted, exiting. There are 0 tasks remaining in the queue.
+2019-06-16 20:34:34,726 INFO  storage.RaftLogWorker (RaftLogWorker.java:close(168)) - c0f318bd-5755-498b-b9d4-1797d83acc94-RaftLogWorker close()
+2019-06-16 20:34:34,727 INFO  server.GrpcService (GrpcService.java:closeImpl(154)) - c0f318bd-5755-498b-b9d4-1797d83acc94: shutdown server with port 43013 now
+2019-06-16 20:34:34,728 INFO  server.GrpcService (GrpcService.java:closeImpl(162)) - c0f318bd-5755-498b-b9d4-1797d83acc94: shutdown server with port 43013 successfully
+2019-06-16 20:34:34,730 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
