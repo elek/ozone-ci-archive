@@ -1,0 +1,42 @@
+2019-06-16 23:02:48,013 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /tmp/junit4721525053953681345/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-16 23:02:48,021 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /tmp/junit4721525053953681345/hdds to VolumeSet
+2019-06-16 23:02:48,032 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@670b40af
+2019-06-16 23:02:48,067 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@670b40af
+2019-06-16 23:02:48,157 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-16 23:02:48,195 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /tmp/junit5371140509418797809/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-16 23:02:48,195 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /tmp/junit5371140509418797809/hdds to VolumeSet
+2019-06-16 23:02:48,195 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@32cf48b7
+2019-06-16 23:02:48,196 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@32cf48b7
+2019-06-16 23:02:48,410 WARN  util.NativeCodeLoader (NativeCodeLoader.java:<clinit>(60)) - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2019-06-16 23:02:49,404 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /tmp/junit5371140509418797809/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-16 23:02:49,404 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /tmp/junit5371140509418797809/hdds to VolumeSet
+2019-06-16 23:02:49,405 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@2e8e8225
+2019-06-16 23:02:49,405 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@2e8e8225
+ERROR StatusLogger No Log4j 2 configuration file found. Using default configuration (logging only errors to the console), or user programmatically provided configurations. Set system property 'log4j2.debug' to show Log4j 2 internal initialization logging. See https://logging.apache.org/log4j/2.x/manual/configuration.html for instructions on how to configure Log4j 2
+2019-06-16 23:02:50,245 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-16 23:02:50,268 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-16 23:02:50,278 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 9858 (custom)
+2019-06-16 23:02:50,279 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-16 23:02:50,281 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-16 23:02:50,282 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-16 23:02:50,283 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-16 23:02:50,419 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/tmp/junit5371140509418797809/junit8209513552240291353/ratis] (custom)
+2019-06-16 23:02:50,452 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-16 23:02:50,476 WARN  volume.VolumeUsage (VolumeUsage.java:saveScmUsed(176)) - Failed to write scmUsed to /tmp/junit5371140509418797809/scmUsed
+java.io.FileNotFoundException: /tmp/junit5371140509418797809/scmUsed (No such file or directory)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeUsage.saveScmUsed(VolumeUsage.java:165)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeUsage.shutdown(VolumeUsage.java:101)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeInfo.shutdownUsageThread(VolumeInfo.java:115)
+	at org.apache.hadoop.ozone.container.common.volume.HddsVolume.shutdown(HddsVolume.java:404)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeSet.saveVolumeSetUsed(VolumeSet.java:412)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeSet.lambda$initializeVolumeSet$2(VolumeSet.java:198)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-06-16 23:02:50,479 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
