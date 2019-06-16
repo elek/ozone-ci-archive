@@ -1,0 +1,102 @@
+2019-06-16 21:49:12,985 WARN  server.ServerUtils (ServerUtils.java:getScmDbDir(145)) - ozone.scm.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-16 21:49:13,178 INFO  pipeline.SCMPipelineManager (SCMPipelineManager.java:initializePipelineState(126)) - No pipeline exists in current db
+2019-06-16 21:49:13,228 INFO  pipeline.PipelineStateManager (PipelineStateManager.java:addPipeline(56)) - Created pipeline Pipeline[ Id: ffb38ba3-1501-4399-a9e0-f59910149a35, Nodes: 4924403c-950d-4ab0-945e-1865be5bf5a0{ip: 165.254.85.176, host: localhost, networkLocation: /default-rack, certSerialId: null}, Type:RATIS, Factor:ONE, State:OPEN]
+2019-06-16 21:49:13,230 INFO  pipeline.PipelineStateManager (PipelineStateManager.java:addPipeline(56)) - Created pipeline Pipeline[ Id: b26f4dda-8f59-4559-9d20-21ead17870a8, Nodes: 4924403c-950d-4ab0-945e-1865be5bf5a0{ip: 165.254.85.176, host: localhost, networkLocation: /default-rack, certSerialId: null}52cfab7e-2b62-4d43-b77b-111aa5291893{ip: 106.135.144.245, host: localhost, networkLocation: /default-rack, certSerialId: null}c62e7ae8-be1d-4536-b61d-cf218cc7f7ad{ip: 140.49.79.73, host: localhost, networkLocation: /default-rack, certSerialId: null}, Type:RATIS, Factor:THREE, State:OPEN]
+2019-06-16 21:49:13,232 INFO  pipeline.PipelineStateManager (PipelineStateManager.java:addPipeline(56)) - Created pipeline Pipeline[ Id: 83dca73d-256a-44fb-a8e1-b41e4ed13c42, Nodes: 9032e26c-7830-415e-adbc-6dd06c0409ae{ip: 13.238.68.230, host: localhost, networkLocation: /default-rack, certSerialId: null}abb42b42-90dc-4787-ba8d-94a8a846c5a7{ip: 145.213.143.187, host: localhost, networkLocation: /default-rack, certSerialId: null}ced0d191-8fbb-4d34-9a4a-9e185240ee14{ip: 235.220.19.33, host: localhost, networkLocation: /default-rack, certSerialId: null}, Type:RATIS, Factor:THREE, State:OPEN]
+2019-06-16 21:49:13,242 INFO  safemode.HealthyPipelineSafeModeRule (HealthyPipelineSafeModeRule.java:<init>(90)) -  Total pipeline count is 2, healthy pipeline threshold count is 1
+2019-06-16 21:49:13,243 INFO  safemode.OneReplicaPipelineSafeModeRule (OneReplicaPipelineSafeModeRule.java:<init>(84)) -  Total pipeline count is 2, pipeline's with atleast one datanode reported threshold count is 2
+2019-06-16 21:49:13,243 WARN  events.EventQueue (EventQueue.java:fireEvent(175)) - No event handler registered for event TypedEvent{payloadType=SafeModeStatus, name='SafeModeStatus'}
+INFO  safemode.SCMSafeModeManager (HealthyPipelineSafeModeRule.java:process(145)) - SCM in safe mode. Healthy pipelines reported count is 0, required healthy pipeline reported count is 1
+2019-06-16 21:49:13,250 INFO  safemode.SCMSafeModeManager (OneReplicaPipelineSafeModeRule.java:process(134)) - SCM in safe mode. Pipelines with atleast one datanode reported count is 0, required atleast one datanode reported per pipeline count is 2
+2019-06-16 21:49:13,250 INFO  2019-06-16 21:49:13,250safemode.SCMSafeModeManager ( OneReplicaPipelineSafeModeRule.java:INFOprocess(134)) - SCM in safe mode. Pipelines with atleast one datanode reported count is 1, required atleast one datanode reported per pipeline count is 2
+2019-06-16 21:49:13,250 INFO  safemode.SCMSafeModeManager (HealthyPipelineSafeModeRule.java:process(145)) - SCM in safe mode. Healthy pipelines reported count is 1, required healthy pipeline reported count is 1
+2019-06-16 21:49:13,251 INFO  safemode.SCMSafeModeManager (OneReplicaPipelineSafeModeRule.java:process(134)) - SCM in safe mode. Pipelines with atleast one datanode reported count is 2, required atleast one datanode reported per pipeline count is 2
+2019-06-16 21:49:13,280 WARN  server.ServerUtils (ServerUtils.java:getScmDbDir(145)) - ozone.scm.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-16 21:49:13,294 WARN  util.MBeans (MBeans.java:getMBeanName(165)) - Error creating MBean object name: Hadoop:service=SCMPipelineManager,name=SCMPipelineManagerInfo
+org.apache.hadoop.metrics2.MetricsException: org.apache.hadoop.metrics2.MetricsException: Hadoop:service=SCMPipelineManager,name=SCMPipelineManagerInfo already exists!
+	at org.apache.hadoop.metrics2.lib.DefaultMetricsSystem.newObjectName(DefaultMetricsSystem.java:135)
+	at org.apache.hadoop.metrics2.lib.DefaultMetricsSystem.newMBeanName(DefaultMetricsSystem.java:110)
+	at org.apache.hadoop.metrics2.util.MBeans.getMBeanName(MBeans.java:163)
+	at org.apache.hadoop.metrics2.util.MBeans.register(MBeans.java:95)
+	at org.apache.hadoop.metrics2.util.MBeans.register(MBeans.java:72)
+	at org.apache.hadoop.hdds.scm.pipeline.SCMPipelineManager.<init>(SCMPipelineManager.java:110)
+	at org.apache.hadoop.hdds.scm.safemode.TestHealthyPipelineSafeModeRule.testHealthyPipelineSafeModeRuleWithPipelines(TestHealthyPipelineSafeModeRule.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.apache.hadoop.metrics2.MetricsException: Hadoop:service=SCMPipelineManager,name=SCMPipelineManagerInfo already exists!
+	at org.apache.hadoop.metrics2.lib.DefaultMetricsSystem.newObjectName(DefaultMetricsSystem.java:131)
+	... 31 more
+2019-06-16 21:49:13,297 INFO  pipeline.SCMPipelineManager (SCMPipelineManager.java:initializePipelineState(126)) - No pipeline exists in current db
+2019-06-16 21:49:13,300 INFO  pipeline.PipelineStateManager (PipelineStateManager.java:addPipeline(56)) - Created pipeline Pipeline[ Id: ed220424-f487-476b-8d58-029f681d7c0b, Nodes: 0fcea5c6-bb77-4fba-b534-5d796ac2591f{ip: 50.169.218.186, host: localhost, networkLocation: /default-rack, certSerialId: null}503d6fb8-21b5-4a97-98be-45eff60a67a2{ip: 155.144.138.88, host: localhost, networkLocation: /default-rack, certSerialId: null}bcd575df-4004-4d26-abd5-3a9c3541ae5a{ip: 145.193.60.233, host: localhost, networkLocation: /default-rack, certSerialId: null}, Type:RATIS, Factor:THREE, State:OPEN]
+2019-06-16 21:49:13,301 INFO  pipeline.PipelineStateManager (PipelineStateManager.java:addPipeline(56)) - Created pipeline Pipeline[ Id: f5fe71dc-0206-4733-a4be-67199b956da6, Nodes: 19a07d98-fbdf-43bb-810f-5837081f55a0{ip: 113.222.12.125, host: localhost, networkLocation: /default-rack, certSerialId: null}d198cb66-0618-4ddd-9aa7-b20e6c8736b2{ip: 115.195.99.245, host: localhost, networkLocation: /default-rack, certSerialId: null}63bbcab0-60f6-4340-a808-af44562e32c0{ip: 134.76.54.240, host: localhost, networkLocation: /default-rack, certSerialId: null}, Type:RATIS, Factor:THREE, State:OPEN]
+2019-06-16 21:49:13,302 INFO  pipeline.PipelineStateManager (PipelineStateManager.java:addPipeline(56)) - Created pipeline Pipeline[ Id: 85463b75-68b8-415b-90be-87adecc66576, Nodes: d91ec6a3-c64b-4159-83bd-4c332ea9e4cf{ip: 14.199.255.24, host: localhost, networkLocation: /default-rack, certSerialId: null}cf97564b-a590-4a79-aa46-c91adf1c5f70{ip: 184.78.75.254, host: localhost, networkLocation: /default-rack, certSerialId: null}b91a086b-c040-4d37-89d5-7ded6bf03fea{ip: 46.195.180.108, host: localhost, networkLocation: /default-rack, certSerialId: null}, Type:RATIS, Factor:THREE, State:OPEN]
+2019-06-16 21:49:13,303 INFO  safemode.HealthyPipelineSafeModeRule (HealthyPipelineSafeModeRule.java:<init>(90)) -  Total pipeline count is 3, healthy pipeline threshold count is 1
+2019-06-16 21:49:13,304 INFO  safemode.OneReplicaPipelineSafeModeRule (OneReplicaPipelineSafeModeRule.java:<init>(84)) -  Total pipeline count is 3, pipeline's with atleast one datanode reported threshold count is 3
+2019-06-16 21:49:13,304 WARN  events.EventQueue (EventQueue.java:fireEvent(175)) - No event handler registered for event TypedEvent{payloadType=SafeModeStatus, name='SafeModeStatus'}
+2019-06-16 21:49:13,305 INFO2019-06-16 21:49:13,305  INFO   safemode.SCMSafeModeManagersafemode.SCMSafeModeManager ( (OneReplicaPipelineSafeModeRule.java:process(134)) - SCM in safe mode. Pipelines with atleast one datanode reported count is 1, required atleast one datanode reported per pipeline count is 3
+2019-06-16 21:49:13,305 INFO  safemode.SCMSafeModeManager (HealthyPipelineSafeModeRule.java:process(145)) - SCM in safe mode. Healthy pipelines reported count is 1, required healthy pipeline reported count is 1
+2019-06-16 21:49:13,338 WARN  server.ServerUtils (ServerUtils.java:getScmDbDir(145)) - ozone.scm.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-16 21:49:13,352 WARN  util.MBeans (MBeans.java:getMBeanName(165)) - Error creating MBean object name: Hadoop:service=SCMPipelineManager,name=SCMPipelineManagerInfo
+org.apache.hadoop.metrics2.MetricsException: org.apache.hadoop.metrics2.MetricsException: Hadoop:service=SCMPipelineManager,name=SCMPipelineManagerInfo already exists!
+	at org.apache.hadoop.metrics2.lib.DefaultMetricsSystem.newObjectName(DefaultMetricsSystem.java:135)
+	at org.apache.hadoop.metrics2.lib.DefaultMetricsSystem.newMBeanName(DefaultMetricsSystem.java:110)
+	at org.apache.hadoop.metrics2.util.MBeans.getMBeanName(MBeans.java:163)
+	at org.apache.hadoop.metrics2.util.MBeans.register(MBeans.java:95)
+	at org.apache.hadoop.metrics2.util.MBeans.register(MBeans.java:72)
+	at org.apache.hadoop.hdds.scm.pipeline.SCMPipelineManager.<init>(SCMPipelineManager.java:110)
+	at org.apache.hadoop.hdds.scm.safemode.TestHealthyPipelineSafeModeRule.testHealthyPipelineSafeModeRuleWithNoPipelines(TestHealthyPipelineSafeModeRule.java:73)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.apache.hadoop.metrics2.MetricsException: Hadoop:service=SCMPipelineManager,name=SCMPipelineManagerInfo already exists!
+	at org.apache.hadoop.metrics2.lib.DefaultMetricsSystem.newObjectName(DefaultMetricsSystem.java:131)
+	... 31 more
+2019-06-16 21:49:13,353 INFO  pipeline.SCMPipelineManager (SCMPipelineManager.java:initializePipelineState(126)) - No pipeline exists in current db
+2019-06-16 21:49:13,354 INFO  safemode.HealthyPipelineSafeModeRule (HealthyPipelineSafeModeRule.java:<init>(90)) -  Total pipeline count is 0, healthy pipeline threshold count is 0
+2019-06-16 21:49:13,355 INFO  safemode.OneReplicaPipelineSafeModeRule (OneReplicaPipelineSafeModeRule.java:<init>(84)) -  Total pipeline count is 0, pipeline's with atleast one datanode reported threshold count is 0
+2019-06-16 21:49:13,355 WARN  events.EventQueue (EventQueue.java:fireEvent(175)) - No event handler registered for event TypedEvent{payloadType=SafeModeStatus, name='SafeModeStatus'}
