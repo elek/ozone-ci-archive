@@ -1,0 +1,127 @@
+2019-06-17 19:32:49,004 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,012 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds to VolumeSet
+2019-06-17 19:32:49,014 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,015 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds to VolumeSet
+2019-06-17 19:32:49,028 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@5315d995
+2019-06-17 19:32:49,050 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@5315d995
+2019-06-17 19:32:49,052 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@5dff73db
+2019-06-17 19:32:49,052 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@5dff73db
+new volume root: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk3/hdds
+2019-06-17 19:32:49,084 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk3/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,085 ERROR volume.VolumeSet (VolumeSet.java:addVolume(344)) - Failed to add volume /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk3 to VolumeSet
+java.io.IOException: Volume is in an INCONSISTENT state. Skipped loading volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk3/hdds
+	at org.apache.hadoop.ozone.container.common.volume.HddsVolume.initialize(HddsVolume.java:225)
+	at org.apache.hadoop.ozone.container.common.volume.HddsVolume.<init>(HddsVolume.java:179)
+	at org.apache.hadoop.ozone.container.common.volume.HddsVolume.<init>(HddsVolume.java:72)
+	at org.apache.hadoop.ozone.container.common.volume.HddsVolume$Builder.build(HddsVolume.java:156)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeSet.createVolume(VolumeSet.java:311)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeSet.addVolume(VolumeSet.java:335)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeSet.addVolume(VolumeSet.java:317)
+	at org.apache.hadoop.ozone.container.common.volume.TestVolumeSet.testVolumeInInconsistentState(TestVolumeSet.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+2019-06-17 19:32:49,099 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,099 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,145 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,146 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds to VolumeSet
+2019-06-17 19:32:49,148 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,148 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds to VolumeSet
+2019-06-17 19:32:49,150 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@49415112
+2019-06-17 19:32:49,151 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@49415112
+2019-06-17 19:32:49,151 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@5595f50d
+2019-06-17 19:32:49,151 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@5595f50d
+2019-06-17 19:32:49,171 INFO  volume.VolumeSet (VolumeSet.java:failVolume(366)) - Moving Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds to failed Volumes
+2019-06-17 19:32:49,171 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,177 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,210 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,211 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds to VolumeSet
+2019-06-17 19:32:49,213 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,213 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds to VolumeSet
+2019-06-17 19:32:49,213 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@7da9bea7
+2019-06-17 19:32:49,214 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@7da9bea7
+2019-06-17 19:32:49,214 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@539c248e
+2019-06-17 19:32:49,214 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@539c248e
+2019-06-17 19:32:49,245 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,245 ERROR volume.VolumeSet (VolumeSet.java:initializeVolumeSet(184)) - Failed to parse the storage location: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs
+java.io.IOException: Cannot create directory /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/hdds
+	at org.apache.hadoop.ozone.container.common.volume.HddsVolume.initialize(HddsVolume.java:208)
+	at org.apache.hadoop.ozone.container.common.volume.HddsVolume.<init>(HddsVolume.java:179)
+	at org.apache.hadoop.ozone.container.common.volume.HddsVolume.<init>(HddsVolume.java:72)
+	at org.apache.hadoop.ozone.container.common.volume.HddsVolume$Builder.build(HddsVolume.java:156)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeSet.createVolume(VolumeSet.java:311)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeSet.initializeVolumeSet(VolumeSet.java:165)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeSet.<init>(VolumeSet.java:130)
+	at org.apache.hadoop.ozone.container.common.volume.VolumeSet.<init>(VolumeSet.java:109)
+	at org.apache.hadoop.ozone.container.common.volume.TestVolumeSet.testFailVolumes(TestVolumeSet.java:232)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+2019-06-17 19:32:49,249 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/d4EsYSQDzM/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,249 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/d4EsYSQDzM/hdds to VolumeSet
+2019-06-17 19:32:49,249 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@14ca84e1
+2019-06-17 19:32:49,250 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@14ca84e1
+2019-06-17 19:32:49,265 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,289 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,291 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,319 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,319 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds to VolumeSet
+2019-06-17 19:32:49,322 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,322 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds to VolumeSet
+2019-06-17 19:32:49,322 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@353f3f77
+2019-06-17 19:32:49,323 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@353f3f77
+2019-06-17 19:32:49,323 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@453aec90
+2019-06-17 19:32:49,323 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@453aec90
+2019-06-17 19:32:49,333 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,333 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,358 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,358 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds to VolumeSet
+2019-06-17 19:32:49,360 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,360 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds to VolumeSet
+2019-06-17 19:32:49,361 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@3d2ed2c8
+2019-06-17 19:32:49,361 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@3d2ed2c8
+2019-06-17 19:32:49,361 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@33049f4f
+2019-06-17 19:32:49,362 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@33049f4f
+2019-06-17 19:32:49,378 INFO  volume.VolumeSet (VolumeSet.java:removeVolume(390)) - Removed Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds from VolumeSet
+2019-06-17 19:32:49,378 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,394 WARN  volume.VolumeSet (VolumeSet.java:removeVolume(398)) - Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds does not exist in VolumeSet
+2019-06-17 19:32:49,395 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,423 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,423 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds to VolumeSet
+2019-06-17 19:32:49,425 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,425 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds to VolumeSet
+2019-06-17 19:32:49,425 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@7edaa130
+2019-06-17 19:32:49,426 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@7edaa130
+2019-06-17 19:32:49,426 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@c9919d4
+2019-06-17 19:32:49,426 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@c9919d4
+2019-06-17 19:32:49,439 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,439 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,464 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,465 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk1/hdds to VolumeSet
+2019-06-17 19:32:49,467 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,467 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk2/hdds to VolumeSet
+2019-06-17 19:32:49,467 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@259d9e9
+2019-06-17 19:32:49,468 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@259d9e9
+2019-06-17 19:32:49,468 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@40be8281
+2019-06-17 19:32:49,468 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@40be8281
+2019-06-17 19:32:49,478 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk3/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-17 19:32:49,478 INFO  volume.VolumeSet (VolumeSet.java:addVolume(339)) - Added Volume : /opt/src/hadoop-hdds/container-service/target/test-dir/dfs/disk3/hdds to VolumeSet
+2019-06-17 19:32:49,480 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,480 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-17 19:32:49,480 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
