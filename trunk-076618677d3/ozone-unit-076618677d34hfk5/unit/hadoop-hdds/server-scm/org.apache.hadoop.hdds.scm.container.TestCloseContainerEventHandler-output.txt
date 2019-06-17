@@ -1,0 +1,34 @@
+2019-06-17 22:53:49,911 WARN  server.ServerUtils (ServerUtils.java:getScmDbDir(145)) - ozone.scm.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-17 22:53:50,095 INFO  pipeline.SCMPipelineManager (SCMPipelineManager.java:initializePipelineState(126)) - No pipeline exists in current db
+2019-06-17 22:53:50,097 WARN  server.ServerUtils (ServerUtils.java:getScmDbDir(145)) - ozone.scm.db.dirs is not configured. We recommend adding this setting. Falling back to ozone.metadata.dirs instead.
+2019-06-17 22:53:50,219 INFO  pipeline.PipelineStateManager (PipelineStateManager.java:addPipeline(56)) - Created pipeline Pipeline[ Id: 7c08c440-6c31-4b36-9573-333cc8a4edc4, Nodes: 79b82753-0dda-4047-b2e4-152920d6e104{ip: 0.135.14.13, host: localhost, networkLocation: /default-rack, certSerialId: null}, Type:RATIS, Factor:ONE, State:OPEN]
+2019-06-17 22:53:50,419 INFO  container.CloseContainerEventHandler (CloseContainerEventHandler.java:onMessage(61)) - Close container Event triggered for container : #1
+2019-06-17 22:53:50,524 INFO  container.CloseContainerEventHandler (CloseContainerEventHandler.java:onMessage(61)) - Close container Event triggered for container : #218162458
+2019-06-17 22:53:50,525 ERROR container.CloseContainerEventHandler (CloseContainerEventHandler.java:onMessage(89)) - Failed to close the container #218162458.
+org.apache.hadoop.hdds.scm.container.ContainerNotFoundException: #218162458
+	at org.apache.hadoop.hdds.scm.container.states.ContainerStateMap.checkIfContainerExist(ContainerStateMap.java:539)
+	at org.apache.hadoop.hdds.scm.container.states.ContainerStateMap.getContainerInfo(ContainerStateMap.java:188)
+	at org.apache.hadoop.hdds.scm.container.ContainerStateManager.getContainer(ContainerStateManager.java:474)
+	at org.apache.hadoop.hdds.scm.container.SCMContainerManager.getContainer(SCMContainerManager.java:196)
+	at org.apache.hadoop.hdds.scm.container.CloseContainerEventHandler.onMessage(CloseContainerEventHandler.java:64)
+	at org.apache.hadoop.hdds.scm.container.CloseContainerEventHandler.onMessage(CloseContainerEventHandler.java:45)
+	at org.apache.hadoop.hdds.server.events.SingleThreadExecutor.lambda$onMessage$1(SingleThreadExecutor.java:85)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-06-17 22:53:50,625 INFO  container.CloseContainerEventHandler (CloseContainerEventHandler.java:onMessage(61)) - Close container Event triggered for container : #1724544543
+2019-06-17 22:53:50,625 ERROR container.CloseContainerEventHandler (CloseContainerEventHandler.java:onMessage(89)) - Failed to close the container #1724544543.
+org.apache.hadoop.hdds.scm.container.ContainerNotFoundException: #1724544543
+	at org.apache.hadoop.hdds.scm.container.states.ContainerStateMap.checkIfContainerExist(ContainerStateMap.java:539)
+	at org.apache.hadoop.hdds.scm.container.states.ContainerStateMap.getContainerInfo(ContainerStateMap.java:188)
+	at org.apache.hadoop.hdds.scm.container.ContainerStateManager.getContainer(ContainerStateManager.java:474)
+	at org.apache.hadoop.hdds.scm.container.SCMContainerManager.getContainer(SCMContainerManager.java:196)
+	at org.apache.hadoop.hdds.scm.container.CloseContainerEventHandler.onMessage(CloseContainerEventHandler.java:64)
+	at org.apache.hadoop.hdds.scm.container.CloseContainerEventHandler.onMessage(CloseContainerEventHandler.java:45)
+	at org.apache.hadoop.hdds.server.events.SingleThreadExecutor.lambda$onMessage$1(SingleThreadExecutor.java:85)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2019-06-17 22:53:50,727 INFO  pipeline.PipelineStateManager (PipelineStateManager.java:addPipeline(56)) - Created pipeline Pipeline[ Id: a453664b-e9e4-42fd-864d-1745536dde6a, Nodes: 79b82753-0dda-4047-b2e4-152920d6e104{ip: 0.135.14.13, host: localhost, networkLocation: /default-rack, certSerialId: null}98934fca-b34d-48ab-b820-8475c2e46301{ip: 235.224.72.178, host: localhost, networkLocation: /default-rack, certSerialId: null}ce8d7dc6-2c16-4549-b1a1-9aa868cc5223{ip: 149.197.226.136, host: localhost, networkLocation: /default-rack, certSerialId: null}, Type:RATIS, Factor:THREE, State:OPEN]
+2019-06-17 22:53:50,728 INFO  container.CloseContainerEventHandler (CloseContainerEventHandler.java:onMessage(61)) - Close container Event triggered for container : #2
+2019-06-17 22:53:50,828 INFO  container.CloseContainerEventHandler (CloseContainerEventHandler.java:onMessage(61)) - Close container Event triggered for container : #2
