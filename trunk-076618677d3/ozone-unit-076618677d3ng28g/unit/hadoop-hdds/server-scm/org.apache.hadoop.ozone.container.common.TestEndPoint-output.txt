@@ -1,0 +1,518 @@
+2019-06-18 05:30:00,487 INFO  ipc.CallQueueManager (CallQueueManager.java:<init>(84)) - Using callQueue: class java.util.concurrent.LinkedBlockingQueue, queueCapacity: 1000, scheduler: class org.apache.hadoop.ipc.DefaultRpcScheduler, ipcBackoff: false.
+2019-06-18 05:30:00,576 INFO  ipc.Server (Server.java:run(1074)) - Starting Socket Reader #1 for port 38875
+2019-06-18 05:30:00,615 WARN  util.NativeCodeLoader (NativeCodeLoader.java:<clinit>(60)) - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2019-06-18 05:30:00,672 INFO  ipc.Server (Server.java:run(1314)) - IPC Server Responder: starting
+2019-06-18 05:30:00,672 INFO  ipc.Server (Server.java:run(1153)) - IPC Server listener on 38875: starting
+2019-06-18 05:30:00,996 ERROR statemachine.EndpointStateMachine (EndpointStateMachine.java:logIfNeeded(204)) - Unable to communicate to SCM server at localhost:43439 for past 0 seconds.
+java.net.ConnectException: Call From ozone-unit-076618677d3ng28g-797659151/192.168.19.27 to localhost:43439 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:831)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:755)
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1515)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1457)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1367)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:228)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+	at com.sun.proxy.$Proxy10.register(Unknown Source)
+	at org.apache.hadoop.ozone.protocolPB.StorageContainerDatanodeProtocolClientSideTranslatorPB.register(StorageContainerDatanodeProtocolClientSideTranslatorPB.java:160)
+	at org.apache.hadoop.ozone.container.common.states.endpoint.RegisterEndpointTask.call(RegisterEndpointTask.java:120)
+	at org.apache.hadoop.ozone.container.common.TestEndPoint.registerTaskHelper(TestEndPoint.java:334)
+	at org.apache.hadoop.ozone.container.common.TestEndPoint.testRegisterToInvalidEndpoint(TestEndPoint.java:352)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:690)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:794)
+	at org.apache.hadoop.ipc.Client$Connection.access$3700(Client.java:411)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1572)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1403)
+	... 35 more
+2019-06-18 05:30:01,084 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/server-scm/target/test-dir/0KGsYN8ayM/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-18 05:30:01,085 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/server-scm/target/test-dir/0KGsYN8ayM/hdds to VolumeSet
+2019-06-18 05:30:01,093 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@41e1e210
+2019-06-18 05:30:01,110 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@41e1e210
+ERROR StatusLogger No Log4j 2 configuration file found. Using default configuration (logging only errors to the console), or user programmatically provided configurations. Set system property 'log4j2.debug' to show Log4j 2 internal initialization logging. See https://logging.apache.org/log4j/2.x/manual/configuration.html for instructions on how to configure Log4j 2
+2019-06-18 05:30:01,346 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 35127
+2019-06-18 05:30:01,809 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-18 05:30:01,828 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-18 05:30:01,835 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 35127 (custom)
+2019-06-18 05:30:01,836 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-18 05:30:01,838 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-18 05:30:01,839 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-18 05:30:01,840 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-18 05:30:01,968 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/server-scm/target/test-dir/bNvUxTIhVU/TestEndPoint/ratis] (custom)
+2019-06-18 05:30:02,002 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-18 05:30:02,015 ERROR statemachine.EndpointStateMachine (EndpointStateMachine.java:logIfNeeded(204)) - Unable to communicate to SCM server at localhost:34363 for past 0 seconds.
+java.net.ConnectException: Call From ozone-unit-076618677d3ng28g-797659151/192.168.19.27 to localhost:34363 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:831)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:755)
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1515)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1457)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1367)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:228)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+	at com.sun.proxy.$Proxy10.sendHeartbeat(Unknown Source)
+	at org.apache.hadoop.ozone.protocolPB.StorageContainerDatanodeProtocolClientSideTranslatorPB.sendHeartbeat(StorageContainerDatanodeProtocolClientSideTranslatorPB.java:131)
+	at org.apache.hadoop.ozone.container.common.states.endpoint.HeartbeatEndpointTask.call(HeartbeatEndpointTask.java:139)
+	at org.apache.hadoop.ozone.container.common.TestEndPoint.heartbeatTaskHelper(TestEndPoint.java:499)
+	at org.apache.hadoop.ozone.container.common.TestEndPoint.testHeartbeatTaskToInvalidNode(TestEndPoint.java:516)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:690)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:794)
+	at org.apache.hadoop.ipc.Client$Connection.access$3700(Client.java:411)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1572)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1403)
+	... 35 more
+2019-06-18 05:30:02,017 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:stop(199)) - Attempting to stop container services.
+2019-06-18 05:30:02,018 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-18 05:30:02,043 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/server-scm/target/test-dir/QTkX5GzVcS/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-18 05:30:02,043 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/server-scm/target/test-dir/QTkX5GzVcS/hdds to VolumeSet
+2019-06-18 05:30:02,044 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@3e2822
+2019-06-18 05:30:02,044 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@3e2822
+2019-06-18 05:30:02,056 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-18 05:30:02,057 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-18 05:30:02,057 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 9858 (custom)
+2019-06-18 05:30:02,058 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-18 05:30:02,058 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-18 05:30:02,058 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-18 05:30:02,058 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-18 05:30:02,059 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/server-scm/target/test-dir/tCOWW95NN6/ratis] (custom)
+2019-06-18 05:30:02,189 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-18 05:30:02,189 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-18 05:30:02,190 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis 2b0d8d63-ea82-49ea-9c19-db5f4bff48d2 at port 9858
+2019-06-18 05:30:02,205 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - 2b0d8d63-ea82-49ea-9c19-db5f4bff48d2: start RPC server
+2019-06-18 05:30:02,358 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - 2b0d8d63-ea82-49ea-9c19-db5f4bff48d2: GrpcService started, listening on 0.0.0.0/0.0.0.0:9858
+2019-06-18 05:30:03,474 ERROR statemachine.EndpointStateMachine (EndpointStateMachine.java:logIfNeeded(204)) - Unable to communicate to SCM server at localhost:38875 for past 0 seconds.
+java.net.SocketTimeoutException: Call From ozone-unit-076618677d3ng28g-797659151/192.168.19.27 to localhost:38875 failed on socket timeout exception: java.net.SocketTimeoutException: 1000 millis timeout while waiting for channel to be ready for read. ch : java.nio.channels.SocketChannel[connected local=/127.0.0.1:40068 remote=/127.0.0.1:38875]; For more details see:  http://wiki.apache.org/hadoop/SocketTimeout
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:831)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:775)
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1515)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1457)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1367)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:228)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+	at com.sun.proxy.$Proxy10.register(Unknown Source)
+	at org.apache.hadoop.ozone.protocolPB.StorageContainerDatanodeProtocolClientSideTranslatorPB.register(StorageContainerDatanodeProtocolClientSideTranslatorPB.java:160)
+	at org.apache.hadoop.ozone.container.common.states.endpoint.RegisterEndpointTask.call(RegisterEndpointTask.java:120)
+	at org.apache.hadoop.ozone.container.common.TestEndPoint.registerTaskHelper(TestEndPoint.java:334)
+	at org.apache.hadoop.ozone.container.common.TestEndPoint.testRegisterRpcTimeout(TestEndPoint.java:376)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.SocketTimeoutException: 1000 millis timeout while waiting for channel to be ready for read. ch : java.nio.channels.SocketChannel[connected local=/127.0.0.1:40068 remote=/127.0.0.1:38875]
+	at org.apache.hadoop.net.SocketIOWithTimeout.doIO(SocketIOWithTimeout.java:164)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:161)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:131)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.FilterInputStream.read(FilterInputStream.java:83)
+	at java.io.FilterInputStream.read(FilterInputStream.java:83)
+	at org.apache.hadoop.ipc.Client$Connection$PingInputStream.read(Client.java:557)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at org.apache.hadoop.ipc.Client$IpcStreams.readResponse(Client.java:1816)
+	at org.apache.hadoop.ipc.Client$Connection.receiveRpcResponse(Client.java:1173)
+	at org.apache.hadoop.ipc.Client$Connection.run(Client.java:1069)
+2019-06-18 05:30:03,622 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/server-scm/target/test-dir/hzOFv5T6Sv/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-18 05:30:03,622 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/server-scm/target/test-dir/hzOFv5T6Sv/hdds to VolumeSet
+2019-06-18 05:30:03,623 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@6a175569
+2019-06-18 05:30:03,623 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@6a175569
+2019-06-18 05:30:03,632 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-18 05:30:03,633 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-18 05:30:03,634 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 9858 (custom)
+2019-06-18 05:30:03,634 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-18 05:30:03,634 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-18 05:30:03,634 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-18 05:30:03,635 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-18 05:30:03,635 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/server-scm/target/test-dir/bHLF3TTLEI/ratis] (custom)
+2019-06-18 05:30:03,976 WARN  ipc.Server (Server.java:processResponse(1523)) - IPC Server handler 0 on 38875, call Call#3 Retry#0 org.apache.hadoop.ozone.protocol.StorageContainerDatanodeProtocol.register from 127.0.0.1:40068: output error
+2019-06-18 05:30:03,976 INFO  ipc.Server (Server.java:run(2695)) - IPC Server handler 0 on 38875 caught an exception
+java.nio.channels.ClosedChannelException
+	at sun.nio.ch.SocketChannelImpl.ensureWriteOpen(SocketChannelImpl.java:270)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:461)
+	at org.apache.hadoop.ipc.Server.channelWrite(Server.java:3250)
+	at org.apache.hadoop.ipc.Server.access$1700(Server.java:137)
+	at org.apache.hadoop.ipc.Server$Responder.processResponse(Server.java:1473)
+	at org.apache.hadoop.ipc.Server$Responder.doRespond(Server.java:1543)
+	at org.apache.hadoop.ipc.Server$Connection.sendResponse(Server.java:2593)
+	at org.apache.hadoop.ipc.Server$Connection.access$300(Server.java:1615)
+	at org.apache.hadoop.ipc.Server$RpcCall.doResponse(Server.java:940)
+	at org.apache.hadoop.ipc.Server$Call.sendResponse(Server.java:774)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:885)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:822)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2682)
+2019-06-18 05:30:04,643 ERROR statemachine.EndpointStateMachine (EndpointStateMachine.java:logIfNeeded(204)) - Unable to communicate to SCM server at localhost:38875 for past 0 seconds.
+java.net.SocketTimeoutException: Call From ozone-unit-076618677d3ng28g-797659151/192.168.19.27 to localhost:38875 failed on socket timeout exception: java.net.SocketTimeoutException: 1000 millis timeout while waiting for channel to be ready for read. ch : java.nio.channels.SocketChannel[connected local=/127.0.0.1:40072 remote=localhost/127.0.0.1:38875]; For more details see:  http://wiki.apache.org/hadoop/SocketTimeout
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:831)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:775)
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1515)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1457)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1367)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:228)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+	at com.sun.proxy.$Proxy10.getVersion(Unknown Source)
+	at org.apache.hadoop.ozone.protocolPB.StorageContainerDatanodeProtocolClientSideTranslatorPB.getVersion(StorageContainerDatanodeProtocolClientSideTranslatorPB.java:112)
+	at org.apache.hadoop.ozone.container.common.states.endpoint.VersionEndpointTask.call(VersionEndpointTask.java:70)
+	at org.apache.hadoop.ozone.container.common.TestEndPoint.testGetVersionAssertRpcTimeOut(TestEndPoint.java:276)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.SocketTimeoutException: 1000 millis timeout while waiting for channel to be ready for read. ch : java.nio.channels.SocketChannel[connected local=/127.0.0.1:40072 remote=localhost/127.0.0.1:38875]
+	at org.apache.hadoop.net.SocketIOWithTimeout.doIO(SocketIOWithTimeout.java:164)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:161)
+	at org.apache.hadoop.net.SocketInputStream.read(SocketInputStream.java:131)
+	at java.io.FilterInputStream.read(FilterInputStream.java:133)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.FilterInputStream.read(FilterInputStream.java:83)
+	at java.io.FilterInputStream.read(FilterInputStream.java:83)
+	at org.apache.hadoop.ipc.Client$Connection$PingInputStream.read(Client.java:557)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at org.apache.hadoop.ipc.Client$IpcStreams.readResponse(Client.java:1816)
+	at org.apache.hadoop.ipc.Client$Connection.receiveRpcResponse(Client.java:1173)
+	at org.apache.hadoop.ipc.Client$Connection.run(Client.java:1069)
+2019-06-18 05:30:04,782 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/server-scm/target/test-dir/hCWJqHjg8K/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-18 05:30:04,782 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/server-scm/target/test-dir/hCWJqHjg8K/hdds to VolumeSet
+2019-06-18 05:30:04,782 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@bae47a0
+2019-06-18 05:30:04,783 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@bae47a0
+2019-06-18 05:30:04,792 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 42995
+2019-06-18 05:30:04,796 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-18 05:30:04,797 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-18 05:30:04,797 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 42995 (custom)
+2019-06-18 05:30:04,798 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-18 05:30:04,798 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-18 05:30:04,798 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-18 05:30:04,799 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-18 05:30:04,799 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/server-scm/target/test-dir/bNvUxTIhVU/TestEndPoint/ratis] (custom)
+2019-06-18 05:30:04,800 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-18 05:30:04,925 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:stop(199)) - Attempting to stop container services.
+2019-06-18 05:30:04,927 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-18 05:30:04,958 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/server-scm/target/test-dir/oND1DTCh8K/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-18 05:30:04,959 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/server-scm/target/test-dir/oND1DTCh8K/hdds to VolumeSet
+2019-06-18 05:30:04,959 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@159e366
+2019-06-18 05:30:04,959 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@159e366
+2019-06-18 05:30:04,972 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 40053
+2019-06-18 05:30:04,973 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-18 05:30:04,974 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-18 05:30:04,974 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 40053 (custom)
+2019-06-18 05:30:04,974 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-18 05:30:04,975 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-18 05:30:04,975 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-18 05:30:04,975 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-18 05:30:04,976 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/server-scm/target/test-dir/bNvUxTIhVU/TestEndPoint/ratis] (custom)
+2019-06-18 05:30:04,977 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-18 05:30:04,978 ERROR statemachine.EndpointStateMachine (EndpointStateMachine.java:logIfNeeded(204)) - Unable to communicate to SCM server at localhost:36299 for past 0 seconds.
+java.net.ConnectException: Call From ozone-unit-076618677d3ng28g-797659151/192.168.19.27 to localhost:36299 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:831)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:755)
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1515)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1457)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1367)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:228)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+	at com.sun.proxy.$Proxy10.sendHeartbeat(Unknown Source)
+	at org.apache.hadoop.ozone.protocolPB.StorageContainerDatanodeProtocolClientSideTranslatorPB.sendHeartbeat(StorageContainerDatanodeProtocolClientSideTranslatorPB.java:131)
+	at org.apache.hadoop.ozone.container.common.states.endpoint.HeartbeatEndpointTask.call(HeartbeatEndpointTask.java:139)
+	at org.apache.hadoop.ozone.container.common.TestEndPoint.heartbeatTaskHelper(TestEndPoint.java:499)
+	at org.apache.hadoop.ozone.container.common.TestEndPoint.testHeartbeatTaskRpcTimeOut(TestEndPoint.java:526)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:690)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:794)
+	at org.apache.hadoop.ipc.Client$Connection.access$3700(Client.java:411)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1572)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1403)
+	... 35 more
+2019-06-18 05:30:04,980 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:stop(199)) - Attempting to stop container services.
+2019-06-18 05:30:04,980 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-18 05:30:05,142 WARN  ipc.Server (Server.java:processResponse(1523)) - IPC Server handler 3 on 38875, call Call#5 Retry#0 org.apache.hadoop.ozone.protocol.StorageContainerDatanodeProtocol.getVersion from 127.0.0.1:40072: output error
+2019-06-18 05:30:05,143 INFO  ipc.Server (Server.java:run(2695)) - IPC Server handler 3 on 38875 caught an exception
+java.nio.channels.ClosedChannelException
+	at sun.nio.ch.SocketChannelImpl.ensureWriteOpen(SocketChannelImpl.java:270)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:461)
+	at org.apache.hadoop.ipc.Server.channelWrite(Server.java:3250)
+	at org.apache.hadoop.ipc.Server.access$1700(Server.java:137)
+	at org.apache.hadoop.ipc.Server$Responder.processResponse(Server.java:1473)
+	at org.apache.hadoop.ipc.Server$Responder.doRespond(Server.java:1543)
+	at org.apache.hadoop.ipc.Server$Connection.sendResponse(Server.java:2593)
+	at org.apache.hadoop.ipc.Server$Connection.access$300(Server.java:1615)
+	at org.apache.hadoop.ipc.Server$RpcCall.doResponse(Server.java:940)
+	at org.apache.hadoop.ipc.Server$Call.sendResponse(Server.java:774)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:885)
+	at org.apache.hadoop.ipc.Server$RpcCall.run(Server.java:822)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:422)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1730)
+	at org.apache.hadoop.ipc.Server$Handler.run(Server.java:2682)
+2019-06-18 05:30:05,262 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/server-scm/target/test-dir/VVR0JDqdI4/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-18 05:30:05,262 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/server-scm/target/test-dir/VVR0JDqdI4/hdds to VolumeSet
+2019-06-18 05:30:05,262 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@6979efad
+2019-06-18 05:30:05,265 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@6979efad
+2019-06-18 05:30:05,284 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-18 05:30:05,285 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-18 05:30:05,285 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 9858 (custom)
+2019-06-18 05:30:05,286 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-18 05:30:05,286 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-18 05:30:05,286 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-18 05:30:05,286 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-18 05:30:05,287 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/server-scm/target/test-dir/MEzMHu4AcP/ratis] (custom)
+2019-06-18 05:30:05,289 ERROR statemachine.EndpointStateMachine (EndpointStateMachine.java:logIfNeeded(204)) - Unable to communicate to SCM server at localhost:46551 for past 0 seconds.
+java.net.ConnectException: Call From ozone-unit-076618677d3ng28g-797659151/192.168.19.27 to localhost:46551 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.hadoop.net.NetUtils.wrapWithMessage(NetUtils.java:831)
+	at org.apache.hadoop.net.NetUtils.wrapException(NetUtils.java:755)
+	at org.apache.hadoop.ipc.Client.getRpcResponse(Client.java:1515)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1457)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1367)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:228)
+	at org.apache.hadoop.ipc.ProtobufRpcEngine$Invoker.invoke(ProtobufRpcEngine.java:116)
+	at com.sun.proxy.$Proxy10.getVersion(Unknown Source)
+	at org.apache.hadoop.ozone.protocolPB.StorageContainerDatanodeProtocolClientSideTranslatorPB.getVersion(StorageContainerDatanodeProtocolClientSideTranslatorPB.java:112)
+	at org.apache.hadoop.ozone.container.common.states.endpoint.VersionEndpointTask.call(VersionEndpointTask.java:70)
+	at org.apache.hadoop.ozone.container.common.TestEndPoint.testGetVersionToInvalidEndpoint(TestEndPoint.java:245)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:531)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:690)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:794)
+	at org.apache.hadoop.ipc.Client$Connection.access$3700(Client.java:411)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1572)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1403)
+	... 34 more
+2019-06-18 05:30:05,305 ERROR endpoint.RegisterEndpointTask (RegisterEndpointTask.java:call(105)) - DatanodeDetails cannot be null in RegisterEndpoint task, shutting down the endpoint.
+2019-06-18 05:30:05,321 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/server-scm/target/test-dir/JcN4Z6U2hE/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-18 05:30:05,321 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/server-scm/target/test-dir/JcN4Z6U2hE/hdds to VolumeSet
+2019-06-18 05:30:05,321 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@2c1dc8e
+2019-06-18 05:30:05,322 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@2c1dc8e
+2019-06-18 05:30:05,337 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 35583
+2019-06-18 05:30:05,338 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-18 05:30:05,339 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-18 05:30:05,339 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 35583 (custom)
+2019-06-18 05:30:05,340 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-18 05:30:05,340 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-18 05:30:05,340 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-18 05:30:05,341 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-18 05:30:05,341 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/server-scm/target/test-dir/UD4lw3MnU9/ratis] (custom)
+2019-06-18 05:30:05,342 INFO  server.XceiverServerGrpc (XceiverServerGrpc.java:<init>(97)) - Found a free port for the server : 38917
+2019-06-18 05:30:05,348 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:start(186)) - Attempting to start container services.
+2019-06-18 05:30:05,348 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:startContainerScrub(160)) - Background container scrubber has been disabled by hdds.containerscrub.enabled
+2019-06-18 05:30:05,348 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:start(418)) - Starting XceiverServerRatis 5e01def1-f1b4-4c4f-8bfa-e75f98fa0c5b at port 35583
+2019-06-18 05:30:05,369 INFO  impl.RaftServerProxy (RaftServerProxy.java:lambda$start$3(299)) - 5e01def1-f1b4-4c4f-8bfa-e75f98fa0c5b: start RPC server
+2019-06-18 05:30:05,371 INFO  server.GrpcService (GrpcService.java:startImpl(148)) - 5e01def1-f1b4-4c4f-8bfa-e75f98fa0c5b: GrpcService started, listening on 0.0.0.0/0.0.0.0:35583
+2019-06-18 05:30:05,375 ERROR endpoint.VersionEndpointTask (HddsVolumeUtil.java:checkVolume(207)) - Volume /opt/src/hadoop-hdds/server-scm/target/test-dir/JcN4Z6U2hE/hdds is in Inconsistent state, expected scm directory /opt/src/hadoop-hdds/server-scm/target/test-dir/JcN4Z6U2hE/hdds/38ed351c-a373-4827-b15b-826cef4f4517 does not exist
+2019-06-18 05:30:05,376 INFO  volume.VolumeSet (VolumeSet.java:failVolume(366)) - Moving Volume : /opt/src/hadoop-hdds/server-scm/target/test-dir/JcN4Z6U2hE/hdds to failed Volumes
+2019-06-18 05:30:05,376 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-18 05:30:05,537 INFO  volume.HddsVolume (HddsVolume.java:<init>(176)) - Creating Volume: /opt/src/hadoop-hdds/server-scm/target/test-dir/cAVSyqclKg/hdds of  storage type : DISK and capacity : 104021790720
+2019-06-18 05:30:05,538 INFO  volume.VolumeSet (VolumeSet.java:initializeVolumeSet(170)) - Added Volume : /opt/src/hadoop-hdds/server-scm/target/test-dir/cAVSyqclKg/hdds to VolumeSet
+2019-06-18 05:30:05,538 INFO  volume.ThrottledAsyncChecker (ThrottledAsyncChecker.java:schedule(140)) - Scheduling a check for org.apache.hadoop.ozone.container.common.volume.HddsVolume@48d7ad8b
+2019-06-18 05:30:05,539 INFO  volume.HddsVolumeChecker (HddsVolumeChecker.java:checkAllVolumes(203)) - Scheduled health check for volume org.apache.hadoop.ozone.container.common.volume.HddsVolume@48d7ad8b
+2019-06-18 05:30:05,552 INFO  ratis.XceiverServerRatis (XceiverServerRatis.java:newXceiverServerRatis(401)) - Found a free port for the server : 36313
+2019-06-18 05:30:05,553 WARN  scm.HddsServerUtil (HddsServerUtil.java:getDefaultRatisDirectory(354)) - Storage directory for Ratis is not configured. It is a good idea to map this to an SSD disk. Falling back to ozone.metadata.dirs
+2019-06-18 05:30:05,554 INFO  impl.RaftServerProxy (ConfUtils.java:logGet(43)) - raft.rpc.type = GRPC (default)
+2019-06-18 05:30:05,555 INFO  grpc.GrpcConfigKeys$Server (ConfUtils.java:logGet(43)) - raft.grpc.server.port = 36313 (custom)
+2019-06-18 05:30:05,555 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.message.size.max = 33570816 (custom)
+2019-06-18 05:30:05,555 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.log.appender.buffer.byte-limit = 33554432 (custom)
+2019-06-18 05:30:05,555 INFO  server.GrpcService (ConfUtils.java:logGet(43)) - raft.grpc.flow.control.window = 1MB (=1048576) (default)
+2019-06-18 05:30:05,556 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.rpc.request.timeout = 3000ms (default)
+2019-06-18 05:30:05,556 INFO  server.RaftServerConfigKeys (ConfUtils.java:logGet(43)) - raft.server.storage.dir = [/opt/src/hadoop-hdds/server-scm/target/test-dir/bNvUxTIhVU/TestEndPoint/ratis] (custom)
+2019-06-18 05:30:05,557 INFO  replication.SimpleContainerDownloader (SimpleContainerDownloader.java:<init>(72)) - Starting container downloader service to copy containers to replicate.
+2019-06-18 05:30:05,567 INFO  ozoneimpl.OzoneContainer (OzoneContainer.java:stop(199)) - Attempting to stop container services.
+2019-06-18 05:30:05,567 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-18 05:30:05,687 INFO  ipc.Server (Server.java:stop(3082)) - Stopping server on 38875
+2019-06-18 05:30:05,688 INFO  ipc.Server (Server.java:run(1185)) - Stopping IPC Server listener on 38875
+2019-06-18 05:30:05,688 INFO  ipc.Server (Server.java:run(1319)) - Stopping IPC Server Responder
+2019-06-18 05:30:05,697 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-18 05:30:05,697 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
+2019-06-18 05:30:05,698 WARN  fs.CachingGetSpaceUsed (CachingGetSpaceUsed.java:run(183)) - Thread Interrupted waiting to refresh disk information: sleep interrupted
