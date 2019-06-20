@@ -1,0 +1,2759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190620 21:08:25.892" generator="Robot 3.1.2 (Python 2.7.5 on linux2)">
+<suite source="/opt/hadoop/smoketest/ozonefs/ozonefs.robot" id="s1" name="ozonefs">
+<test id="s1-t1" name="Create volume and bucket">
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh volume create http://om/fstest --user bilbo --quota 100TB --root</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:25.948" level="INFO">Running command 'ozone sh volume create http://om/fstest --user bilbo --quota 100TB --root 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:28.948" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:28.948" level="INFO">${output} = 2019-06-20 21:08:28 INFO  RestClient:263 - Creating Volume: fstest, with bilbo as owner and quota set to 100TB.</msg>
+<status status="PASS" endtime="20190620 21:08:28.948" starttime="20190620 21:08:25.947"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:28.949" level="INFO">2019-06-20 21:08:28 INFO  RestClient:263 - Creating Volume: fstest, with bilbo as owner and quota set to 100TB.</msg>
+<status status="PASS" endtime="20190620 21:08:28.949" starttime="20190620 21:08:28.948"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:28.950" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:28.950" starttime="20190620 21:08:28.949"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:08:28.950" starttime="20190620 21:08:25.946"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh volume create http://om/fstest2 --user bilbo --quota 100TB --root</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:28.952" level="INFO">Running command 'ozone sh volume create http://om/fstest2 --user bilbo --quota 100TB --root 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:31.056" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:31.056" level="INFO">${output} = 2019-06-20 21:08:31 INFO  RestClient:263 - Creating Volume: fstest2, with bilbo as owner and quota set to 100TB.</msg>
+<status status="PASS" endtime="20190620 21:08:31.057" starttime="20190620 21:08:28.951"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:31.058" level="INFO">2019-06-20 21:08:31 INFO  RestClient:263 - Creating Volume: fstest2, with bilbo as owner and quota set to 100TB.</msg>
+<status status="PASS" endtime="20190620 21:08:31.059" starttime="20190620 21:08:31.057"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:31.060" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:31.060" starttime="20190620 21:08:31.059"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:08:31.060" starttime="20190620 21:08:28.951"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh bucket create http://om/fstest/bucket1</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:31.064" level="INFO">Running command 'ozone sh bucket create http://om/fstest/bucket1 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:33.552" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:33.553" level="INFO">${output} = 2019-06-20 21:08:33 INFO  RestClient:439 - Creating Bucket: fstest/bucket1, with Versioning DISABLED and Storage Type set to DISK</msg>
+<status status="PASS" endtime="20190620 21:08:33.553" starttime="20190620 21:08:31.062"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:33.554" level="INFO">2019-06-20 21:08:33 INFO  RestClient:439 - Creating Bucket: fstest/bucket1, with Versioning DISABLED and Storage Type set to DISK</msg>
+<status status="PASS" endtime="20190620 21:08:33.555" starttime="20190620 21:08:33.553"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:33.556" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:33.556" starttime="20190620 21:08:33.555"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:08:33.557" starttime="20190620 21:08:31.061"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh bucket create http://om/fstest/bucket2</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:33.560" level="INFO">Running command 'ozone sh bucket create http://om/fstest/bucket2 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:35.657" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:35.657" level="INFO">${output} = 2019-06-20 21:08:35 INFO  RestClient:439 - Creating Bucket: fstest/bucket2, with Versioning DISABLED and Storage Type set to DISK</msg>
+<status status="PASS" endtime="20190620 21:08:35.658" starttime="20190620 21:08:33.558"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:35.659" level="INFO">2019-06-20 21:08:35 INFO  RestClient:439 - Creating Bucket: fstest/bucket2, with Versioning DISABLED and Storage Type set to DISK</msg>
+<status status="PASS" endtime="20190620 21:08:35.659" starttime="20190620 21:08:35.658"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:35.660" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:35.660" starttime="20190620 21:08:35.659"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:08:35.660" starttime="20190620 21:08:33.557"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh bucket create http://om/fstest2/bucket3</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:35.662" level="INFO">Running command 'ozone sh bucket create http://om/fstest2/bucket3 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:38.347" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:38.348" level="INFO">${output} = 2019-06-20 21:08:38 INFO  RestClient:439 - Creating Bucket: fstest2/bucket3, with Versioning DISABLED and Storage Type set to DISK</msg>
+<status status="PASS" endtime="20190620 21:08:38.348" starttime="20190620 21:08:35.661"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:38.350" level="INFO">2019-06-20 21:08:38 INFO  RestClient:439 - Creating Bucket: fstest2/bucket3, with Versioning DISABLED and Storage Type set to DISK</msg>
+<status status="PASS" endtime="20190620 21:08:38.350" starttime="20190620 21:08:38.349"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:38.351" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:38.351" starttime="20190620 21:08:38.350"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:08:38.352" starttime="20190620 21:08:35.660"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:08:38.352" critical="yes" starttime="20190620 21:08:25.945"></status>
+</test>
+<test id="s1-t2" name="Check volume from ozonefs">
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -ls o3fs://bucket1.fstest/</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:38.358" level="INFO">Running command 'ozone fs -ls o3fs://bucket1.fstest/ 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:40.916" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:40.917" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:08:40.917" starttime="20190620 21:08:38.356"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:40.919" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:08:40.919" starttime="20190620 21:08:40.918"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:40.920" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:40.920" starttime="20190620 21:08:40.919"></status>
+</kw>
+<msg timestamp="20190620 21:08:40.921" level="INFO">${result} = </msg>
+<status status="PASS" endtime="20190620 21:08:40.921" starttime="20190620 21:08:38.354"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:08:40.921" critical="yes" starttime="20190620 21:08:38.353"></status>
+</test>
+<test id="s1-t3" name="Run ozoneFS tests">
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -mkdir -p o3fs://bucket1.fstest/testdir/deep</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:40.927" level="INFO">Running command 'ozone fs -mkdir -p o3fs://bucket1.fstest/testdir/deep 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:43.568" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:43.568" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:08:43.569" starttime="20190620 21:08:40.925"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:43.571" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:08:43.571" starttime="20190620 21:08:43.570"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:43.572" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:43.572" starttime="20190620 21:08:43.571"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:08:43.573" starttime="20190620 21:08:40.924"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName'</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:43.577" level="INFO">Running command 'ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName' 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:46.108" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:46.108" level="INFO">${output} = testdir/deep/</msg>
+<status status="PASS" endtime="20190620 21:08:46.108" starttime="20190620 21:08:43.574"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:46.110" level="INFO">testdir/deep/</msg>
+<status status="PASS" endtime="20190620 21:08:46.110" starttime="20190620 21:08:46.109"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:46.111" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:46.111" starttime="20190620 21:08:46.110"></status>
+</kw>
+<msg timestamp="20190620 21:08:46.112" level="INFO">${result} = testdir/deep/</msg>
+<status status="PASS" endtime="20190620 21:08:46.112" starttime="20190620 21:08:43.573"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>testdir/deep</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:08:46.113" starttime="20190620 21:08:46.112"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -copyFromLocal NOTICE.txt o3fs://bucket1.fstest/testdir/deep/</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:46.117" level="INFO">Running command 'ozone fs -copyFromLocal NOTICE.txt o3fs://bucket1.fstest/testdir/deep/ 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:50.338" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:50.339" level="INFO">${output} = WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-th...</msg>
+<status status="PASS" endtime="20190620 21:08:50.339" starttime="20190620 21:08:46.115"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:50.341" level="INFO">WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-thirdparty-misc-0.2.0.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release</msg>
+<status status="PASS" endtime="20190620 21:08:50.341" starttime="20190620 21:08:50.340"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:50.342" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:50.342" starttime="20190620 21:08:50.341"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:08:50.343" starttime="20190620 21:08:46.113"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName'</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:50.346" level="INFO">Running command 'ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName' 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:52.694" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:52.694" level="INFO">${output} = testdir/deep/
+testdir/deep/NOTICE.txt</msg>
+<status status="PASS" endtime="20190620 21:08:52.694" starttime="20190620 21:08:50.344"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:52.696" level="INFO">testdir/deep/
+testdir/deep/NOTICE.txt</msg>
+<status status="PASS" endtime="20190620 21:08:52.696" starttime="20190620 21:08:52.695"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:52.697" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:52.697" starttime="20190620 21:08:52.696"></status>
+</kw>
+<msg timestamp="20190620 21:08:52.698" level="INFO">${result} = testdir/deep/
+testdir/deep/NOTICE.txt</msg>
+<status status="PASS" endtime="20190620 21:08:52.698" starttime="20190620 21:08:50.343"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>NOTICE.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:08:52.699" starttime="20190620 21:08:52.698"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -put NOTICE.txt o3fs://bucket1.fstest/testdir/deep/PUTFILE.txt</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:52.703" level="INFO">Running command 'ozone fs -put NOTICE.txt o3fs://bucket1.fstest/testdir/deep/PUTFILE.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:57.330" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:57.331" level="INFO">${output} = WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-th...</msg>
+<status status="PASS" endtime="20190620 21:08:57.331" starttime="20190620 21:08:52.700"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:57.333" level="INFO">WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-thirdparty-misc-0.2.0.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release</msg>
+<status status="PASS" endtime="20190620 21:08:57.333" starttime="20190620 21:08:57.332"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:57.334" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:57.335" starttime="20190620 21:08:57.333"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:08:57.336" starttime="20190620 21:08:52.699"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName'</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:57.340" level="INFO">Running command 'ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName' 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:08:59.782" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:08:59.782" level="INFO">${output} = testdir/deep/
+testdir/deep/NOTICE.txt
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:08:59.782" starttime="20190620 21:08:57.337"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:08:59.784" level="INFO">testdir/deep/
+testdir/deep/NOTICE.txt
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:08:59.784" starttime="20190620 21:08:59.783"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:08:59.785" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:08:59.785" starttime="20190620 21:08:59.784"></status>
+</kw>
+<msg timestamp="20190620 21:08:59.785" level="INFO">${result} = testdir/deep/
+testdir/deep/NOTICE.txt
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:08:59.785" starttime="20190620 21:08:57.336"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>PUTFILE.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:08:59.786" starttime="20190620 21:08:59.786"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -ls o3fs://bucket1.fstest/testdir/deep/</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:08:59.789" level="INFO">Running command 'ozone fs -ls o3fs://bucket1.fstest/testdir/deep/ 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:02.442" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:02.443" level="INFO">${output} = Found 2 items
+-rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:18 o3fs://bucket1.fstest/testdir/deep/NOTICE.txt
+-rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:18 o3fs://bucket1.fstest/test...</msg>
+<status status="PASS" endtime="20190620 21:09:02.443" starttime="20190620 21:08:59.787"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:02.445" level="INFO">Found 2 items
+-rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:18 o3fs://bucket1.fstest/testdir/deep/NOTICE.txt
+-rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:18 o3fs://bucket1.fstest/testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:02.445" starttime="20190620 21:09:02.444"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:02.446" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:02.446" starttime="20190620 21:09:02.445"></status>
+</kw>
+<msg timestamp="20190620 21:09:02.447" level="INFO">${result} = Found 2 items
+-rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:18 o3fs://bucket1.fstest/testdir/deep/NOTICE.txt
+-rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:18 o3fs://bucket1.fstest/test...</msg>
+<status status="PASS" endtime="20190620 21:09:02.447" starttime="20190620 21:08:59.786"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>NOTICE.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:02.448" starttime="20190620 21:09:02.448"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>PUTFILE.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:02.449" starttime="20190620 21:09:02.449"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -mv o3fs://bucket1.fstest/testdir/deep/NOTICE.txt o3fs://bucket1.fstest/testdir/deep/MOVED.TXT</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:02.453" level="INFO">Running command 'ozone fs -mv o3fs://bucket1.fstest/testdir/deep/NOTICE.txt o3fs://bucket1.fstest/testdir/deep/MOVED.TXT 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:05.032" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:05.032" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:09:05.032" starttime="20190620 21:09:02.451"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:05.034" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:09:05.034" starttime="20190620 21:09:05.033"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:05.035" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:05.036" starttime="20190620 21:09:05.035"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:05.036" starttime="20190620 21:09:02.450"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName'</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:05.039" level="INFO">Running command 'ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName' 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:07.398" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:07.398" level="INFO">${output} = testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:07.398" starttime="20190620 21:09:05.037"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:07.399" level="INFO">testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:07.399" starttime="20190620 21:09:07.398"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:07.400" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:07.400" starttime="20190620 21:09:07.400"></status>
+</kw>
+<msg timestamp="20190620 21:09:07.401" level="INFO">${result} = testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:07.401" starttime="20190620 21:09:05.036"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>MOVED.TXT</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:07.401" starttime="20190620 21:09:07.401"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>NOTICE.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:07.402" starttime="20190620 21:09:07.402"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -mkdir -p o3fs://bucket1.fstest/testdir/deep/subdir1</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:07.405" level="INFO">Running command 'ozone fs -mkdir -p o3fs://bucket1.fstest/testdir/deep/subdir1 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:10.008" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:10.009" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:09:10.009" starttime="20190620 21:09:07.403"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:10.011" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:09:10.011" starttime="20190620 21:09:10.010"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:10.012" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:10.012" starttime="20190620 21:09:10.011"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:10.013" starttime="20190620 21:09:07.402"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -cp o3fs://bucket1.fstest/testdir/deep/MOVED.TXT o3fs://bucket1.fstest/testdir/deep/subdir1/NOTICE.txt</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:10.016" level="INFO">Running command 'ozone fs -cp o3fs://bucket1.fstest/testdir/deep/MOVED.TXT o3fs://bucket1.fstest/testdir/deep/subdir1/NOTICE.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:14.627" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:14.627" level="INFO">${output} = WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-th...</msg>
+<status status="PASS" endtime="20190620 21:09:14.627" starttime="20190620 21:09:10.014"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:14.630" level="INFO">WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-thirdparty-misc-0.2.0.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release</msg>
+<status status="PASS" endtime="20190620 21:09:14.630" starttime="20190620 21:09:14.628"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:14.631" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:14.631" starttime="20190620 21:09:14.630"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:14.632" starttime="20190620 21:09:10.013"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName'</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:14.635" level="INFO">Running command 'ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName' 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:17.085" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:17.085" level="INFO">${output} = testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt
+testdir/deep/subdir1/
+testdir/deep/subdir1/NOTICE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:17.085" starttime="20190620 21:09:14.633"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:17.087" level="INFO">testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt
+testdir/deep/subdir1/
+testdir/deep/subdir1/NOTICE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:17.087" starttime="20190620 21:09:17.086"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:17.088" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:17.089" starttime="20190620 21:09:17.088"></status>
+</kw>
+<msg timestamp="20190620 21:09:17.089" level="INFO">${result} = testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt
+testdir/deep/subdir1/
+testdir/deep/subdir1/NOTICE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:17.089" starttime="20190620 21:09:14.632"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>subdir1/NOTICE.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:17.090" starttime="20190620 21:09:17.090"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -ls o3fs://bucket1.fstest/testdir/deep/subdir1/</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:17.094" level="INFO">Running command 'ozone fs -ls o3fs://bucket1.fstest/testdir/deep/subdir1/ 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:19.647" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:19.647" level="INFO">${output} = Found 1 items
+-rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:18 o3fs://bucket1.fstest/testdir/deep/subdir1/NOTICE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:19.647" starttime="20190620 21:09:17.092"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:19.648" level="INFO">Found 1 items
+-rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:18 o3fs://bucket1.fstest/testdir/deep/subdir1/NOTICE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:19.648" starttime="20190620 21:09:19.648"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:19.649" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:19.649" starttime="20190620 21:09:19.649"></status>
+</kw>
+<msg timestamp="20190620 21:09:19.649" level="INFO">${result} = Found 1 items
+-rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:18 o3fs://bucket1.fstest/testdir/deep/subdir1/NOTICE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:19.650" starttime="20190620 21:09:17.091"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>NOTICE.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:19.650" starttime="20190620 21:09:19.650"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -cat o3fs://bucket1.fstest/testdir/deep/subdir1/NOTICE.txt</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:19.653" level="INFO">Running command 'ozone fs -cat o3fs://bucket1.fstest/testdir/deep/subdir1/NOTICE.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:23.164" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:23.164" level="INFO">${output} = WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-th...</msg>
+<status status="PASS" endtime="20190620 21:09:23.165" starttime="20190620 21:09:19.651"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:23.167" level="INFO">WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-thirdparty-misc-0.2.0.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+This product includes software developed by The Apache Software
+Foundation (http://www.apache.org/).
+
+The binary distribution of this product bundles binaries of
+org.iq80.leveldb:leveldb-api (https://github.com/dain/leveldb), which has the
+following notices:
+* Copyright 2011 Dain Sundstrom &lt;dain@iq80.com&gt;
+* Copyright 2011 FuseSource Corp. http://fusesource.com
+
+The binary distribution of this product bundles binaries of
+AWS SDK for Java - Bundle 1.11.563 (https://github.com/aws/aws-sdk-java),
+which has the following notices:
+
+This software includes third party software subject to the following copyrights:
+- XML parsing and utility functions from JetS3t - Copyright 2006-2009 James Murty.
+- PKCS#1 PEM encoded private key parsing and utility functions from oauth.googlecode.com - Copyright 1998-2010 AOL Inc.
+
+The binary distribution of this product bundles binaries of
+Gson 2.2.4,
+which has the following notices:
+
+                            The Netty Project
+                            =================
+
+Please visit the Netty web site for more information:
+
+  * http://netty.io/
+
+Copyright 2014 The Netty Project
+
+The Netty Project licenses this file to you under the Apache License,
+version 2.0 (the "License"); you may not use this file except in compliance
+with the License. You may obtain a copy of the License at:
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations
+under the License.
+
+Also, please refer to each LICENSE.&lt;component&gt;.txt file, which is located in
+the 'license' directory of the distribution file, for the license terms of the
+components that this product depends on.
+
+-------------------------------------------------------------------------------
+This product contains the extensions to Java Collections Framework which has
+been derived from the works by JSR-166 EG, Doug Lea, and Jason T. Greene:
+
+  * LICENSE:
+    * license/LICENSE.jsr166y.txt (Public Domain)
+  * HOMEPAGE:
+    * http://gee.cs.oswego.edu/cgi-bin/viewcvs.cgi/jsr166/
+    * http://viewvc.jboss.org/cgi-bin/viewvc.cgi/jbosscache/experimental/jsr166/
+
+This product contains a modified version of Robert Harder's Public Domain
+Base64 Encoder and Decoder, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.base64.txt (Public Domain)
+  * HOMEPAGE:
+    * http://iharder.sourceforge.net/current/java/base64/
+
+This product contains a modified portion of 'Webbit', an event based
+WebSocket and HTTP server, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.webbit.txt (BSD License)
+  * HOMEPAGE:
+    * https://github.com/joewalnes/webbit
+
+This product contains a modified portion of 'SLF4J', a simple logging
+facade for Java, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.slf4j.txt (MIT License)
+  * HOMEPAGE:
+    * http://www.slf4j.org/
+
+This product contains a modified portion of 'ArrayDeque', written by Josh
+Bloch of Google, Inc:
+
+  * LICENSE:
+    * license/LICENSE.deque.txt (Public Domain)
+
+This product contains a modified portion of 'Apache Harmony', an open source
+Java SE, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.harmony.txt (Apache License 2.0)
+  * HOMEPAGE:
+    * http://archive.apache.org/dist/harmony/
+
+This product contains a modified version of Roland Kuhn's ASL2
+AbstractNodeQueue, which is based on Dmitriy Vyukov's non-intrusive MPSC queue.
+It can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.abstractnodequeue.txt (Public Domain)
+  * HOMEPAGE:
+    * https://github.com/akka/akka/blob/wip-2.2.3-for-scala-2.11/akka-actor/src/main/java/akka/dispatch/AbstractNodeQueue.java
+
+This product contains a modified portion of 'jbzip2', a Java bzip2 compression
+and decompression library written by Matthew J. Francis. It can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.jbzip2.txt (MIT License)
+  * HOMEPAGE:
+    * https://code.google.com/p/jbzip2/
+
+This product contains a modified portion of 'libdivsufsort', a C API library to construct
+the suffix array and the Burrows-Wheeler transformed string for any input string of
+a constant-size alphabet written by Yuta Mori. It can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.libdivsufsort.txt (MIT License)
+  * HOMEPAGE:
+    * https://code.google.com/p/libdivsufsort/
+
+This product contains a modified portion of Nitsan Wakart's 'JCTools', Java Concurrency Tools for the JVM,
+ which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.jctools.txt (ASL2 License)
+  * HOMEPAGE:
+    * https://github.com/JCTools/JCTools
+
+This product optionally depends on 'JZlib', a re-implementation of zlib in
+pure Java, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.jzlib.txt (BSD style License)
+  * HOMEPAGE:
+    * http://www.jcraft.com/jzlib/
+
+This product optionally depends on 'Compress-LZF', a Java library for encoding and
+decoding data in LZF format, written by Tatu Saloranta. It can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.compress-lzf.txt (Apache License 2.0)
+  * HOMEPAGE:
+    * https://github.com/ning/compress
+
+This product optionally depends on 'lz4', a LZ4 Java compression
+and decompression library written by Adrien Grand. It can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.lz4.txt (Apache License 2.0)
+  * HOMEPAGE:
+    * https://github.com/jpountz/lz4-java
+
+This product optionally depends on 'lzma-java', a LZMA Java compression
+and decompression library, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.lzma-java.txt (Apache License 2.0)
+  * HOMEPAGE:
+    * https://github.com/jponge/lzma-java
+
+This product contains a modified portion of 'jfastlz', a Java port of FastLZ compression
+and decompression library written by William Kinney. It can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.jfastlz.txt (MIT License)
+  * HOMEPAGE:
+    * https://code.google.com/p/jfastlz/
+
+This product contains a modified portion of and optionally depends on 'Protocol Buffers', Google's data
+interchange format, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.protobuf.txt (New BSD License)
+  * HOMEPAGE:
+    * http://code.google.com/p/protobuf/
+
+This product optionally depends on 'Bouncy Castle Crypto APIs' to generate
+a temporary self-signed X.509 certificate when the JVM does not provide the
+equivalent functionality.  It can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.bouncycastle.txt (MIT License)
+  * HOMEPAGE:
+    * http://www.bouncycastle.org/
+
+This product optionally depends on 'Snappy', a compression library produced
+by Google Inc, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.snappy.txt (New BSD License)
+  * HOMEPAGE:
+    * http://code.google.com/p/snappy/
+
+This product contains a modified portion of UnsignedBytes LexicographicalComparator
+from Guava v21 project by Google Inc, which can be obtained at:
+
+  * LICENSE:
+    * license/COPYING (Apache License 2.0)
+  * HOMEPAGE:
+    * https://github.com/google/guava
+
+This product optionally depends on 'JBoss Marshalling', an alternative Java
+serialization API, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.jboss-marshalling.txt (GNU LGPL 2.1)
+  * HOMEPAGE:
+    * http://www.jboss.org/jbossmarshalling
+
+This product optionally depends on 'Caliper', Google's micro-
+benchmarking framework, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.caliper.txt (Apache License 2.0)
+  * HOMEPAGE:
+    * http://code.google.com/p/caliper/
+
+This product optionally depends on 'Apache Commons Logging', a logging
+framework, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.commons-logging.txt (Apache License 2.0)
+  * HOMEPAGE:
+    * http://commons.apache.org/logging/
+
+This product optionally depends on 'Apache Log4J', a logging framework, which
+can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.log4j.txt (Apache License 2.0)
+  * HOMEPAGE:
+    * http://logging.apache.org/log4j/
+
+This product optionally depends on 'Aalto XML', an ultra-high performance
+non-blocking XML processor, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.aalto-xml.txt (Apache License 2.0)
+  * HOMEPAGE:
+    * http://wiki.fasterxml.com/AaltoHome
+
+This product contains a modified version of 'HPACK', a Java implementation of
+the HTTP/2 HPACK algorithm written by Twitter. It can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.hpack.txt (Apache License 2.0)
+  * HOMEPAGE:
+    * https://github.com/twitter/hpack
+
+This product contains a modified portion of 'Apache Commons Lang', a Java library
+provides utilities for the java.lang API, which can be obtained at:
+
+  * LICENSE:
+    * license/LICENSE.commons-lang.txt (Apache License 2.0)
+  * HOMEPAGE:
+    * https://commons.apache.org/proper/commons-lang/
+
+This product contains a modified portion of 'JDOM 1.1', which can be obtained at:
+
+  * LICENSE:
+    * https://github.com/hunterhacker/jdom/blob/jdom-1.1/core/LICENSE.txt
+  * HOMEPAGE:
+    * http://www.jdom.org/
+
+The binary distribution of this product bundles binaries of
+Commons Codec 1.4,
+which has the following notices:
+ * src/test/org/apache/commons/codec/language/DoubleMetaphoneTest.javacontains test data from http://aspell.net/test/orig/batch0.tab.Copyright (C) 2002 Kevin Atkinson (kevina@gnu.org)
+  ===============================================================================
+  The content of package org.apache.commons.codec.language.bm has been translated
+  from the original php source code available at http://stevemorse.org/phoneticinfo.htm
+  with permission from the original authors.
+  Original source copyright:Copyright (c) 2008 Alexander Beider &amp; Stephen P. Morse.
+
+The binary distribution of this product bundles binaries of
+Commons Lang 2.6,
+which has the following notices:
+ * This product includes software from the Spring Framework,under the Apache License 2.0 (see: StringUtils.containsWhitespace())
+
+The binary distribution of this product bundles binaries of
+Apache Log4j 1.2.17,
+which has the following notices:
+ * ResolverUtil.java
+    Copyright 2005-2006 Tim Fennell
+  Dumbster SMTP test server
+    Copyright 2004 Jason Paul Kitchen
+  TypeUtil.java
+    Copyright 2002-2012 Ramnivas Laddad, Juergen Hoeller, Chris Beams
+
+The binary distribution of this product bundles binaries of
+"Java Concurrency in Practice" book annotations 1.0,
+which has the following notices:
+ * Copyright (c) 2005 Brian Goetz and Tim Peierls Released under the Creative
+  Commons Attribution License (http://creativecommons.org/licenses/by/2.5)
+  Official home: http://www.jcip.net Any republication or derived work
+  distributed in source code form must include this copyright and license
+  notice.
+
+The binary distribution of this product bundles binaries of
+Jetty :: Http Utility 9.3.19.,
+Jetty :: IO Utility 9.3.19.,
+Jetty :: Security 9.3.19.,
+Jetty :: Server Core 9.3.19.,
+Jetty :: Servlet Handling 9.3.19.,
+Jetty :: Utilities 9.3.19.,
+Jetty :: Utilities :: Ajax,
+Jetty :: Webapp Application Support 9.3.19.,
+Jetty :: XML utilities 9.3.19.,
+which has the following notices:
+ * ==============================================================
+    Jetty Web Container
+    Copyright 1995-2016 Mort Bay Consulting Pty Ltd.
+   ==============================================================
+
+   The Jetty Web Container is Copyright Mort Bay Consulting Pty Ltd
+   unless otherwise noted.
+
+   Jetty is dual licensed under both
+
+     * The Apache 2.0 License
+       http://www.apache.org/licenses/LICENSE-2.0.html
+
+         and
+
+     * The Eclipse Public 1.0 License
+       http://www.eclipse.org/legal/epl-v10.html
+
+   Jetty may be distributed under either license.
+
+   ------
+   Eclipse
+
+   The following artifacts are EPL.
+    * org.eclipse.jetty.orbit:org.eclipse.jdt.core
+
+   The following artifacts are EPL and ASL2.
+    * org.eclipse.jetty.orbit:javax.security.auth.message
+
+
+   The following artifacts are EPL and CDDL 1.0.
+    * org.eclipse.jetty.orbit:javax.mail.glassfish
+
+
+   ------
+   Oracle
+
+   The following artifacts are CDDL + GPLv2 with classpath exception.
+   https://glassfish.dev.java.net/nonav/public/CDDL+GPL.html
+
+    * javax.servlet:javax.servlet-api
+    * javax.annotation:javax.annotation-api
+    * javax.transaction:javax.transaction-api
+    * javax.websocket:javax.websocket-api
+
+   ------
+   Oracle OpenJDK
+
+   If ALPN is used to negotiate HTTP/2 connections, then the following
+   artifacts may be included in the distribution or downloaded when ALPN
+   module is selected.
+
+    * java.sun.security.ssl
+
+   These artifacts replace/modify OpenJDK classes.  The modififications
+   are hosted at github and both modified and original are under GPL v2 with
+   classpath exceptions.
+   http://openjdk.java.net/legal/gplv2+ce.html
+
+
+   ------
+   OW2
+
+   The following artifacts are licensed by the OW2 Foundation according to the
+   terms of http://asm.ow2.org/license.html
+
+   org.ow2.asm:asm-commons
+   org.ow2.asm:asm
+
+
+   ------
+   Apache
+
+   The following artifacts are ASL2 licensed.
+
+   org.apache.taglibs:taglibs-standard-spec
+   org.apache.taglibs:taglibs-standard-impl
+
+
+   ------
+   MortBay
+
+   The following artifacts are ASL2 licensed.  Based on selected classes from
+   following Apache Tomcat jars, all ASL2 licensed.
+
+   org.mortbay.jasper:apache-jsp
+     org.apache.tomcat:tomcat-jasper
+     org.apache.tomcat:tomcat-juli
+     org.apache.tomcat:tomcat-jsp-api
+     org.apache.tomcat:tomcat-el-api
+     org.apache.tomcat:tomcat-jasper-el
+     org.apache.tomcat:tomcat-api
+     org.apache.tomcat:tomcat-util-scan
+     org.apache.tomcat:tomcat-util
+
+   org.mortbay.jasper:apache-el
+     org.apache.tomcat:tomcat-jasper-el
+     org.apache.tomcat:tomcat-el-api
+
+
+   ------
+   Mortbay
+
+   The following artifacts are CDDL + GPLv2 with classpath exception.
+
+   https://glassfish.dev.java.net/nonav/public/CDDL+GPL.html
+
+   org.eclipse.jetty.toolchain:jetty-schemas
+
+   ------
+   Assorted
+
+   The UnixCrypt.java code implements the one way cryptography used by
+   Unix systems for simple password protection.  Copyright 1996 Aki Yoshida,
+   modified April 2001  by Iris Van den Broeke, Daniel Deville.
+   Permission to use, copy, modify and distribute UnixCrypt
+   for non-commercial or commercial purposes and without fee is
+   granted provided that the copyright notice appears in all copies./
+
+The binary distribution of this product bundles binaries of
+Snappy for Java 1.0.4.1,
+which has the following notices:
+ * This product includes software developed by Google
+    Snappy: http://code.google.com/p/snappy/ (New BSD License)
+
+   This product includes software developed by Apache
+    PureJavaCrc32C from apache-hadoop-common http://hadoop.apache.org/
+    (Apache 2.0 license)
+
+   This library containd statically linked libstdc++. This inclusion is allowed by
+   "GCC RUntime Library Exception"
+   http://gcc.gnu.org/onlinedocs/libstdc++/manual/license.html
+
+   == Contributors ==
+     * Tatu Saloranta
+       * Providing benchmark suite
+     * Alec Wysoker
+       * Performance and memory usage improvement
+
+The binary distribution of this product bundles binaries of
+Xerces2 Java Parser 2.9.1,
+which has the following notices:
+ * =========================================================================
+   ==  NOTICE file corresponding to section 4(d) of the Apache License,   ==
+   ==  Version 2.0, in this case for the Apache Xerces Java distribution. ==
+   =========================================================================
+
+   Apache Xerces Java
+   Copyright 1999-2007 The Apache Software Foundation
+
+   This product includes software developed at
+   The Apache Software Foundation (http://www.apache.org/).
+
+   Portions of this software were originally based on the following:
+     - software copyright (c) 1999, IBM Corporation., http://www.ibm.com.
+     - software copyright (c) 1999, Sun Microsystems., http://www.sun.com.
+     - voluntary contributions made by Paul Eng on behalf of the
+       Apache Software Foundation that were originally developed at iClick, Inc.,
+       software copyright (c) 1999.
+
+The binary distribution of this product bundles binaries of
+Logback Classic Module 1.1.2,
+Logback Core Module 1.1.2,
+which has the following notices:
+ * Logback: the reliable, generic, fast and flexible logging framework.
+   Copyright (C) 1999-2012, QOS.ch. All rights reserved.
+
+The binary distribution of this product bundles binaries of
+Apache HBase - Annotations 1.2.6,
+Apache HBase - Client 1.2.6,
+Apache HBase - Common 1.2.6,
+Apache HBase - Hadoop Compatibility 1.2.6,
+Apache HBase - Hadoop Two Compatibility 1.2.6,
+Apache HBase - Prefix Tree 1.2.6,
+Apache HBase - Procedure 1.2.6,
+Apache HBase - Protocol 1.2.6,
+Apache HBase - Server 1.2.6,
+which has the following notices:
+ * Apache HBase
+   Copyright 2007-2015 The Apache Software Foundation
+
+   This product includes software developed at
+   The Apache Software Foundation (http://www.apache.org/).
+
+   --
+   This product incorporates portions of the 'Hadoop' project
+
+   Copyright 2007-2009 The Apache Software Foundation
+
+   Licensed under the Apache License v2.0
+   --
+   Our Orca logo we got here: http://www.vectorfree.com/jumping-orca
+   It is licensed Creative Commons Attribution 3.0.
+   See https://creativecommons.org/licenses/by/3.0/us/
+   We changed the logo by stripping the colored background, inverting
+   it and then rotating it some.
+
+   Later we found that vectorfree.com image is not properly licensed.
+   The original is owned by vectorportal.com. The original was
+   relicensed so we could use it as Creative Commons Attribution 3.0.
+   The license is bundled with the download available here:
+   http://www.vectorportal.com/subcategory/205/KILLER-WHALE-FREE-VECTOR.eps/ifile/9136/detailtest.asp
+   --
+   This product includes portions of the Bootstrap project v3.0.0
+
+   Copyright 2013 Twitter, Inc.
+
+   Licensed under the Apache License v2.0
+
+   This product uses the Glyphicons Halflings icon set.
+
+   http://glyphicons.com/
+
+   Copyright Jan Kovařík
+
+   Licensed under the Apache License v2.0 as a part of the Bootstrap project.
+
+   --
+   This product includes portions of the Guava project v14, specifically
+   'hbase-common/src/main/java/org/apache/hadoop/hbase/io/LimitInputStream.java'
+
+   Copyright (C) 2007 The Guava Authors
+
+   Licensed under the Apache License, Version 2.0
+
+The binary distribution of this product bundles binaries of
+Phoenix Core 4.7.0,
+which has the following notices:
+   Apache Phoenix
+   Copyright 2013-2016 The Apache Software Foundation
+
+   This product includes software developed by The Apache Software
+   Foundation (http://www.apache.org/).
+
+   This also includes:
+
+   The phoenix-spark module has been adapted from the phoenix-spark library
+   distributed under the terms of the Apache 2 license. Original source copyright:
+   Copyright 2014 Simply Measured, Inc.
+   Copyright 2015 Interset Software Inc.
+
+   The file bin/daemon.py is based on the file of the same name in python-daemon 2.0.5
+   (https://pypi.python.org/pypi/python-daemon/). Original source copyright:
+   # Copyright © 2008–2015 Ben Finney &lt;ben+python@benfinney.id.au&gt;
+   # Copyright © 2007–2008 Robert Niederreiter, Jens Klein
+   # Copyright © 2004–2005 Chad J. Schroeder
+   # Copyright © 2003 Clark Evans
+   # Copyright © 2002 Noah Spurrier
+   # Copyright © 2001 Jürgen Hermann
+
+The binary distribution of this product bundles binaries of
+Plexus Cipher: encryption/decryption Component 1.4,
+which has the following notices:
+ * The code in this component contains a class - Base64 taken from http://juliusdavies.ca/svn/not-yet-commons-ssl/tags/commons-ssl-0.3.10/src/java/org/apache/commons/ssl/Base64.java
+   which is Apache license: http://www.apache.org/licenses/LICENSE-2.0
+
+   The PBE key processing routine PBECipher.createCipher() is adopted from http://juliusdavies.ca/svn/not-yet-commons-ssl/tags/commons-ssl-0.3.10/src/java/org/apache/commons/ssl/OpenSSL.java
+    which is also Apache APL-2.0 license: http://www.apache.org/licenses/LICENSE-2.0
+
+The binary distribution of this product bundles binaries of
+software.amazon.ion:ion-java 1.0.1,
+which has the following notices:
+ * Amazon Ion Java Copyright 2007-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+The binary distribution of this product bundles binaries of
+joda-time:joda-time:2.9.9
+which has the following notices:
+ * =============================================================================
+   = NOTICE file corresponding to section 4d of the Apache License Version 2.0 =
+   =============================================================================
+   This product includes software developed by
+   Joda.org (http://www.joda.org/).
+
+The binary distribution of this product bundles binaries of
+Ehcache 3.3.1,
+which has the following notices:
+ * Ehcache V3 Copyright 2014-2016 Terracotta, Inc.
+
+The binary distribution of this product bundles binaries of
+snakeyaml (https://bitbucket.org/asomov/snakeyaml),
+which has the following notices:
+ * Copyright (c) 2008, http://www.snakeyaml.org
+
+The binary distribution of this product bundles binaries of
+swagger-annotations (https://github.com/swagger-api/swagger-core),
+which has the following notices:
+ * Copyright 2016 SmartBear Software
+
+The binary distribution of this product bundles binaries of
+metrics-core 3.2.4
+which has the following notices:
+ * Copyright 2010-2013 Coda Hale and Yammer, Inc.
+
+   This product includes software developed by Coda Hale and Yammer, Inc.
+
+   This product includes code derived from the JSR-166 project (ThreadLocalRandom, Striped64,
+   LongAdder), which was released with the following comments:
+
+   Written by Doug Lea with assistance from members of JCP JSR-166
+   Expert Group and released to the public domain, as explained at
+   http://creativecommons.org/publicdomain/zero/1.0/
+
+The source and binary distribution of this product bundles binaries of
+xterm.js 3.8.0
+which has the following notices:
+Copyright (c) 2017-2018, The xterm.js authors (https://github.com/xtermjs/xterm.js)
+Copyright (c) 2014-2016, SourceLair Private Company (https://www.sourcelair.com)
+Copyright (c) 2012-2013, Christopher Jeffrey (https://github.com/chjj/)
+
+The source and binary distribution of this product bundles modified version of
+  github.com/awslabs/aws-js-s3-explorer licensed under Apache 2.0 license
+  with the following notice:
+
+AWS JavaScript S3 Explorer
+Copyright 2014-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+The binary distribution of this product bundles binaries of
+jline 3.9.0 (https://github.com/jline/jline3)
+
+  * LICENSE:
+    * license/LICENSE.jline3.txt (BSD License)
+  * HOMEPAGE:
+    * https://github.com/jline/jline3</msg>
+<status status="PASS" endtime="20190620 21:09:23.168" starttime="20190620 21:09:23.166"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:23.170" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:23.170" starttime="20190620 21:09:23.169"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:23.171" starttime="20190620 21:09:19.650"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>Failed</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:23.172" starttime="20190620 21:09:23.171"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -rm o3fs://bucket1.fstest/testdir/deep/subdir1/NOTICE.txt</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:23.175" level="INFO">Running command 'ozone fs -rm o3fs://bucket1.fstest/testdir/deep/subdir1/NOTICE.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:25.817" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:25.817" level="INFO">${output} = 2019-06-20 21:09:25 INFO  deprecation:1394 - io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+Deleted o3fs://bucket1.fstest/testdir/deep/subdir1/NOTICE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:25.817" starttime="20190620 21:09:23.173"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:25.818" level="INFO">2019-06-20 21:09:25 INFO  deprecation:1394 - io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+Deleted o3fs://bucket1.fstest/testdir/deep/subdir1/NOTICE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:25.819" starttime="20190620 21:09:25.818"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:25.819" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:25.820" starttime="20190620 21:09:25.819"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:25.820" starttime="20190620 21:09:23.172"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName'</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:25.823" level="INFO">Running command 'ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName' 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:28.189" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:28.189" level="INFO">${output} = testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt
+testdir/deep/subdir1/</msg>
+<status status="PASS" endtime="20190620 21:09:28.189" starttime="20190620 21:09:25.821"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:28.191" level="INFO">testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt
+testdir/deep/subdir1/</msg>
+<status status="PASS" endtime="20190620 21:09:28.191" starttime="20190620 21:09:28.190"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:28.192" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:28.192" starttime="20190620 21:09:28.191"></status>
+</kw>
+<msg timestamp="20190620 21:09:28.193" level="INFO">${result} = testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt
+testdir/deep/subdir1/</msg>
+<status status="PASS" endtime="20190620 21:09:28.193" starttime="20190620 21:09:25.820"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>NOTICE.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:28.194" starttime="20190620 21:09:28.193"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -rmdir o3fs://bucket1.fstest/testdir/deep/subdir1/</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:28.198" level="INFO">Running command 'ozone fs -rmdir o3fs://bucket1.fstest/testdir/deep/subdir1/ 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:30.830" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:30.830" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:09:30.830" starttime="20190620 21:09:28.195"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:30.831" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:09:30.831" starttime="20190620 21:09:30.830"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:30.833" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:30.833" starttime="20190620 21:09:30.832"></status>
+</kw>
+<msg timestamp="20190620 21:09:30.833" level="INFO">${result} = </msg>
+<status status="PASS" endtime="20190620 21:09:30.834" starttime="20190620 21:09:28.194"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName'</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:30.836" level="INFO">Running command 'ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName' 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:33.374" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:33.374" level="INFO">${output} = testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:33.374" starttime="20190620 21:09:30.835"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:33.376" level="INFO">testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:33.376" starttime="20190620 21:09:33.375"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:33.377" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:33.377" starttime="20190620 21:09:33.376"></status>
+</kw>
+<msg timestamp="20190620 21:09:33.377" level="INFO">${result} = testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:33.377" starttime="20190620 21:09:30.834"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>subdir1</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:33.378" starttime="20190620 21:09:33.378"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -touch o3fs://bucket1.fstest/testdir/TOUCHFILE.txt</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:33.381" level="INFO">Running command 'ozone fs -touch o3fs://bucket1.fstest/testdir/TOUCHFILE.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:36.054" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:36.054" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:09:36.054" starttime="20190620 21:09:33.379"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:36.056" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:09:36.056" starttime="20190620 21:09:36.055"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:36.057" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:36.057" starttime="20190620 21:09:36.057"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:36.058" starttime="20190620 21:09:33.378"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName'</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:36.062" level="INFO">Running command 'ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName' 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:38.420" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:38.420" level="INFO">${output} = testdir/TOUCHFILE.txt
+testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:38.420" starttime="20190620 21:09:36.059"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:38.422" level="INFO">testdir/TOUCHFILE.txt
+testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:38.422" starttime="20190620 21:09:38.421"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:38.422" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:38.423" starttime="20190620 21:09:38.422"></status>
+</kw>
+<msg timestamp="20190620 21:09:38.423" level="INFO">${result} = testdir/TOUCHFILE.txt
+testdir/deep/
+testdir/deep/MOVED.TXT
+testdir/deep/PUTFILE.txt</msg>
+<status status="PASS" endtime="20190620 21:09:38.423" starttime="20190620 21:09:36.058"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>TOUCHFILE.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:38.424" starttime="20190620 21:09:38.424"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -rm -r o3fs://bucket1.fstest/testdir/</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:38.427" level="INFO">Running command 'ozone fs -rm -r o3fs://bucket1.fstest/testdir/ 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:41.088" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:41.088" level="INFO">${output} = 2019-06-20 21:09:40 INFO  deprecation:1394 - io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+Deleted o3fs://bucket1.fstest/testdir</msg>
+<status status="PASS" endtime="20190620 21:09:41.089" starttime="20190620 21:09:38.425"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:41.090" level="INFO">2019-06-20 21:09:40 INFO  deprecation:1394 - io.bytes.per.checksum is deprecated. Instead, use dfs.bytes-per-checksum
+Deleted o3fs://bucket1.fstest/testdir</msg>
+<status status="PASS" endtime="20190620 21:09:41.090" starttime="20190620 21:09:41.089"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:41.091" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:41.092" starttime="20190620 21:09:41.091"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:41.092" starttime="20190620 21:09:38.424"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName'</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:41.095" level="INFO">Running command 'ozone sh key list o3://om/fstest/bucket1 | grep -v WARN | jq -r '.[].keyName' 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:43.405" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:43.405" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:09:43.405" starttime="20190620 21:09:41.093"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:43.407" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:09:43.407" starttime="20190620 21:09:43.406"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:43.408" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:43.409" starttime="20190620 21:09:43.408"></status>
+</kw>
+<msg timestamp="20190620 21:09:43.409" level="INFO">${result} = </msg>
+<status status="PASS" endtime="20190620 21:09:43.409" starttime="20190620 21:09:41.092"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>testdir</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:43.410" starttime="20190620 21:09:43.410"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>rm -Rf localdir1</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:43.414" level="INFO">Running command 'rm -Rf localdir1 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:43.422" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:43.422" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:09:43.422" starttime="20190620 21:09:43.412"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:43.424" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:09:43.424" starttime="20190620 21:09:43.423"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:43.425" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:43.426" starttime="20190620 21:09:43.425"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:43.426" starttime="20190620 21:09:43.411"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>mkdir localdir1</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:43.430" level="INFO">Running command 'mkdir localdir1 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:43.439" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:43.439" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:09:43.439" starttime="20190620 21:09:43.428"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:43.441" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:09:43.441" starttime="20190620 21:09:43.440"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:43.442" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:43.442" starttime="20190620 21:09:43.441"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:43.443" starttime="20190620 21:09:43.427"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>cp NOTICE.txt localdir1/LOCAL.txt</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:43.446" level="INFO">Running command 'cp NOTICE.txt localdir1/LOCAL.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:43.454" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:43.454" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:09:43.454" starttime="20190620 21:09:43.444"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:43.456" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:09:43.456" starttime="20190620 21:09:43.455"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:43.457" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:43.457" starttime="20190620 21:09:43.456"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:43.458" starttime="20190620 21:09:43.443"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -mkdir -p o3fs://bucket1.fstest/testdir1</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:43.461" level="INFO">Running command 'ozone fs -mkdir -p o3fs://bucket1.fstest/testdir1 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:46.142" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:46.142" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:09:46.142" starttime="20190620 21:09:43.459"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:46.144" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:09:46.144" starttime="20190620 21:09:46.143"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:46.145" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:46.145" starttime="20190620 21:09:46.145"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:46.146" starttime="20190620 21:09:43.458"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -copyFromLocal localdir1 o3fs://bucket1.fstest/testdir1/</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:46.150" level="INFO">Running command 'ozone fs -copyFromLocal localdir1 o3fs://bucket1.fstest/testdir1/ 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:50.206" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:50.207" level="INFO">${output} = WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-th...</msg>
+<status status="PASS" endtime="20190620 21:09:50.207" starttime="20190620 21:09:46.147"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:50.209" level="INFO">WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-thirdparty-misc-0.2.0.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release</msg>
+<status status="PASS" endtime="20190620 21:09:50.209" starttime="20190620 21:09:50.208"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:50.210" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:50.210" starttime="20190620 21:09:50.209"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:50.211" starttime="20190620 21:09:46.146"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -put NOTICE.txt o3fs://bucket1.fstest/testdir1/NOTICE.txt</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:50.214" level="INFO">Running command 'ozone fs -put NOTICE.txt o3fs://bucket1.fstest/testdir1/NOTICE.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:54.192" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:54.192" level="INFO">${output} = WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-th...</msg>
+<status status="PASS" endtime="20190620 21:09:54.193" starttime="20190620 21:09:50.212"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:54.194" level="INFO">WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-thirdparty-misc-0.2.0.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release</msg>
+<status status="PASS" endtime="20190620 21:09:54.195" starttime="20190620 21:09:54.193"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:54.196" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:54.196" starttime="20190620 21:09:54.195"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:54.196" starttime="20190620 21:09:50.211"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -ls -R o3fs://bucket1.fstest/testdir1/</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:54.200" level="INFO">Running command 'ozone fs -ls -R o3fs://bucket1.fstest/testdir1/ 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:56.798" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:56.798" level="INFO">${output} = -rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:19 o3fs://bucket1.fstest/testdir1/NOTICE.txt
+drwxrwxrwx   - hadoop hadoop          0 2019-06-20 21:09 o3fs://bucket1.fstest/testdir1/localdir1
+-rw...</msg>
+<status status="PASS" endtime="20190620 21:09:56.798" starttime="20190620 21:09:54.198"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:56.800" level="INFO">-rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:19 o3fs://bucket1.fstest/testdir1/NOTICE.txt
+drwxrwxrwx   - hadoop hadoop          0 2019-06-20 21:09 o3fs://bucket1.fstest/testdir1/localdir1
+-rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:19 o3fs://bucket1.fstest/testdir1/localdir1/LOCAL.txt</msg>
+<status status="PASS" endtime="20190620 21:09:56.800" starttime="20190620 21:09:56.799"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:56.801" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:56.802" starttime="20190620 21:09:56.801"></status>
+</kw>
+<msg timestamp="20190620 21:09:56.802" level="INFO">${result} = -rw-rw-rw-   1 hadoop hadoop      22808 1970-01-04 01:19 o3fs://bucket1.fstest/testdir1/NOTICE.txt
+drwxrwxrwx   - hadoop hadoop          0 2019-06-20 21:09 o3fs://bucket1.fstest/testdir1/localdir1
+-rw...</msg>
+<status status="PASS" endtime="20190620 21:09:56.802" starttime="20190620 21:09:54.197"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>localdir1/LOCAL.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:56.803" starttime="20190620 21:09:56.803"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>testdir1/NOTICE.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:09:56.804" starttime="20190620 21:09:56.804"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -mkdir -p o3fs://bucket2.fstest/testdir2</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:56.808" level="INFO">Running command 'ozone fs -mkdir -p o3fs://bucket2.fstest/testdir2 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:09:59.415" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:09:59.415" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:09:59.416" starttime="20190620 21:09:56.806"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:09:59.418" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:09:59.418" starttime="20190620 21:09:59.416"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:09:59.419" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:09:59.419" starttime="20190620 21:09:59.418"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:09:59.420" starttime="20190620 21:09:56.805"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -mkdir -p o3fs://bucket3.fstest2/testdir3</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:09:59.423" level="INFO">Running command 'ozone fs -mkdir -p o3fs://bucket3.fstest2/testdir3 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:10:01.936" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:10:01.937" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:10:01.937" starttime="20190620 21:09:59.421"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:10:01.938" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:10:01.939" starttime="20190620 21:10:01.938"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:10:01.940" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:10:01.940" starttime="20190620 21:10:01.939"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:10:01.940" starttime="20190620 21:09:59.420"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -cp o3fs://bucket1.fstest/testdir1/localdir1 o3fs://bucket2.fstest/testdir2/</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:10:01.943" level="INFO">Running command 'ozone fs -cp o3fs://bucket1.fstest/testdir1/localdir1 o3fs://bucket2.fstest/testdir2/ 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:10:06.081" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:10:06.081" level="INFO">${output} = WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-th...</msg>
+<status status="PASS" endtime="20190620 21:10:06.081" starttime="20190620 21:10:01.941"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:10:06.083" level="INFO">WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-thirdparty-misc-0.2.0.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release</msg>
+<status status="PASS" endtime="20190620 21:10:06.083" starttime="20190620 21:10:06.082"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:10:06.084" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:10:06.084" starttime="20190620 21:10:06.083"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:10:06.085" starttime="20190620 21:10:01.941"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -cp o3fs://bucket1.fstest/testdir1/localdir1 o3fs://bucket3.fstest2/testdir3/</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:10:06.088" level="INFO">Running command 'ozone fs -cp o3fs://bucket1.fstest/testdir1/localdir1 o3fs://bucket3.fstest2/testdir3/ 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:10:10.216" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:10:10.216" level="INFO">${output} = WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-th...</msg>
+<status status="PASS" endtime="20190620 21:10:10.216" starttime="20190620 21:10:06.086"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:10:10.218" level="INFO">WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-thirdparty-misc-0.2.0.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release</msg>
+<status status="PASS" endtime="20190620 21:10:10.218" starttime="20190620 21:10:10.217"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:10:10.219" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:10:10.219" starttime="20190620 21:10:10.218"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:10:10.220" starttime="20190620 21:10:06.085"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone sh key put o3://om/fstest/bucket1/KEY.txt NOTICE.txt</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:10:10.223" level="INFO">Running command 'ozone sh key put o3://om/fstest/bucket1/KEY.txt NOTICE.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:10:13.972" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:10:13.972" level="INFO">${output} = WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-th...</msg>
+<status status="PASS" endtime="20190620 21:10:13.972" starttime="20190620 21:10:10.221"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:10:13.974" level="INFO">WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-thirdparty-misc-0.2.0.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release</msg>
+<status status="PASS" endtime="20190620 21:10:13.974" starttime="20190620 21:10:13.973"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:10:13.975" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:10:13.976" starttime="20190620 21:10:13.975"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:10:13.976" starttime="20190620 21:10:10.220"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -ls o3fs://bucket1.fstest/KEY.txt</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:10:13.980" level="INFO">Running command 'ozone fs -ls o3fs://bucket1.fstest/KEY.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:10:16.564" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:10:16.564" level="INFO">${output} = -rw-rw-rw-   1 hadoop hadoop      22808 2019-06-20 21:10 o3fs://bucket1.fstest/KEY.txt</msg>
+<status status="PASS" endtime="20190620 21:10:16.564" starttime="20190620 21:10:13.978"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:10:16.566" level="INFO">-rw-rw-rw-   1 hadoop hadoop      22808 2019-06-20 21:10 o3fs://bucket1.fstest/KEY.txt</msg>
+<status status="PASS" endtime="20190620 21:10:16.566" starttime="20190620 21:10:16.565"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:10:16.567" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:10:16.567" starttime="20190620 21:10:16.566"></status>
+</kw>
+<msg timestamp="20190620 21:10:16.568" level="INFO">${result} = -rw-rw-rw-   1 hadoop hadoop      22808 2019-06-20 21:10 o3fs://bucket1.fstest/KEY.txt</msg>
+<status status="PASS" endtime="20190620 21:10:16.568" starttime="20190620 21:10:13.976"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>KEY.txt</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:10:16.569" starttime="20190620 21:10:16.568"></status>
+</kw>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>ozone fs -copyFromLocal NOTICE.txt o3fs://bucket1.fstest/KEY.txt</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190620 21:10:16.572" level="INFO">Running command 'ozone fs -copyFromLocal NOTICE.txt o3fs://bucket1.fstest/KEY.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:10:19.118" level="INFO">${rc} = 1</msg>
+<msg timestamp="20190620 21:10:19.118" level="INFO">${result} = copyFromLocal: `o3fs://bucket1.fstest/KEY.txt': File exists</msg>
+<status status="PASS" endtime="20190620 21:10:19.118" starttime="20190620 21:10:16.570"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190620 21:10:19.120" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:10:19.121" starttime="20190620 21:10:19.119"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>File exists</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:10:19.122" starttime="20190620 21:10:19.121"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>rm -Rf GET.txt</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:10:19.125" level="INFO">Running command 'rm -Rf GET.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:10:19.133" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:10:19.133" level="INFO">${output} = </msg>
+<status status="PASS" endtime="20190620 21:10:19.133" starttime="20190620 21:10:19.123"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:10:19.135" level="INFO"></msg>
+<status status="PASS" endtime="20190620 21:10:19.136" starttime="20190620 21:10:19.134"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:10:19.137" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:10:19.138" starttime="20190620 21:10:19.136"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:10:19.138" starttime="20190620 21:10:19.122"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ozone fs -get o3fs://bucket1.fstest/KEY.txt GET.txt</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:10:19.142" level="INFO">Running command 'ozone fs -get o3fs://bucket1.fstest/KEY.txt GET.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:10:22.726" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:10:22.726" level="INFO">${output} = WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-th...</msg>
+<status status="PASS" endtime="20190620 21:10:22.726" starttime="20190620 21:10:19.140"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:10:22.728" level="INFO">WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil (file:/opt/hadoop/share/ozone/lib/ratis-thirdparty-misc-0.2.0.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of org.apache.ratis.thirdparty.com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release</msg>
+<status status="PASS" endtime="20190620 21:10:22.729" starttime="20190620 21:10:22.727"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:10:22.729" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:10:22.730" starttime="20190620 21:10:22.729"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:10:22.730" starttime="20190620 21:10:19.139"></status>
+</kw>
+<kw name="Execute" library="commonlib">
+<arguments>
+<arg>ls -l GET.txt</arg>
+</arguments>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>${command}</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${output}</var>
+</assign>
+<msg timestamp="20190620 21:10:22.734" level="INFO">Running command 'ls -l GET.txt 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:10:22.745" level="INFO">${rc} = 0</msg>
+<msg timestamp="20190620 21:10:22.745" level="INFO">${output} = -rw-r--r--. 1 hadoop users 22808 Jun 20 21:10 GET.txt</msg>
+<status status="PASS" endtime="20190620 21:10:22.746" starttime="20190620 21:10:22.732"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${output}</arg>
+</arguments>
+<msg timestamp="20190620 21:10:22.748" level="INFO">-rw-r--r--. 1 hadoop users 22808 Jun 20 21:10 GET.txt</msg>
+<status status="PASS" endtime="20190620 21:10:22.748" starttime="20190620 21:10:22.746"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190620 21:10:22.749" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:10:22.749" starttime="20190620 21:10:22.748"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:10:22.750" starttime="20190620 21:10:22.731"></status>
+</kw>
+<kw name="Run And Return Rc And Output" library="OperatingSystem">
+<doc>Runs the given command in the system and returns the RC and output.</doc>
+<arguments>
+<arg>ozone fs -ls o3fs://abcde.pqrs/</arg>
+</arguments>
+<assign>
+<var>${rc}</var>
+<var>${result}</var>
+</assign>
+<msg timestamp="20190620 21:10:22.752" level="INFO">Running command 'ozone fs -ls o3fs://abcde.pqrs/ 2&gt;&amp;1'.</msg>
+<msg timestamp="20190620 21:10:25.288" level="INFO">${rc} = 1</msg>
+<msg timestamp="20190620 21:10:25.288" level="INFO">${result} = ls: Volume pqrs is not found</msg>
+<status status="PASS" endtime="20190620 21:10:25.288" starttime="20190620 21:10:22.750"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${rc}</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190620 21:10:25.290" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20190620 21:10:25.290" starttime="20190620 21:10:25.289"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${result}</arg>
+<arg>not found</arg>
+</arguments>
+<status status="PASS" endtime="20190620 21:10:25.291" starttime="20190620 21:10:25.290"></status>
+</kw>
+<status status="PASS" endtime="20190620 21:10:25.291" critical="yes" starttime="20190620 21:08:40.922"></status>
+</test>
+<doc>Ozonefs test</doc>
+<status status="PASS" endtime="20190620 21:10:25.293" starttime="20190620 21:08:25.893"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="ozonefs" pass="3">ozonefs</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
